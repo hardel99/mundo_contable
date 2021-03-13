@@ -1,7 +1,11 @@
-import Navbar from './components/navbar/navbar.jsx';
+/* import Navbar from './components/navbar/navbar.jsx'; */
 
 function App() { 
-  return(<Navbar></Navbar>);
+  return(
+    <>
+      <h1>yooooo</h1> 
+    </>
+  );
 }
 
 export default App;
