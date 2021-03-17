@@ -1,6 +1,7 @@
 import React, {userState, useState} from 'react'
 import Navbar from '../Components/Navbar'
 
+
 const index = () => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -13,4 +14,4 @@ const index = () => {
     )
 }
 
-export default index
+export default index;

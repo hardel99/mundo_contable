@@ -7,7 +7,7 @@ const Navbar = () => {
         
         <Nav>
             <NavbarContainer>
-                <NavLogo to = '/'> Logo </NavLogo>
+                <NavLogo to = '/'>Logo</NavLogo>
             </NavbarContainer>
         </Nav>
     )
