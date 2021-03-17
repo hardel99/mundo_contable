@@ -1,16 +1,17 @@
 import React, {useState} from 'react'
-import {Button} from './navbarComponents/button';
+import  {Button} from './navbarComponents/button';
 import { Link } from 'react-router-dom'
-import './navbar.module.css';
+import './navbar.css';
 import Dropdown from './navbarComponents/dropdown';
 
 function Navbar (){
+
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
 
     const handleClick = () => setClick(!click)
     const closeMobilMenu = () => setClick(false);
-    
+
     return (
         <>
             <nav className='navbar'>
@@ -19,6 +20,7 @@ function Navbar (){
                 </Link>
                 <div className='Menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
+                </div>
                     <ul className= {click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className = 'nav-links' onClick={closeMobilMenu}>
@@ -31,13 +33,23 @@ function Navbar (){
                             </Link>
                             {dropdown && <Dropdown/>}
                         </li>
-
-                    </ul>
-                </div>
+                        <li className='nav-item'>
+                            <Link to='/Contact-us' className = 'nav-links' onClick={closeMobilMenu}>
+                                Contact us
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/sign-up' className = 'nav-links-mobile' onClick={closeMobilMenu}>
+                                Sign Up
+                            </Link>
+                        </li>
+                    </ul>   
+                <Button></Button>
             </nav>
-
         </>
-    )
+    );
 }
 
 export default Navbar;
+
+
