@@ -33,7 +33,7 @@ function Navbar (){
         <>
             <nav className='navbar'>
                 <Link to='/' className='navbar-logo'>
-                   MUNDO CONTABLES
+                   MUNDO CONTABLES <i class='fab fa-firstdraft'/>
                 </Link>
                 <div className='Menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
@@ -49,6 +49,11 @@ function Navbar (){
                                 Services <i className='fas fa-caret-down'/>
                             </Link>
                             {dropdown && <Dropdown/>}
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/Products' className = 'nav-links' onClick={closeMobilMenu}>
+                                Products
+                            </Link>   
                         </li>
                         <li className='nav-item'>
                             <Link to='/Contact-us' className = 'nav-links' onClick={closeMobilMenu}>
