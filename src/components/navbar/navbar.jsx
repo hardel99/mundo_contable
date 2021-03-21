@@ -33,7 +33,7 @@ function Navbar (){
         <>
             <nav className='navbar'>
                 <Link to='/' className='navbar-logo'>
-                   MUNDO CONTABLES <i class='fab fa-firstdraft'/>
+                   MUNDO CONTABLES <i class='img-logo' url />
                 </Link>
                 <div className='Menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
