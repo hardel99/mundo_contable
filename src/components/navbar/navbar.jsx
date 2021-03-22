@@ -3,6 +3,7 @@ import  {Button} from './navbarComponents/button';
 import { Link } from 'react-router-dom'
 import './navbar.css';
 import Dropdown from './navbarComponents/dropdown';
+import logo from './img/LOGOMC.png'
 
 function Navbar (){
 
@@ -33,7 +34,7 @@ function Navbar (){
         <>
             <nav className='navbar'>
                 <Link to='/' className='navbar-logo'>
-                   MUNDO CONTABLES <i class='img-logo' url />
+                   MUNDO CONTABLES <img src={logo}></img>
                 </Link>
                 <div className='Menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>

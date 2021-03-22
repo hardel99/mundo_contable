@@ -42,7 +42,7 @@
   .nav-item {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 40px;
     color: var(--grey-light);
 
   }
@@ -79,7 +79,7 @@
     }
 
     .NavbarItems {
-      position: relative;
+      position:relative;
     }
   
     .nav-menu {
