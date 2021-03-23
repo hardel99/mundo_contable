@@ -29,20 +29,22 @@
     font-size: 1.6rem;
   }
   
+/* here edit the elements of navbar */
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
+    grid-gap: 15px;
     list-style: none;
     text-align: center;
     width: 70vw;
-    justify-content: end;
+    justify-content: center;
   }
   
+/* thats move the elements of navbar */
   .nav-item {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 80px;
     color: var(--grey-light);
 
   }

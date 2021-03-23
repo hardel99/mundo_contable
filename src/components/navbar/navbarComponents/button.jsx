@@ -6,7 +6,7 @@ export function Button() {
     return (
         <Link to= 'sign-up'>
             <button className='btn'>
-                Sign Up
+                Registrarse
             </button>
         </Link>
     );
