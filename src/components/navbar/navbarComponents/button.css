@@ -3,7 +3,7 @@
 }
 
 .btn {
-    padding: 8px 20px;
+    padding: 8px 14px;
     border-radius: 4px;
     outline: none;
     border: none;
@@ -16,21 +16,12 @@
 }
 
 .btn:hover {
-    padding: 6px 18px;
+    padding: 8px 14px;
     transition: all 0.3s ease-out;
     background-color: transparent;
     color: #fff;
     border-radius: 4px;
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
 }
 
-
-/* .Rectngulo-36 {
-    width: 102px;
-    height: 37px;
-    margin: 3px 0 2px 25px;
-    padding: 8px 10px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color: var(--green);
-  }
-  */
+  

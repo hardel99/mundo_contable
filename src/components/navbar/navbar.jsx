@@ -9,6 +9,7 @@ function Navbar (){
 
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
+    const [navbar, setNavbar] = useState(false);
 
     const handleClick = () => setClick(!click)
     const closeMobilMenu = () => setClick(false);
@@ -28,13 +29,22 @@ function Navbar (){
             setDropdown(false);
         }
     };
+
+    const changeBackground = () => {
+        if(window.scrollY >= 80){
+            setNavbar(true);
+        }else {
+            setNavbar(false);
+        }
+    }
     
+    window.addEventListener('scroll', changeBackground);
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className={navbar ? 'navbar active' : 'navbar'}>
                 <Link to='/' className='navbar-logo'>
-                <img src={logo} width={40} height={40} />
+                <img src={logo} width={40} height={40} alt={'MundoCOntablesLogo'} />
                 </Link>
                 <div className='Menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
@@ -69,9 +79,9 @@ function Navbar (){
                         </li>
                     {/* Here ending the sections inside the navbar */}
                     </ul> 
-                    <li className='nav-ingresar'>
-                        <Link to='/log-in' className = 'nav-links' onClick={closeMobilMenu}>
-                        Log in
+                    <li className='nav-log'>
+                        <Link to='/log-in' className = 'nav-links-log' onClick={closeMobilMenu}>
+                            Log in
                         </Link>
                     </li>
                     <Button></Button>
@@ -81,5 +91,4 @@ function Navbar (){
 }
 
 export default Navbar;
-
 

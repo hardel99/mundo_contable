@@ -5,10 +5,18 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.home, .services, .products, .contact-us,.sign-up, .marketing, .consulting {
+.body{
+    background-image: url('./components/img/paisaje.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.home, .services, .products, .contact-us,.sign-up, .marketing, .consulting, .login{
     display: flex;
     height: 98vh;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
 }
+
+
