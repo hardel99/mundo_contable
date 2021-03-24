@@ -2,33 +2,15 @@ import React, {useState} from 'react';
 import  {Button} from './navbarComponents/button';
 import { Link } from 'react-router-dom'
 import './navbar.css';
-import Dropdown from './navbarComponents/dropdown';
 import logo from '../img/LOGOMC.png'
 
 function Navbar (){
 
     const [click, setClick] = useState(false);
-    const [dropdown, setDropdown] = useState(false);
     const [navbar, setNavbar] = useState(false);
 
     const handleClick = () => setClick(!click)
     const closeMobilMenu = () => setClick(false);
-
-    const onMouseEnter = () => {
-        if(window.ineerWidth < 960) {
-            setDropdown(false);
-        } else {
-            setDropdown(true);
-        }
-    };
-
-    const onMouseLeave = () => {
-        if(window.ineerWidth < 960) {
-            setDropdown(false);
-        } else {
-            setDropdown(false);
-        }
-    };
 
     const changeBackground = () => {
         if(window.scrollY >= 80){
@@ -56,11 +38,10 @@ function Navbar (){
                                 Inicio
                             </Link>
                         </li>
-                        <li className='nav-item' onMouseEnter = {onMouseEnter} onMouseLeave = {onMouseLeave}>
+                        <li className='nav-item'>
                             <Link to='/services' className = 'nav-links' onClick={closeMobilMenu}>
-                                Servicios <i className='fas fa-caret-down'/>
+                                Servicios
                             </Link>
-                            {dropdown && <Dropdown/>}
                         </li>
                         <li className='nav-item'>
                             <Link to='/Products' className = 'nav-links' onClick={closeMobilMenu}>
