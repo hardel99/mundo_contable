@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./Components/Navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Service from "./components/pages/Service";
-import Products from "./components/pages/Products";
-import ContactUs from "./components/pages/ContactUs";
-import SignUp from "./components/pages/SignUp";
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
+import Service from "./Components/pages/Service";
+import Products from "./Components/pages/Products";
+import ContactUs from "./Components/pages/ContactUs";
+import SignUp from "./Components/pages/SignUp";
+import Home from "./Components/pages/Home";
+import Login from "./Components/pages/Login";
 
 function App() {
     return (
@@ -15,11 +15,11 @@ function App() {
             <Navbar />
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/service" exact component={Service} />
+                <Route path="/services" exact component={Service} />
                 <Route path="/products" exact component={Products} />
                 <Route path="/contact-us" exact component={ContactUs} />
                 <Route path="/sign-up" exact component={SignUp} />
-                <Route path="/login" exact component={Login} />
+                <Route path="/log-in" exact component={Login} />
             </Switch>
         </Router>
     );
