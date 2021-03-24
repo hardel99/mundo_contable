@@ -20,7 +20,7 @@
   }
 
   .navbar.active {
-    background: linear-gradient(98deg, rgb(3, 3, 3), rgb(13, 20, 31) 100%);
+    background: linear-gradient(98deg, #091447, #0e1531 100%);
   }
   
   .navbar-logo {
