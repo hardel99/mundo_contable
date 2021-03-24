@@ -1,20 +1,26 @@
-import Navbar from "./Components/Navbar";
+import React from "react";
+import "./App.css";
+import Navbar from "./components/navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Signup from "./Components/Auth/signup";
-import { AuthProvider } from "./app/auth/AuthContext";
-import Dashboard from "./Components/Dashboard/dashboard";
-import Login from "./Components/Auth/login";
+import Service from "./components/pages/Service";
+import Products from "./components/pages/Products";
+import ContactUs from "./components/pages/ContactUs";
+import SignUp from "./components/pages/SignUp";
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
 
 function App() {
     return (
         <Router>
-            <AuthProvider>
-                <Switch>
-                    <Route exact path="/" component={Dashboard} />
-                    <Route path="/signup" component={Signup} />
-                    <Route path="/login" component={Login} />
-                </Switch>
-            </AuthProvider>
+            <Navbar />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/service" exact component={Service} />
+                <Route path="/products" exact component={Products} />
+                <Route path="/contact-us" exact component={ContactUs} />
+                <Route path="/sign-up" exact component={SignUp} />
+                <Route path="/login" exact component={Login} />
+            </Switch>
         </Router>
     );
 }
