@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
 
 const SignUp = () => {
@@ -8,23 +9,22 @@ const SignUp = () => {
     const { signup } = useAuth();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const history = useHistory();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-            return setError("Las contraseñas no son iguales!");
+            return setError("Passwords do not match");
         }
 
         try {
             setError("");
             setLoading(true);
-            //await signup(emailRef.current.value, passwordRef.current.value); <----Idk why this don't work, but it dont so...
-            signup(emailRef.current.value, passwordRef.current.value);
+            await signup(emailRef.current.value, passwordRef.current.value);
+            history.push("/");
         } catch {
-            setError(
-                "Parece que hubo un error :/, por favor intenta mas tarde"
-            );
+            setError("Failed to create an account");
         }
 
         setLoading(false);
@@ -54,7 +54,9 @@ const SignUp = () => {
                 <input disabled={loading} value="Registrarse" type="submit" />
             </form>
 
-            <div>Ya tienes una cuenta? Ingresa aqui!</div>
+            <div>
+                Ya tienes una cuenta? <Link to="log-in">Ingresa aqui!</Link>
+            </div>
         </>
     );
 };

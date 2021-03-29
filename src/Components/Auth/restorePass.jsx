@@ -1,25 +1,27 @@
 import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
 
-const Login = () => {
+const ForgotPassword = () => {
     const emailRef = useRef();
-    const passwordRef = useRef();
-    const { login } = useAuth();
+    const { resetPassword } = useAuth();
     const [error, setError] = useState("");
+    const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
-    const history = useHistory();
 
     async function handleSubmit(e) {
         e.preventDefault();
 
         try {
+            setMessage("");
             setError("");
             setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            history.push("/dashboard");
+            await resetPassword(emailRef.current.value);
+            setMessage("Revisa tu correo para el resto de las indicaciones");
         } catch {
-            setError("Parece que hubo un error :/, por favor intenta de nuevo");
+            setError(
+                "Parece que hubo un error y no podemos restaurar la contraseña"
+            );
         }
 
         setLoading(false);
@@ -27,20 +29,17 @@ const Login = () => {
 
     return (
         <>
-            <h2>Iniciar sesion</h2>
+            <h2>Restaurar Contraseña</h2>
             {error && <alert>{error}</alert>}
+            {message && <alert>{message}</alert>}
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label>E-mail:</label>
                     <input type="email" ref={emailRef} required={true} />
                 </fieldset>
-                <fieldset>
-                    <label>Contraseña:</label>
-                    <input type="password" ref={passwordRef} required={true} />
-                </fieldset>
                 <input
                     disabled={loading}
-                    value="Iniciar sesion"
+                    value="Restaurar contraseña"
                     type="submit"
                 />
             </form>
@@ -49,10 +48,10 @@ const Login = () => {
                 gratis
             </div>
             <div>
-                <Link to="/forgotPassword">Olvidaste tu contraseña?</Link>
+                <Link to="/log-in">Iniciar sesion</Link>
             </div>
         </>
     );
 };
 
-export default Login;
+export default ForgotPassword;
