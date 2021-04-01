@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState} from "react";
 import { useAuth } from "../../app/auth/AuthContext";
 
 const SignUp = () => {
@@ -31,7 +31,7 @@ const SignUp = () => {
     }
 
     return (
-        <>
+        <> 
             <h2>Registrarse</h2>
             {error && <alert>{error}</alert>}
             <form onSubmit={handleSubmit}>
@@ -45,15 +45,10 @@ const SignUp = () => {
                 </fieldset>
                 <fieldset>
                     <label>Confirmar contraseña:</label>
-                    <input
-                        type="password"
-                        ref={confirmPasswordRef}
-                        required={true}
-                    />
+                    <input type="password" ref={confirmPasswordRef} required={true}/>
                 </fieldset>
                 <input disabled={loading} value="Registrarse" type="submit" />
             </form>
-
             <div>Ya tienes una cuenta? Ingresa aqui!</div>
         </>
     );

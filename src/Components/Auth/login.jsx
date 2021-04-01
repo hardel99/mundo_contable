@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState} from "react";
 import { useAuth } from "../../app/auth/AuthContext";
 
 const Login = () => {
@@ -25,28 +25,23 @@ const Login = () => {
         setLoading(false);
     }
 
-    return (
-        <>
-            <h2>Iniciar sesion</h2>
-            {error && <alert>{error}</alert>}
-            <form onSubmit={handleSubmit}>
-                <fieldset>
-                    <label>E-mail:</label>
-                    <input type="email" ref={emailRef} required={true} />
-                </fieldset>
-                <fieldset>
-                    <label>Contraseña:</label>
-                    <input type="password" ref={passwordRef} required={true} />
-                </fieldset>
-                <input
-                    disabled={loading}
-                    value="Iniciar sesion"
-                    type="submit"
-                />
-            </form>
-
-            <div>Ya tienes una cuenta? Ingresa aqui!</div>
-        </>
+return (
+    <>   
+        <h2>Iniciar sesion</h2>
+        {error && <alert>{error}</alert>}
+        <form onSubmit={handleSubmit}>
+            <fieldset>
+                <label>E-mail:</label>
+                <input type="email" ref={emailRef} required={true} />
+            </fieldset>
+            <fieldset>
+                <label>Contraseña:</label>
+                <input type="password" ref={passwordRef} required={true} />
+            </fieldset>
+            <input disabled={loading} value="Iniciar sesion" type="submit"/>
+        </form>
+        <div className='log-coment'>Ya tienes una cuenta? Ingresa aqui!</div>
+    </>
     );
 };
 
