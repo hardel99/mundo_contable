@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar'
 import {BrowserRouter as Router} from 'react-router-dom'
 import { GlobalStyle } from './Components/GlobalStyles';
 import Hero from './Components/HeroSection';
+import InfoSection from './Components/InfoSection';
 
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
       <GlobalStyle/>
       <Navbar/>
       <Hero/>
+      <InfoSection/>
     </Router>
-   
   );
 }
 

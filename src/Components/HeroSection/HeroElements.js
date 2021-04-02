@@ -49,7 +49,6 @@ export const HeroH1 = styled.h1`
  /*  font-size: var(--h1-size); */ 
  margin-bottom:2rem;
  box-shadow: 0 5px var(--accent);
- letter-spacing: px;
 `;
 
 export const HeroH2 = styled.h2`
@@ -72,13 +71,13 @@ export const HeroBtn = styled.button`
  border: none;
  border-radius:5px;
  background: var(--green);
- color: white;
+ color: #fff;
  transition: 0.2s ease-out;
 
- &hover{
-     background: white;
+ &:hover 
+    {
+     background: var(--darkgreen);
      transition: 0.2s ease-out;
      cursor: pointer;
-     color:blue;
- }
-`;
+    }
+`
