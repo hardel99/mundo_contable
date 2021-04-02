@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./navbarComponents/button.css";
-import { Link } from "react-router-dom";
 import "./navbar.css";
 import Modal from '../Auth/screenModal';
 import logo from "../img/LOGOMC.png";
@@ -39,32 +38,32 @@ function Navbar() {
     return (
         <>
             <nav className={navbar ? "navbar active" : "navbar"}>
-                <Link to="/" className="navbar-logo">
+                <a href="#" className="navbar-logo">
                     <img src={logo} width={40} height={40} alt={"MundoCOntablesLogo"}/>
-                </Link>
+                </a>
                 <div className="Menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"} />
                 </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className="nav-item">
-                        <Link to="/" className="nav-links" onClick={closeMobilMenu}>
+                        <a href="#" className="nav-links" onClick={closeMobilMenu}>
                             Inicio
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/services" className="nav-links" onClick={closeMobilMenu}>
+                        <a href='#s2' className="nav-links" onClick={closeMobilMenu}>
                             Servicios
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/Products" className="nav-links" onClick={closeMobilMenu}>
+                        <a href="#s1" className="nav-links" onClick={closeMobilMenu}>
                             Nosotros
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/Contact-us" className="nav-links" onClick={closeMobilMenu}>
-                            Contacto
-                        </Link>
+                        <a href="#s3" className="nav-links" onClick={closeMobilMenu}>
+                            Contactos
+                        </a>
                     </li>
                 </ul>
                     <li className="nav-log">
@@ -76,7 +75,6 @@ function Navbar() {
                     Registrarse
                     </button>
                     <Modal showModal={showModal} setShowModal={setShowModal} action={action} setAction={setAction}/>
-                    
             </nav>
         </>
     );

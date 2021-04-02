@@ -2,12 +2,6 @@ import React from "react";
 import "./App.css";
 import Navbar from "./Components/navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Service from "./Components/pages/Service";
-import Products from "./Components/pages/Products";
-import ContactUs from "./Components/pages/ContactUs";
-import SignUp from "./Components/Auth/signup";
-import Home from "./Components/pages/Home";
-import Login from "./Components/Auth/login";
 import {AuthProvider} from './app/auth/AuthContext';
 
 function App() {
@@ -15,12 +9,10 @@ function App() {
         <Router>
             <AuthProvider>
             <Navbar/>
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/services" exact component={Service} />
-                <Route path="/products" exact component={Products} />
-                <Route path="/contact-us" exact component={ContactUs} />
-            </Switch>
+            <section id='s0'></section>
+            <section id='s1'></section>
+            <section id='s2'></section>
+            <section id='s3'></section>
             </AuthProvider>
         </Router>
     );

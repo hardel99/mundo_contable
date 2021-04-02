@@ -5,10 +5,12 @@
     font-family: "Roboto", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-image: url("./Components/img/paisaje.jpg");
-    background-position: center;
-    background-size: cover;
+    
 }
 
 .home,
@@ -24,4 +26,29 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 5rem;
+}
+
+section { 
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: -65px;
+}
+
+#s0 {
+    background-image: url("./Components/img/paisaje.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#s1 {
+    background-color: brown;
+}
+
+#s2 {
+    background-color: chartreuse;
+}
+
+#s3 {
+    background-color: darkgoldenrod;
 }
