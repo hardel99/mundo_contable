@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Components/pages/Home";
 import { AuthProvider } from "./app/auth/AuthContext";
 import Dashboard from "./Components/Dashboard/dashboard";
 import ForgotPassword from "./Components/Auth/restorePass";
@@ -25,8 +24,8 @@ function App() {
                     />
                     <PrivateRoute path="/dashboard" component={Dashboard} />
                 </Switch>
-                <Hero />
-                <InfoSection />
+                <Hero id="main" />
+                <InfoSection id="info" />
             </AuthProvider>
         </Router>
     );

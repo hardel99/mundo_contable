@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "./navbarComponents/button";
-import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../img/LOGOMC.png";
 
@@ -24,14 +23,14 @@ function Navbar() {
     return (
         <>
             <nav className={navbar ? "navbar active" : "navbar"}>
-                <Link to="/" className="navbar-logo">
+                <a href="#" className="navbar-logo">
                     <img
                         src={logo}
                         width={40}
                         height={40}
                         alt={"MundoCOntablesLogo"}
                     />
-                </Link>
+                </a>
                 <div className="Menu-icon" onClick={handleClick}>
                     <i className={click ? "fas fa-times" : "fas fa-bars"} />
                 </div>
@@ -40,63 +39,46 @@ function Navbar() {
                     {/*nav-menu}
                     {/* Here begin the sections inside the navbar */}
                     <li className="nav-item">
-                        <Link
-                            to="/"
+                        <a
+                            href="#"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
                             {" "}
                             {/*nav-links*/}
                             Inicio
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link
-                            to="/services"
+                        <a
+                            href="#info"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
                             Servicios
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link
-                            to="/Products"
+                        <a
+                            href="#us"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
                             Nosotros
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link
-                            to="/Contact-us"
+                        <a
+                            href="#contact"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
                             Contacto
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link
-                            to="/sign-up"
-                            className="nav-links-mobile"
-                            onClick={closeMobilMenu}
-                        >
-                            Registrarse
-                        </Link>
+                        </a>
                     </li>
                     {/* Here ending the sections inside the navbar */}
                 </ul>
-                <li className="nav-log">
-                    <Link
-                        to="/log-in"
-                        className="nav-links-log"
-                        onClick={closeMobilMenu}
-                    >
-                        Log in
-                    </Link>
-                </li>
+                <li className="nav-log">Log in</li>
                 <Button></Button>
             </nav>
         </>
