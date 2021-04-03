@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useRef, useState, useHistory } from "react";
 import { useAuth } from "../../app/auth/AuthContext";
 
 const Login = () => {
@@ -44,12 +43,8 @@ const Login = () => {
                     type="submit"
                 />
             </form>
-            <div>
-                Aun no te registras? <Link to="/sign-up">Registrate aqui </Link>
-                gratis
-            </div>
-            <div>
-                <Link to="/forgotPassword">Olvidaste tu contraseña?</Link>
+            <div className="log-coment">
+                No tienes una cuenta? <button>Creala aqui</button>
             </div>
         </>
     );

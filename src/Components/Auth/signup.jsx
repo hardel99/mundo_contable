@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
 
 const SignUp = () => {
@@ -55,7 +55,7 @@ const SignUp = () => {
             </form>
 
             <div>
-                Ya tienes una cuenta? <Link to="log-in">Ingresa aqui!</Link>
+                Ya tienes una cuenta? <button>Ingresa aqui!</button>
             </div>
         </>
     );

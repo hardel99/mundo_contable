@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Button } from "./navbarComponents/button";
+import "./navbarComponents/button.css";
 import "./navbar.css";
+import Modal from "../Auth/screenModal";
 import logo from "../img/LOGOMC.png";
 
 function Navbar() {
     const [click, setClick] = useState(false);
     const [navbar, setNavbar] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [action, setAction] = useState("");
 
     const handleClick = () => setClick(!click);
     const closeMobilMenu = () => setClick(false);
@@ -16,6 +19,18 @@ function Navbar() {
         } else {
             setNavbar(false);
         }
+    };
+
+    const openModal = () => {
+        setShowModal((prev) => !prev);
+    };
+
+    const loginClicked = () => {
+        setAction("Login");
+    };
+
+    const signUpClicked = () => {
+        setAction("");
     };
 
     window.addEventListener("scroll", changeBackground);
@@ -35,23 +50,18 @@ function Navbar() {
                     <i className={click ? "fas fa-times" : "fas fa-bars"} />
                 </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
-                    {" "}
-                    {/*nav-menu}
-                    {/* Here begin the sections inside the navbar */}
                     <li className="nav-item">
                         <a
                             href="#"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
-                            {" "}
-                            {/*nav-links*/}
                             Inicio
                         </a>
                     </li>
                     <li className="nav-item">
                         <a
-                            href="#info"
+                            href="#servicios"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
@@ -60,7 +70,7 @@ function Navbar() {
                     </li>
                     <li className="nav-item">
                         <a
-                            href="#us"
+                            href="#nosotros"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
@@ -69,17 +79,40 @@ function Navbar() {
                     </li>
                     <li className="nav-item">
                         <a
-                            href="#contact"
+                            href="#contacto"
                             className="nav-links"
                             onClick={closeMobilMenu}
                         >
-                            Contacto
+                            Contactos
                         </a>
                     </li>
-                    {/* Here ending the sections inside the navbar */}
                 </ul>
-                <li className="nav-log">Log in</li>
-                <Button></Button>
+                <li className="nav-log">
+                    <button
+                        className="nav-links-log"
+                        onClick={() => {
+                            openModal();
+                            loginClicked();
+                        }}
+                    >
+                        Log in
+                    </button>
+                </li>
+                <button
+                    className="btn"
+                    onClick={() => {
+                        openModal();
+                        signUpClicked();
+                    }}
+                >
+                    Registrarse
+                </button>
+                <Modal
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    action={action}
+                    setAction={setAction}
+                />
             </nav>
         </>
     );

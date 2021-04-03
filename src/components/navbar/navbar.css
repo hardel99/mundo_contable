@@ -1,5 +1,5 @@
 .navbar {
-    background: transparent;
+    background: rgba(9, 20, 71, 0);
     height: 65px;
     display: flex;
     justify-content: center;
@@ -10,10 +10,23 @@
     top: 0;
     z-index: 999;
     margin-top: -65px;
+    transition: all 0.5s ease-in-out;
 }
 
 .navbar.active {
-    background: linear-gradient(98deg, #091447, #0e1531 100%);
+    animation-name: navbarTransition;
+    animation-duration: 0.5s;
+    background: rgba(9, 20, 71, 1);
+}
+
+@keyframes navbarTransition {
+    from {
+        background: rgba(9, 20, 71, 0);
+    }
+
+    to {
+        background: rgba(9, 20, 71, 1);
+    }
 }
 
 .navbar-logo {
@@ -64,8 +77,12 @@
 }
 
 .nav-links-log {
+    background: none;
     color: white;
+    box-shadow: none;
+    border: none;
     text-decoration: none;
+    transition: all 0.3s ease-out;
     padding: 0.5rem 1rem;
 }
 
@@ -79,7 +96,6 @@
 
 .nav-links-log:hover {
     padding: 8px 14px;
-    transition: all 0.3s ease-out;
     background-color: transparent;
     color: #fff;
     border-radius: 4px;

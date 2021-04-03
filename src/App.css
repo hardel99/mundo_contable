@@ -9,6 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 .home,
 .services,
 .products,
@@ -21,5 +22,30 @@ html {
     height: 98vh;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 5rem;
+}
+
+section { 
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: -65px;
+}
+
+#s0 {
+    background-image: url("./Components/img/paisaje.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#s1 {
+    background-color: rgba(55, 58, 110, 0.678);
+}
+
+#s2 {
+    background-color: rgba(0, 132, 255, 0.562);
+}
+
+#s3 {
+    background-color: rgba(33, 14, 207, 0.692);
 }
