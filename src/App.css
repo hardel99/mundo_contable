@@ -9,9 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    
-}
 
 .home,
 .services,
@@ -42,13 +39,13 @@ section {
 }
 
 #s1 {
-    background-color: brown;
+    background-color: rgba(55, 58, 110, 0.678);
 }
 
 #s2 {
-    background-color: chartreuse;
+    background-color: rgba(0, 132, 255, 0.562);
 }
 
 #s3 {
-    background-color: darkgoldenrod;
+    background-color: rgba(33, 14, 207, 0.692);
 }
