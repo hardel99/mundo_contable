@@ -26,29 +26,30 @@ function Navbar() {
     };
 
     const loginClicked = () => {
-        window.location.href = "#";
-        if (window.scrollY === 0) {
-            setAction("Login");
-            openModal();
-        } else {
+        if (window.scrollY > 0 ){
+            window.location.href = "#";
             setTimeout(() => {
                 setAction("Login");
                 openModal();
-            }, 700);
+            }, 600);
+        } else {
+            setAction("Login");
+            openModal();
         }
     };
 
     const signUpClicked = () => {
-        window.location.href = "#";
-        if (window.scrollY === 0) {
-            setAction("Signup");
-            openModal();
-        } else {
+        if(window.scrollY > 0 ){
+            window.location.href = "#";
             setTimeout(() => {
                 setAction("Signup");
                 openModal();
-            }, 700);
+            }, 600);   
+        } else {
+            setAction("Signup");
+            openModal();
         }
+                
     };
 
     window.addEventListener("scroll", changeBackground);

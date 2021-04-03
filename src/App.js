@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "./Components/navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
 import Dashboard from "./Components/Dashboard/dashboard";

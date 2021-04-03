@@ -10,6 +10,7 @@ const Background = styled.div`
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     position: fixed;
+    top:0px;
     display: flex;
     justify-content: center;
     align-items: center;
