@@ -1,8 +1,9 @@
-var accountSid = "AC5fc356974d34970c6d64201cc0531a29"; // Your Account SID from www.twilio.com/console
-var authToken = "bc29df4c46add674f3c351a573c49b15"; // Your Auth Token from www.twilio.com/console
+require("dotenv").config({ path: ".env.local" });
 
-var twilio = require("twilio");
-var client = new twilio(accountSid, authToken);
+var client = require("twilio")(
+    process.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_TOKEN
+);
 
 /**Params:
  * text - the text message
@@ -22,5 +23,8 @@ function sendMessage(text, number) {
             to: number,
             from: "+15053023912",
         })
-        .then((message) => console.log(message.sid));
+        .then((message) => console.log(message.sid))
+        .catch((err) => console.log(err));
 }
+
+sendMessage("prueba con .env.local", "+50372735902");
