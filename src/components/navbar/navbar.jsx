@@ -27,18 +27,28 @@ function Navbar() {
 
     const loginClicked = () => {
         window.location.href = "#";
-        setTimeout(() => {
+        if (window.scrollY === 0) {
             setAction("Login");
             openModal();
-        }, 1000);
+        } else {
+            setTimeout(() => {
+                setAction("Login");
+                openModal();
+            }, 700);
+        }
     };
 
     const signUpClicked = () => {
         window.location.href = "#";
-        setTimeout(() => {
+        if (window.scrollY === 0) {
             setAction("Signup");
             openModal();
-        }, 1000);
+        } else {
+            setTimeout(() => {
+                setAction("Signup");
+                openModal();
+            }, 700);
+        }
     };
 
     window.addEventListener("scroll", changeBackground);
