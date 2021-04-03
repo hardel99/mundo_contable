@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./Components/navbar/navbar";
+import Navbar from "./Components/Navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
 import Dashboard from "./Components/Dashboard/dashboard";
@@ -25,15 +25,11 @@ function App() {
                     <PrivateRoute path="/dashboard" component={Dashboard} />
                 </Switch>
                 <Hero id="main" />
-                <section id="servicio">
-                    <InfoSection id="info" />
+                <section id="servicios">
+                    <InfoSection />
                 </section>
-                <section id="nosotros">
-                    <InfoSection id="info" />
-                </section>
-                <section id="contacto">
-                    <InfoSection id="info" />
-                </section>
+                <section id="nosotros"></section>
+                <section id="contacto"></section>
             </AuthProvider>
         </Router>
     );

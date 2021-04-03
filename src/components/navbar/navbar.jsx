@@ -3,12 +3,14 @@ import "./navbarComponents/button.css";
 import "./navbar.css";
 import Modal from "../Auth/screenModal";
 import logo from "../img/LOGOMC.png";
+import { useHistory } from "react-router";
 
 function Navbar() {
     const [click, setClick] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [action, setAction] = useState("");
+    const history = useHistory();
 
     const handleClick = () => setClick(!click);
     const closeMobilMenu = () => setClick(false);
@@ -30,7 +32,12 @@ function Navbar() {
     };
 
     const signUpClicked = () => {
-        setAction("");
+        /* window.location.href = "#";
+        setTimeout(() => {
+            setAction("Signup");
+        }, 1000); */
+
+        setAction("Signup");
     };
 
     window.addEventListener("scroll", changeBackground);
