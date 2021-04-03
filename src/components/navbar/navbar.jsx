@@ -3,14 +3,12 @@ import "./navbarComponents/button.css";
 import "./navbar.css";
 import Modal from "../Auth/screenModal";
 import logo from "../img/LOGOMC.png";
-import { useHistory } from "react-router";
 
 function Navbar() {
     const [click, setClick] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [action, setAction] = useState("");
-    const history = useHistory();
 
     const handleClick = () => setClick(!click);
     const closeMobilMenu = () => setClick(false);
@@ -28,16 +26,19 @@ function Navbar() {
     };
 
     const loginClicked = () => {
-        setAction("Login");
+        window.location.href = "#";
+        setTimeout(() => {
+            setAction("Login");
+            openModal();
+        }, 1000);
     };
 
     const signUpClicked = () => {
-        /* window.location.href = "#";
+        window.location.href = "#";
         setTimeout(() => {
             setAction("Signup");
-        }, 1000); */
-
-        setAction("Signup");
+            openModal();
+        }, 1000);
     };
 
     window.addEventListener("scroll", changeBackground);
@@ -98,7 +99,6 @@ function Navbar() {
                     <button
                         className="nav-links-log"
                         onClick={() => {
-                            openModal();
                             loginClicked();
                         }}
                     >
@@ -108,7 +108,6 @@ function Navbar() {
                 <button
                     className="btn"
                     onClick={() => {
-                        openModal();
                         signUpClicked();
                     }}
                 >
