@@ -1,6 +1,6 @@
-.content{
+.content-login{
     position: relative;
-    top: 80px;
+    top: 60px;
 }
 
 fieldset{
@@ -64,10 +64,16 @@ label{
     height: 32px;
     border: none;
     border-radius: 5px;
-    box-shadow: #141414;
+    box-shadow: #000000;
     margin-top: 10px;
     font-size: 1rem;
     color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-log:hover{
+    cursor: pointer;
+    background-color: rgb(7, 155, 128);
 }
 
 h2 {
@@ -82,7 +88,7 @@ h2.linea {
 }
 
 h2.linea:before {
-    border-top: 1px solid #615b5b;
+    border-top: 1px solid rgba(86, 86, 99, 0.5);
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -132,12 +138,12 @@ h2.linea span {
     font-size: 11pt;
 }
 
-.btns{
+.btn-s{
     color: rgba(0, 163, 255, 1);
     font-size: 11pt;
 }
 
-.btns:hover{
+.btn-s:hover{
     cursor: pointer;
     text-decoration: underline;
 }

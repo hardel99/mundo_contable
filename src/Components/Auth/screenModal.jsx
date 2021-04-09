@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
-import image from "../img/paisaje.jpg";
+import image from "../../images/signup-img.jpg";
 import Login from "./login";
 import SignUp from "./signup";
 
@@ -34,7 +34,6 @@ const ModalImg = styled.img`
     height: 100%;
     padding: none;
     border-radius: 0 10px 10px 0;
-    background: #000;
 `;
 
 const ModalContent = styled.div`

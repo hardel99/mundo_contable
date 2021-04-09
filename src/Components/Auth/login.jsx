@@ -28,7 +28,7 @@ const Login = () => {
     }
 
     return (
-        <div className='content'>
+        <div className='content-login'>
             {error && <div className='alert'>{error}</div>}
             <form onSubmit={handleSubmit}>
                 <fieldset>
@@ -49,9 +49,11 @@ const Login = () => {
                 <input disabled={loading} value="Iniciar sesion" type="submit" className='btn-log' />
             </form>
             <h2 class="linea"><span>O ingresar con</span></h2>
-            <div className='btn-google'><FcGoogle className='icon-google'/><p id='txt-google'>Continuar con Google</p></div>
+            <div className='btn-google'><FcGoogle className='icon-google'/>
+                <p id='txt-google'>Continuar con Google</p>
+            </div>
             <div className="log-coment">
-                ¿Aun no tienes una cuanta? <a className="btns" > Creala aqui</a>
+                ¿Aun no tienes una cuenta? <a className="btn-s" > Creala aqui</a>
             </div>
         </div>
     );
