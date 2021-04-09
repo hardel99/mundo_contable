@@ -12,7 +12,7 @@ export default function Dashboard() {
 
         try {
             await logout();
-            history.push("/log-in");
+            history.push("/");
         } catch {
             setError("Algo salio mal, espera un poco mientras lo resolvemos");
         }

@@ -10,7 +10,7 @@ const Background = styled.div`
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     position: fixed;
-    top:0px;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,12 +29,19 @@ const ModalWrapper = styled.div`
     border-radius: 20px;
 `;
 
-const ModalImg = styled.img`
+const ModalImg = styled.div`
     width: 100%;
     height: 100%;
     padding: none;
     border-radius: 0 10px 10px 0;
-    background: #000;
+    background-image: linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(45, 60, 158, 0.9) 100%
+        ),
+        url(${image});
+    background-position: center;
+    background-size: cover;
 `;
 
 const ModalContent = styled.div`
@@ -98,7 +105,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
     );
 
     useEffect(() => {
-        document.addEventListener("keydon", keyPress);
+        document.addEventListener("keydown", keyPress);
         return () => document.removeEventListener("keydown", keyPress);
     }, [keyPress]);
 
@@ -112,7 +119,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                                 <ModalContent>
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
-                                <ModalImg src={image} alt="paisaje" />
+                                <ModalImg />
                             </ModalWrapper>
                         </animated.div>
                     </Background>
