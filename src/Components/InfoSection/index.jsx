@@ -6,7 +6,8 @@ import {IconContext} from "react-icons"
 import {
   InfoSect,
   InfoRow,
-  InfoColumn,
+  Column1,
+  Column2,
   TextWrapper,
   TopLine,
   Heading,
@@ -28,8 +29,8 @@ function InfoSection() {
         
           <InfoRow>
 
-            <InfoColumn>
-             <IconContext.Provider value={{color: "var(--blue)", size: "5.5rem"}}>
+            <Column1 id= 'column'>
+             <IconContext.Provider value={{color: "var(--blue)", size: "clamp(4rem, 5vw, 5.5rem)"}}>
               <TextWrapper>
                 <TopLine >Mundo Contable </TopLine>
                 <Heading > Nuestras Apps para emprededores </Heading>
@@ -46,13 +47,13 @@ function InfoSection() {
                 
               </TextWrapper>
              </IconContext.Provider>
-            </InfoColumn>
+            </Column1>
 
-            <InfoColumn>
+            <Column2>
               <ImgWrapper >
               <ImgApp  src={ImgScreen} />
               </ImgWrapper>
-            </InfoColumn>
+            </Column2>
 
           </InfoRow>
         

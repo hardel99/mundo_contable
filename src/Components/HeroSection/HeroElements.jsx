@@ -36,9 +36,14 @@ export const HeroItems = styled.div `
  width: 860px;
  color: #fff;
  text-align:center;
+ 
 
- @media screen and (max-width: 650px) {
+ @media screen and (max-width: 750px) {
      width:100%;
+ }
+
+ @media screen and (max-width: 425px){
+    text-align:left;
  }
 
 `;
@@ -52,7 +57,7 @@ export const HeroH1 = styled.h1`
 `;
 
 export const HeroH2 = styled.h2`
- font-size: clamp (2.5rem, 10vw, 5rem);
+ font-size: clamp (2rem, 10vw, 5rem);
  /*font-size: var(--title-size);*/
  margin-bottom:1rem;
  letter-spacing: 3px;
@@ -62,6 +67,8 @@ export const HeroP = styled.p`
 font-family: 'Roboto', sans-serif;
 font-size: clamp (2rem, 2.5vw, 3rem);
 margin-bottom:2rem;
+line-height: 2rem;
+
 `;
 
 export const HeroBtn = styled.button`
