@@ -18,8 +18,8 @@ const Background = styled.div`
 
 //la cosita donde va el contenido del login
 const ModalWrapper = styled.div`
-    width: 800px;
-    height: 500px;
+    width: 834px;
+    height: 600px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
     color: #000;
     display: grid;
@@ -40,22 +40,15 @@ const ModalImg = styled.img`
 const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     line-height: 1.8;
     border-radius: 10px 0 0 10px;
     color: #141414;
-    background-color: #fff;
+    background-color: rgba(237, 237, 237, 1);
 
     p {
         margin-bottom: 1rem;
-    }
-
-    button {
-        padding: 10px 24px;
-        background: #141414;
-        color: #fff;
-        border: none;
     }
 `;
 

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
+import { FcGoogle } from "react-icons/fc";
+import './login.css';
 
 const Login = () => {
     const emailRef = useRef();
@@ -26,28 +28,32 @@ const Login = () => {
     }
 
     return (
-        <>
-            <h2>Iniciar sesion</h2>
-            {error && <alert>{error}</alert>}
+        <div className='content'>
+            {error && <div className='alert'>{error}</div>}
             <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <label>E-mail:</label>
-                    <input type="email" ref={emailRef} required={true} />
+                    <div className= 'fields'>
+                        <i class="fas fa-user"/>
+                        <label >E-mail:</label>
+                    </div>
+                    <input type="email" ref={emailRef} required={true} className='field' placeholder={'Ejemplo@gmail.com'}/>
                 </fieldset>
                 <fieldset>
-                    <label>Contraseña:</label>
-                    <input type="password" ref={passwordRef} required={true} />
+                    <div className= 'fields'>
+                        <i class="fas fa-lock"/>
+                        <label>Contraseña:</label>
+                    </div>
+                    <input type="password" ref={passwordRef} required={true} className='field' />
                 </fieldset>
-                <input
-                    disabled={loading}
-                    value="Iniciar sesion"
-                    type="submit"
-                />
+                <div><a className='btn-forge'> ¿Olvidaste tu contraseña?</a></div>
+                <input disabled={loading} value="Iniciar sesion" type="submit" className='btn-log' />
             </form>
+            <h2 class="linea"><span>O ingresar con</span></h2>
+            <div className='btn-google'><FcGoogle className='icon-google'/><p id='txt-google'>Continuar con Google</p></div>
             <div className="log-coment">
-                No tienes una cuenta? <button>Creala aqui</button>
+                ¿Aun no tienes una cuanta? <a className="btns" > Creala aqui</a>
             </div>
-        </>
+        </div>
     );
 };
 
