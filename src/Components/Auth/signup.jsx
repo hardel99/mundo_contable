@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import './signup.css';
 
 const SignUp = () => {
+    const nombreRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
@@ -36,6 +37,13 @@ const SignUp = () => {
         <div className='content-signup'>
             {error && <alert>{error}</alert>}
             <form onSubmit={handleSubmit}>
+                <fielset>
+                    <div className='fields-signup'>
+                        <i class="fas fa-user"/>
+                        <label>Nombre:</label>
+                    </div>
+                    <input type="nombre" ref={nombreRef} required={true} className='field-signup' placeholder={'Pedro Ramirez'}/>
+                </fielset>
                 <fieldset>
                     <div className='fields-signup'>
                         <i class="fas fa-user"/>

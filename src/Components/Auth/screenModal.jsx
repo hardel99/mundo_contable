@@ -29,11 +29,28 @@ const ModalWrapper = styled.div`
     border-radius: 20px;
 `;
 
-const ModalImg = styled.img`
+const ModalImg = styled.div`
     width: 100%;
     height: 100%;
     padding: none;
     border-radius: 0 10px 10px 0;
+    background-image: linear-gradient(
+            180deg,
+            rgba(34, 90, 255, 0.5) 0%,
+            rgba(9, 20, 71, 0.5) 100%
+        ),
+        url(${image});
+    background-position: center;
+    background-size: cover;
+
+    #txt-modal-img{
+        color:white;
+        font-family:roboto;
+        font-size:25pt;
+        width:270px;
+        margin-left:15px;
+        margin-top:425px;
+    }
 `;
 
 const ModalContent = styled.div`
@@ -104,7 +121,9 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                                 <ModalContent>
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
-                                <ModalImg src={image} alt="paisaje" />
+                                <ModalImg>
+                                    <p id='txt-modal-img'>Se mas eficiente y obtén más ganancias.</p>
+                                </ModalImg>
                             </ModalWrapper>
                         </animated.div>
                     </Background>
