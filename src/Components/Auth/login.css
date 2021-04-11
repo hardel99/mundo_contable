@@ -1,6 +1,6 @@
 .content-login{
     position: relative;
-    top: 50px;
+    top: 60px;
 }
 
 fieldset{
@@ -69,16 +69,19 @@ label{
     font-size: 1rem;
     color: white;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.473));
 }
 
 .btn-log:hover{
     cursor: pointer;
     background-color: rgb(7, 155, 128);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.685));
 }
 
 h2 {
-    font: 15px Roboto;
-    margin-top: 30px;
+    font: 13px Roboto;
+    margin-top: 25px;
+    color: rgb(129, 129, 129);
     text-align: center;
 }
 
@@ -88,7 +91,7 @@ h2.linea {
 }
 
 h2.linea:before {
-    border-top: 1px solid rgba(86, 86, 99, 0.5);
+    border-top: 1px solid rgba(129, 129, 129, 0.603);
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -114,6 +117,7 @@ h2.linea span {
     text-align: left;
     padding: 5px;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13));
 }
 
 .btn-google:hover{

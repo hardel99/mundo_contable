@@ -56,20 +56,23 @@ label {
     border: none;
     border-radius: 5px;
     box-shadow: #000000;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 1rem;
     color: white;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.473));
 }
 
 .btn-register:hover{
     cursor: pointer;
     background-color: rgb(7, 155, 128);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.685));
 }
 
 #sign-linea {
-    font: 15px Roboto;
-    margin-top: 30px;
+    font: 13px Roboto;
+    margin-top: 20px;
+    color: rgb(129, 129, 129);
     text-align: center;
 }
 
@@ -79,7 +82,7 @@ label {
 }
 
 #sign-linea.linea:before {
-    border-top: 1px solid rgba(86, 86, 99, 0.5);
+    border-top: 1px solid rgba(129, 129, 129, 0.603);
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -105,6 +108,7 @@ label {
     text-align: left;
     padding: 5px;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13));
 }
 
 .btn-google-s:hover{
