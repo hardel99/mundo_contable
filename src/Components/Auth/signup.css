@@ -43,10 +43,30 @@ label {
     letter-spacing: 0.6px;
 }
 
-.checkbox{
-    display: inline-block;
-    margin-top: 5px;
-    margin-left: 10px;
+.container{
+    display: block;
+    margin: 10px 0 10px 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+#terms-conditions{
+    font-size: 10pt;
+    font-family: roboto;
+    margin-left: 5px;
+}
+
+.container input{
+    Width: 16px;
+    Height: 16px;
+    cursor: pointer;
+}
+
+.checkmark {
+    background-color: black;
 }
 
 .btn-register{

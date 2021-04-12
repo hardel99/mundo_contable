@@ -65,7 +65,11 @@ const SignUp = () => {
                     </div>
                     <input type="password" ref={confirmPasswordRef} required={true} className='field-signup' />
                 </fieldset>
-                <div><a className='checkbox'>Acepto los terminos y condiciones</a></div>
+                <label class="container"> 
+                    <input type="checkbox"/>
+                    <span class="checkmark"/>
+                    <a id='terms-conditions'>Acepto terminos y condiciones</a> 
+                </label>
                 <input disabled={loading} value="Registrarse" type="submit" className='btn-register' />
             </form>
             <h2 id='sign-linea' class="linea"><span>O ingresar con</span></h2>
