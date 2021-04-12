@@ -63,10 +63,10 @@ const SignUp = () => {
                         <i class="fas fa-lock"/>
                         <label>Confirmar contraseña:</label>
                     </div>
-                    <input type="password" ref={confirmPasswordRef} required={true} className='field-signup' />
+                    <input type="password" ref={confirmPasswordRef} required={true} className='field-signup'/>
                 </fieldset>
                 <label class="container"> 
-                    <input type="checkbox"/>
+                    <input type="checkbox" required={true}/>
                     <span class="checkmark"/>
                     <a id='terms-conditions'>Acepto terminos y condiciones</a> 
                 </label>

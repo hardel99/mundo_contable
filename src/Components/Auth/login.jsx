@@ -53,7 +53,7 @@ const Login = () => {
                 <p id='txt-google'>Continuar con Google</p>
             </div>
             <div className="log-coment">
-                ¿Aun no tienes una cuenta? <a className="btn-s" > Creala aqui</a>
+                ¿Aun no tienes una cuenta? <a className="btn-s"> Creala aqui</a>
             </div>
         </div>
     );
