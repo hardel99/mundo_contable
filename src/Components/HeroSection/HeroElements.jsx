@@ -13,6 +13,11 @@ export const HeroContainer = styled.div`
  height :100vh;
  position:relative;
  z-index:1; 
+
+ 
+ @media screen and (max-width: 750px) {
+     padding:0 20px;
+ }
 `;
 
 export const HeroContent = styled.div `
@@ -32,11 +37,10 @@ export const HeroItems = styled.div `
  align-items: center;
  height: 100vh;
  max-height: 100%;
- padding: 0 2rem;
+ padding: 0 1rem;
  width: 860px;
  color: #fff;
- text-align:center;
- 
+ text-align:center; 
 
  @media screen and (max-width: 750px) {
      width:100%;
@@ -53,38 +57,34 @@ export const HeroH1 = styled.h1`
  /* Clamp is for responsive text without media queries although these sizes will not be the official ones*/
  /*  font-size: var(--h1-size); */ 
  margin-bottom:2rem;
- box-shadow: 0 5px var(--accent);
-`;
-
-export const HeroH2 = styled.h2`
- font-size: clamp (2rem, 10vw, 5rem);
- /*font-size: var(--title-size);*/
- margin-bottom:1rem;
- letter-spacing: 3px;
+ box-shadow: 0 3px var(--accent);
 `;
 
 export const HeroP = styled.p`
 font-family: 'Roboto', sans-serif;
-font-size: clamp (2rem, 2.5vw, 3rem);
+font-size: clamp(1rem, 1.5vw, 2rem); 
 margin-bottom:2rem;
 line-height: 2rem;
 
 `;
 
 export const HeroBtn = styled.button`
- font-size: var(--type-button-size);
+ font-size: var(--type-button);
  font-weight: bold;
  padding: .5rem 5rem;
- border: none;
  border-radius:5px;
- background: var(--green);
- color: #fff;
- transition: 0.2s ease-out;
+ border: 2px solid #fff;
+ background: none;
+ color:#fff;
+ transition: 0.3s ease-out;
+ outline: none;
 
- &:hover 
-    {
-     background: var(--darkgreen);
-     transition: 0.2s ease-out;
-     cursor: pointer;
-    }
+
+&:hover {
+    box-shadow: inset 300px 0 0 0  var(--blue);
+    cursor: pointer;
+    color: #fff;
+    border: 2px solid var(--blue);
+
+}
 `

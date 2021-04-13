@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle `
   --gray-light: #f6f6fb;
   --black: #2e2e36;
   --green: #01bc9a;
-  --darkgreen:#008f75;
+  --light-green:#04c7c4;
   --accent-dark: #b5c8ff;
   --accent: #ffcf3b;
 
@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle `
     --title-size: 2.8rem;
     --subhead-size: 1.3rem;
     --body-size:1rem;
-    --type-button-size:1rem;
+    --type-button:1rem;
     --type-placeholder-size:0.90rem;    
 }
 `;

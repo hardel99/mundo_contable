@@ -2,6 +2,7 @@ import React from 'react';
 import ImgScreen from '../../images/sms-screen.png'
 import {MdTextsms} from "react-icons/md"
 import {IconContext} from "react-icons"
+import {Btn} from "../ButtonElement"
 
 import {
   InfoSect,
@@ -13,9 +14,9 @@ import {
   Heading,
   AppOptions,
   SmsTitle,
-  FreeTrialBtn,
   ProgramTitle,
   Subtitle,
+  BtnWrapper,
   ImgWrapper,
   ImgApp
   
@@ -30,8 +31,9 @@ function InfoSection() {
           <InfoRow>
 
             <Column1 id= 'column'>
-             <IconContext.Provider value={{color: "var(--blue)", size: "clamp(4rem, 5vw, 5.5rem)"}}>
+             <IconContext.Provider value={{color: "var(--blue)", size: "clamp(4rem, 5vw, 5.5rem)" }}>
               <TextWrapper>
+
                 <TopLine >Mundo Contable </TopLine>
                 <Heading > Nuestras Apps para emprededores </Heading>
 
@@ -41,18 +43,22 @@ function InfoSection() {
                </AppOptions>
 
                 <Subtitle >Automatizamos el proceso de marketing por mensajería con nuestra herramienta 100% online. </Subtitle>
+
                 <MdTextsms/>
-              
-                  <FreeTrialBtn>Prueba gratis</FreeTrialBtn>
-                
+                <BtnWrapper>
+                <Btn>Prueba gratis</Btn>
+                </BtnWrapper>      
+
               </TextWrapper>
              </IconContext.Provider>
             </Column1>
 
             <Column2>
+
               <ImgWrapper >
               <ImgApp  src={ImgScreen} />
               </ImgWrapper>
+
             </Column2>
 
           </InfoRow>

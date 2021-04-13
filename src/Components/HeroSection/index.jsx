@@ -5,14 +5,9 @@ import
     HeroContent,
     HeroItems,
     HeroH1,
-    HeroH2,
     HeroP,
     HeroBtn
 } from './HeroElements'
-
-
-
-
 
 const Hero = () => {
     return (
@@ -20,8 +15,8 @@ const Hero = () => {
             <HeroContent>
                 <HeroItems>
                    <HeroH1>Mundo Contable</HeroH1>
-                    <HeroH2>Te ofrecemos una plataforma global.</HeroH2>
-                    <HeroP>Hacemos que sea mas fácil realizar tu contabilidad como empresario o emprendedor.</HeroP>
+             
+                    <HeroP>Te ofrecemos una plataforma global y hacemos que sea mas fácil realizar tu contabilidad como empresario o emprendedor.</HeroP>
                     <HeroBtn>Comenzar</HeroBtn>
                 </HeroItems>
             </HeroContent>

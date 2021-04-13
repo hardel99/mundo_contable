@@ -132,31 +132,11 @@ export const Subtitle = styled.p`
   max-width: 440px;
   margin-bottom: 1.5em;
   line-height: 24px;
-  
 `;
 
-export const FreeTrialBtn = styled.button`
- font-size: var(--type-button-size);
- font-weight: bold;
- margin-top:1rem;
- padding: .5rem 1rem;
- display:block;
- border: none;
- border-radius:5px;
- background-color: var(--green);
- color: #fff;
- transition: 0.2s ease-out;
- 
-
- &:hover 
-    {
-     background-color: #fff;
-     color: var(--black);
-     border: 3px solid var(--green);
-     transition: 0.2s ease-out;
-     cursor: pointer;
-    }
-`;
+export const BtnWrapper = styled.div `
+  margin-top: 1rem;
+`
 
 export const ImgWrapper = styled.div`
   max-width: 555px;
@@ -164,7 +144,6 @@ export const ImgWrapper = styled.div`
   justify-content:center;
   /*border: 3px solid gold;*/ 
 `;
-
 
 export const ImgApp = styled.img`
   padding-right: 0;
