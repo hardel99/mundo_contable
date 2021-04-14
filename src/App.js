@@ -10,6 +10,8 @@ import Hero from "./Components/HeroSection";
 import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
+import BrandSection from "./Components/BrandSection";
+
 
 /**Usuario de prueba :
  * ttt@ttt.com
@@ -27,6 +29,7 @@ function App() {
                         <section id="servicios">
                             <InfoSection />
                         </section>
+                        <BrandSection/>
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
                     </Route>
