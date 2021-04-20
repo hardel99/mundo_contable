@@ -20,13 +20,21 @@ const Background = styled.div`
 const ModalWrapper = styled.div`
     width: 834px;
     height: 600px;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 16px white;
     color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: relative;
-    z-index: 10;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
     border-radius: 20px;
+    @media(max-width:40em){
+        margin:none;
+        border-radius:0;
+        height:100%;
+        width:100%;
+    }
 `;
 
 const ModalImg = styled.div`
@@ -51,6 +59,10 @@ const ModalImg = styled.div`
         margin-left:15px;
         margin-top:425px;
     }
+
+    @media(max-width:40em){
+        display:none;
+    }
 `;
 
 const ModalContent = styled.div`
@@ -63,8 +75,30 @@ const ModalContent = styled.div`
     color: #141414;
     background-color: rgba(237, 237, 237, 1);
 
-    p {
-        margin-bottom: 1rem;
+    .fa-times{
+        color:#999;
+        position: absolute;
+        right:10%;
+        top:5%;
+        display:none;
+    }
+
+    @media(max-width:60em){
+        margin-top:-25%;
+        position:fixed;
+        height:100vh;
+        border-radius:0;
+        width:100%;
+        .fa-times{
+            display:inline-block;
+        }
+    }
+
+    @media(max-width:500px){
+        margin-top:0;
+        .fa-times{
+            display:inline-block;
+        }
     }
 `;
 
@@ -119,6 +153,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                         <animated.div style={animation}>
                             <ModalWrapper showModal={showModal}>
                                 <ModalContent>
+                                    <i className={"fas fa-times"} onClick={closeModal} ref={modalRef}/>
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
                                 <ModalImg>

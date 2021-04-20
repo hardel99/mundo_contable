@@ -34,8 +34,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className='content-signup'>
-            {error && <alert>{error}</alert>}
+        <div className='content-signup'> 
             <form onSubmit={handleSubmit}>
                 <fielset>
                     <div className='fields-signup'>

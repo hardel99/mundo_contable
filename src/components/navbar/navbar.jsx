@@ -105,6 +105,24 @@ function Navbar() {
                             Contactos
                         </a>
                     </li>
+                    <li className="nav-item mobile">
+                        <a
+                            className="nav-links"
+                            onClick={() => { 
+                                closeMobilMenu();
+                                loginClicked();}}>
+                            Iniciar sesion
+                        </a>
+                    </li>
+                    <li className="nav-item mobile">
+                        <a
+                            className="nav-links"
+                            onClick={() => { 
+                                closeMobilMenu();
+                                signUpClicked(); }}>
+                            Registrarse
+                        </a>
+                    </li>
                 </ul>
                 <li className="nav-log">
                     <button className="nav-links-log" onClick={() => { loginClicked(); }}>

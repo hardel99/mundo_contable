@@ -1,6 +1,7 @@
 .content-login{
     position: relative;
     top: 60px;
+
 }
 
 fieldset{
@@ -151,3 +152,27 @@ h2.linea span {
     cursor: pointer;
     text-decoration: underline;
 }
+
+@media(max-width:900px){
+    .content-login{
+        top: 20%;
+    }
+}
+
+/*iphone5*/
+@media(max-width:320px){
+    .content-login{
+        top:50px;
+        transform: scale(0.87);
+    }
+}  
+
+/* Tablets */
+@media(max-width:900px) and ( min-width:500px){
+    .content-login{
+        top: 200px;
+        transform: scale(1.6);
+        
+    }
+}
+
