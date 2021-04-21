@@ -58,17 +58,16 @@ function Navbar() {
         <>
             <nav className={navbar ? "navbar active" : "navbar"}>
                 <a href="#" className="navbar-logo">
-                    <img
-                        src={logo}
-                        width={40}
-                        height={40}
-                        alt={"MundoCOntablesLogo"}
+                    <img  src={logo} width={40} height={40} alt={"MundoCOntablesLogo"}
                     />
                 </a>
-                <div className="Menu-icon" onClick={handleClick}>
-                    <i className={click ? "fas fa-times" : "fas fa-bars"} />
-                </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
+                    <a href="#" className="navbar-logo" id="logo-mobile">
+                        <img  src={logo} width={40} height={40} alt={"MundoCOntablesLogo"}/>
+                    </a>
+                    <div className="Menu-icon" onClick={handleClick}>
+                        <i className={click ? "fas fa-times" : "fas fa-bars"} />
+                    </div>
                     <li className="nav-item">
                         <a
                             href="#"
