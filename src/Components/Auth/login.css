@@ -155,7 +155,11 @@ h2.linea span {
 
 @media(max-width:900px){
     .content-login{
-        top: 20%;
+        top: 15%;
+    }
+    
+    .fields{
+        margin-top: 10px;
     }
 }
 
@@ -165,12 +169,13 @@ h2.linea span {
         top:50px;
         transform: scale(0.87);
     }
+
 }  
 
 /* Tablets */
 @media(max-width:900px) and ( min-width:500px){
     .content-login{
-        top: 200px;
+        top: 230px;
         transform: scale(1.6);
         
     }

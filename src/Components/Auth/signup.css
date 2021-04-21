@@ -159,3 +159,26 @@ label {
     cursor: pointer;
     text-decoration: underline;
 }
+
+@media(max-width:900px){
+    .content-signup{
+        top: 20%;
+    }
+}
+
+/*iphone5*/
+@media(max-width:320px){
+    .content-signup{
+        top:50px;
+        transform: scale(0.87);
+    }
+}  
+
+/* Tablets */
+@media(max-width:900px) and ( min-width:500px){
+    .content-signup{
+        top: 230px;
+        transform: scale(1.5);
+        
+    }
+}
