@@ -1,6 +1,7 @@
 import React from 'react'
 import ImgBrand from '../../images/salesman-1.jpg'
 import SvgDots from '../../images/dots1.svg'
+import ReactPlayer from 'react-player'
 
 
 import {
@@ -9,14 +10,14 @@ DotsBg1,
 DotsBg2,
 BrandRow,
 Column,
-VideoWrapper,
 ContainerElements,
 TextContainer,
 TextWrapper,
 Title,
 Paragraph,
 ImgWrapper,
-ImgAccounter
+ImgAccounter,
+VideoWrapper
 } from './BrandElements'
 
 function BrandSection() {
@@ -26,11 +27,21 @@ function BrandSection() {
         <DotsBg2  src={SvgDots} />  
 
         <BrandRow>
-        <VideoWrapper>
-            <iframe src="https://www.youtube.com/embed/nN_TeQWQGH8?autoplay=1" width="620" height="380" frameborder="0"></iframe>
-        </VideoWrapper>
 
         <Column>
+
+    <VideoWrapper>
+      <ReactPlayer
+        url="https://www.youtube.com/watch?time_continue=4&v=nN_TeQWQGH8&feature=emb_title"
+        width="100%"
+        height="100%"
+        controls
+        /*playing <- disabled because it still doesn't play at the correct moment */
+        
+       
+      />
+    </VideoWrapper>
+    </Column>
 
         <ContainerElements>
 
@@ -50,7 +61,7 @@ function BrandSection() {
 
         </ContainerElements>
 
-        </Column>
+       
         </BrandRow>
         </BrandSect>
     )
