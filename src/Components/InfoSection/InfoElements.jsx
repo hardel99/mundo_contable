@@ -4,14 +4,24 @@ import styled from 'styled-components';
 export const InfoSect = styled.div`
   background-color: #fff;
   color: var(--black);
-  padding:100px 140px;
+  padding:180px 140px;
   height :100vh;
 
-  @media screen and (max-width: 768px) {
+    
+  @media screen and (max-width: 1000px) {
+   padding:100px 80px;
+  }
+  
+  @media screen and (max-width: 850px) {
    flex-direction:column;
    padding:100px 80px;
    justify-content:flex-start;
   }
+
+  @media screen and (max-width: 425px) {
+   padding:100px 20px;
+  }
+
 `;
 
 export const InfoRow = styled.div`
@@ -19,28 +29,63 @@ export const InfoRow = styled.div`
   flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
+  /*   border:3px solid black;  */
 `;
 
-export const InfoColumn = styled.div`
+export const Column1 = styled.div`
   flex: 1;
   max-width: 50%;
   flex-basis: 50%;
+  /*   border:3px solid blue; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
     max-width: 100%;
     flex-basis: 100%;
     display: flex;
     justify-content: center;
   }
+
+  @media screen and (min-width: 1600px) {
+  
+  display: flex;
+  justify-content: flex-end;
+}
+
 `;
+
+export const Column2 = styled.div`
+  flex: 1;
+  max-width: 50%;
+  flex-basis: 50%;
+  /*   border:3px solid blue;
+ */
+  display:flex;
+  justify-content:flex-end;
+
+  @media screen and (max-width: 850px) {
+    max-width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1600px) {
+  
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+`;
+
 
 export const TextWrapper = styled.div`
   max-width: 540px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   font-size: clamp(0.5em, 3vw, 18px);
-  margin-right:1rem;
 
-
+  /*   border:3px solid gold;
+ */
   @media screen and (max-width: 768px) {
   padding-bottom: 65px;
   }
@@ -56,7 +101,7 @@ export const TopLine = styled.div`
 
 export const Heading = styled.h1`
   margin-bottom: 1rem;
-  font-size: clamp(32px, 5vw, 40px);
+  font-size: clamp(25px, 5vw, 40px);
   line-height: 1.1;
 `;
 
@@ -68,10 +113,10 @@ export const AppOptions = styled.div `
 `
 
 export const SmsTitle = styled.p `
-  margin-right:1.5em;
+  margin-right: 1.5em;
   padding: 0.5rem 0 ;
   box-shadow:  0 3px var(--blue);
-  cursor:pointer;
+  cursor: pointer;
 `
 
 export const ProgramTitle = styled.p `
@@ -86,43 +131,23 @@ export const Subtitle = styled.p`
   font-family: 'Roboto', sans-serif;
   max-width: 440px;
   margin-bottom: 1.5em;
-  font-size: 18px;
   line-height: 24px;
 `;
 
-export const FreeTrialBtn = styled.button`
- font-size: var(--type-button-size);
- font-weight: bold;
- margin-top:1rem;
- padding: .5rem 1rem;
- display:block;
- border: none;
- border-radius:5px;
- background-color: var(--green);
- color: #fff;
- transition: 0.2s ease-out;
- 
-
- &:hover 
-    {
-     background-color: #fff;
-     color: var(--black);
-     border: 3px solid var(--green);
-     transition: 0.2s ease-out;
-     cursor: pointer;
-    }
-`;
+export const BtnWrapper = styled.div `
+  margin-top: 1rem;
+`
 
 export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
-  justify-content: flex-end;
+  justify-content:center;
+  /*border: 3px solid gold;*/ 
 `;
-
 
 export const ImgApp = styled.img`
   padding-right: 0;
-  border: 0;
+  /*border: 3px solid red;*/ 
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;

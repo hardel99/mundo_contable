@@ -10,7 +10,7 @@ const Background = styled.div`
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     position: fixed;
-    top:0px;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +25,15 @@ const ModalWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
-    @media(max-width:40em){
-        margin:none;
-        border-radius:0;
-        height:100%;
-        width:100%;
+    @media (max-width: 40em) {
+        margin: none;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
     }
 `;
 
@@ -51,17 +51,17 @@ const ModalImg = styled.div`
     background-position: center;
     background-size: cover;
 
-    #txt-modal-img{
-        color:white;
-        font-family:roboto;
-        font-size:25pt;
-        width:270px;
-        margin-left:15px;
-        margin-top:425px;
+    #txt-modal-img {
+        color: white;
+        font-family: roboto;
+        font-size: 25pt;
+        width: 270px;
+        margin-left: 15px;
+        margin-top: 425px;
     }
 
-    @media(max-width:40em){
-        display:none;
+    @media (max-width: 40em) {
+        display: none;
     }
 `;
 
@@ -75,30 +75,30 @@ const ModalContent = styled.div`
     color: #141414;
     background-color: rgba(237, 237, 237, 1);
 
-    .fa-times{
+    .fa-times {
         color:#bdbdbd;
         box-shadow: #000000;
         position: absolute;
-        right:10%;
-        top:5%;
-        display:none;
+        right: 10%;
+        top: 5%;
+        display: none;
     }
 
-    @media(max-width:60em){
-        margin-top:-25%;
-        position:fixed;
-        height:100vh;
-        border-radius:0;
-        width:100%;
-        .fa-times{
-            display:inline-block;
+    @media (max-width: 60em) {
+        margin-top: -25%;
+        position: fixed;
+        height: 100vh;
+        border-radius: 0;
+        width: 100%;
+        .fa-times {
+            display: inline-block;
         }
     }
 
-    @media(max-width:500px){
-        margin-top:0;
-        .fa-times{
-            display:inline-block;
+    @media (max-width: 500px) {
+        margin-top: 0;
+        .fa-times {
+            display: inline-block;
         }
     }
 `;
@@ -143,7 +143,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
     );
 
     useEffect(() => {
-        document.addEventListener("keydon", keyPress);
+        document.addEventListener("keydown", keyPress);
         return () => document.removeEventListener("keydown", keyPress);
     }, [keyPress]);
 
@@ -159,7 +159,9 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
                                 <ModalImg>
-                                    <p id='txt-modal-img'>Se mas eficiente y obtén más ganancias.</p>
+                                    <p id="txt-modal-img">
+                                        Se mas eficiente y obtén más ganancias.
+                                    </p>
                                 </ModalImg>
                             </ModalWrapper>
                         </animated.div>

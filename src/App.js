@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./Components/navbar/navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
 import Dashboard from "./Components/Dashboard/dashboard";
@@ -8,28 +7,39 @@ import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
+import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
+import NotFound from "./Components/inexistentPage";
+import BrandSection from "./Components/BrandSection";
 
+
+/**Usuario de prueba :
+ * ttt@ttt.com
+ * password */
 function App() {
     return (
         <Router>
             <AuthProvider>
-                <GlobalStyle />
-                <Navbar />
                 <Switch>
+                    <PrivateRoute path="/app/dashboard" component={Dashboard} />
+                    <Route exact path="/">
+                        <GlobalStyle />
+                        <Navbar />
+                        <Hero />
+                        <section id="servicios">
+                            <InfoSection />
+                        </section>
+                        <BrandSection/>
+                        <section id="nosotros"></section>
+                        <section id="contacto"></section>
+                    </Route>
                     <Route
                         path="/forgotPassword"
                         exact
                         component={ForgotPassword}
                     />
-                    <PrivateRoute path="/dashboard" component={Dashboard} />
+                    <Route component={NotFound} />
                 </Switch>
-                <Hero id="main" />
-                <section id="servicios">
-                    <InfoSection />
-                </section>
-                <section id="nosotros"></section>
-                <section id="contacto"></section>
             </AuthProvider>
         </Router>
     );

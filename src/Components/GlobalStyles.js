@@ -17,17 +17,17 @@ export const GlobalStyle = createGlobalStyle `
   --gray-light: #f6f6fb;
   --black: #2e2e36;
   --green: #01bc9a;
-  --darkgreen:#008f75;
+  --light-green:#04c7c4;
   --accent-dark: #b5c8ff;
   --accent: #ffcf3b;
 
   /*Typography*/
  
-    --h1-size:60px;
-    --title-size: 40px;
-    --subhead-size: 20px;
-    --body-size:18px;
-    --type-button-size:1rem;
-    --type-placeholder-size:14px;    
+    --h1-size:3.8rem;
+    --title-size: 2.8rem;
+    --subhead-size: 1.3rem;
+    --body-size:1rem;
+    --type-button:1rem;
+    --type-placeholder-size:0.90rem;    
 }
 `;
