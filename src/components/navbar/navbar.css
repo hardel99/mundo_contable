@@ -62,7 +62,7 @@ li.mobile{
 .nav-item {
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 60px;
     color: var(--grey-light);
 }
 
@@ -90,12 +90,18 @@ li.mobile{
     padding: 0.5rem 1rem;
 }
 
-.nav-links:hover {
-    background-color: #01bc9a;
-    color: white;
-    border-radius: 4px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    transition: all 0.2s ease-out;
+.nav-links::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.nav-links:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
 
 .nav-links-log:hover {
@@ -161,8 +167,16 @@ li.mobile{
     .nav-links {
         text-align: center;
         padding: 2rem;
-        width: 100%;
+        width: 70%;
+        margin: 0px auto;
         display: table;
+        border-bottom: 1px solid black;
+        font-size: 1.2em;
+    }
+
+    .nav-links:hover{
+        background: none;
+        box-shadow: none;
     }
 
     .navbar-logo {
@@ -202,17 +216,18 @@ li.mobile{
         text-align: center;
         margin: 1rem auto;
         border-radius: 4px;
-        width: 50%;
+        width: 60%;
         height: 50px;
         background: #1888ff;
         text-decoration: none;
         color: #fff;
-        font-size: 1rem;
         cursor: pointer;
     }
 
     li.mobile > a{
+        width: 100%;
         padding-top:15px;
+        border-bottom:none;
     }
 
     button {

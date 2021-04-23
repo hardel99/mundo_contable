@@ -114,11 +114,7 @@ function Navbar() {
                         </a>
                     </li>
                     <li className="nav-item mobile">
-                        <a
-                            className="nav-links"
-                            onClick={() => { 
-                                closeMobilMenu();
-                                signUpClicked(); }}>
+                        <a className="nav-links" onClick={() => { closeMobilMenu(); signUpClicked(); }}>
                             Registrarse
                         </a>
                     </li>
