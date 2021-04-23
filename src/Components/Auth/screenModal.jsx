@@ -20,7 +20,7 @@ const Background = styled.div`
 const ModalWrapper = styled.div`
     width: 834px;
     height: 600px;
-    box-shadow: 0 5px 16px white;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.7);
     color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -76,7 +76,8 @@ const ModalContent = styled.div`
     background-color: rgba(237, 237, 237, 1);
 
     .fa-times {
-        color: #999;
+        color:#bdbdbd;
+        box-shadow: #000000;
         position: absolute;
         right: 10%;
         top: 5%;
@@ -115,6 +116,7 @@ const Container = styled.div`
 
 export default function Modal({ showModal, setShowModal, action, setAction }) {
     const modalRef = useRef();
+    const mobileRef = useRef();
 
     const animation = useSpring({
         config: {
@@ -125,7 +127,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
     });
 
     const closeModal = (e) => {
-        if (modalRef.current === e.target) {
+        if (modalRef.current === e.target || mobileRef.current === e.target) {
             setShowModal(false);
         }
     };
@@ -153,11 +155,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                         <animated.div style={animation}>
                             <ModalWrapper showModal={showModal}>
                                 <ModalContent>
-                                    <i
-                                        className={"fas fa-times"}
-                                        onClick={closeModal}
-                                        ref={modalRef}
-                                    />
+                                    <i className={"fas fa-times"} onClick={closeModal} ref={mobileRef}/>
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
                                 <ModalImg>
