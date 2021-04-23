@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
-import image from "../img/paisaje.jpg";
+import image from "../../images/signup-img.jpg";
 import Login from "./login";
 import SignUp from "./signup";
 
@@ -18,15 +18,23 @@ const Background = styled.div`
 
 //la cosita donde va el contenido del login
 const ModalWrapper = styled.div`
-    width: 800px;
-    height: 500px;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    width: 834px;
+    height: 600px;
+    box-shadow: 0 5px 16px white;
     color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: relative;
-    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
+    @media (max-width: 40em) {
+        margin: none;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
 `;
 
 const ModalImg = styled.div`
@@ -35,34 +43,62 @@ const ModalImg = styled.div`
     padding: none;
     border-radius: 0 10px 10px 0;
     background-image: linear-gradient(
-            to top,
-            rgba(255, 255, 255, 0.4) 0%,
-            rgba(45, 60, 158, 0.9) 100%
+            180deg,
+            rgba(34, 90, 255, 0.5) 0%,
+            rgba(9, 20, 71, 0.5) 100%
         ),
         url(${image});
     background-position: center;
     background-size: cover;
+
+    #txt-modal-img {
+        color: white;
+        font-family: roboto;
+        font-size: 25pt;
+        width: 270px;
+        margin-left: 15px;
+        margin-top: 425px;
+    }
+
+    @media (max-width: 40em) {
+        display: none;
+    }
 `;
 
 const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     line-height: 1.8;
     border-radius: 10px 0 0 10px;
     color: #141414;
-    background-color: #fff;
+    background-color: rgba(237, 237, 237, 1);
 
-    p {
-        margin-bottom: 1rem;
+    .fa-times {
+        color: #999;
+        position: absolute;
+        right: 10%;
+        top: 5%;
+        display: none;
     }
 
-    button {
-        padding: 10px 24px;
-        background: #141414;
-        color: #fff;
-        border: none;
+    @media (max-width: 60em) {
+        margin-top: -25%;
+        position: fixed;
+        height: 100vh;
+        border-radius: 0;
+        width: 100%;
+        .fa-times {
+            display: inline-block;
+        }
+    }
+
+    @media (max-width: 500px) {
+        margin-top: 0;
+        .fa-times {
+            display: inline-block;
+        }
     }
 `;
 
@@ -117,9 +153,18 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                         <animated.div style={animation}>
                             <ModalWrapper showModal={showModal}>
                                 <ModalContent>
+                                    <i
+                                        className={"fas fa-times"}
+                                        onClick={closeModal}
+                                        ref={modalRef}
+                                    />
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
-                                <ModalImg />
+                                <ModalImg>
+                                    <p id="txt-modal-img">
+                                        Se mas eficiente y obtén más ganancias.
+                                    </p>
+                                </ModalImg>
                             </ModalWrapper>
                         </animated.div>
                     </Background>

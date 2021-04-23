@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
+import { FcGoogle } from "react-icons/fc";
+import './signup.css';
 
 const SignUp = () => {
+    const nombreRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
@@ -31,33 +34,51 @@ const SignUp = () => {
     }
 
     return (
-        <>
-            <h2>Registrarse</h2>
-            {error && <alert>{error}</alert>}
+        <div className='content-signup'> 
             <form onSubmit={handleSubmit}>
+                <fielset>
+                    <div className='fields-signup'>
+                        <i class="fas fa-user"/>
+                        <label>Nombre:</label>
+                    </div>
+                    <input type="nombre" ref={nombreRef} required={true} className='field-signup' placeholder={'Pedro Ramirez'}/>
+                </fielset>
                 <fieldset>
-                    <label>E-mail:</label>
-                    <input type="email" ref={emailRef} required={true} />
+                    <div className='fields-signup'>
+                        <i class="fas fa-user"/>
+                        <label>E-mail:</label>
+                    </div>
+                    <input type="email" ref={emailRef} required={true} className='field-signup' placeholder={'Ejemplo@gmail.com'}/>
                 </fieldset>
                 <fieldset>
-                    <label>Contraseña:</label>
-                    <input type="password" ref={passwordRef} required={true} />
+                    <div className='fields-signup'>
+                        <i class="fas fa-lock"/>
+                        <label>Contraseña:</label>
+                    </div>
+                    <input type="password" ref={passwordRef} required={true} className='field-signup' />
                 </fieldset>
                 <fieldset>
-                    <label>Confirmar contraseña:</label>
-                    <input
-                        type="password"
-                        ref={confirmPasswordRef}
-                        required={true}
-                    />
+                    <div className='fields-signup'>
+                        <i class="fas fa-lock"/>
+                        <label>Confirmar contraseña:</label>
+                    </div>
+                    <input type="password" ref={confirmPasswordRef} required={true} className='field-signup'/>
                 </fieldset>
-                <input disabled={loading} value="Registrarse" type="submit" />
+                <label class="container"> 
+                    <input type="checkbox" required={true}/>
+                    <span class="checkmark"/>
+                    <a id='terms-conditions'>Acepto terminos y condiciones</a> 
+                </label>
+                <input disabled={loading} value="Registrarse" type="submit" className='btn-register' />
             </form>
-
-            <div>
-                Ya tienes una cuenta? <button>Ingresa aqui!</button>
+            <h2 id='sign-linea' class="linea"><span>O ingresar con</span></h2>
+            <div className='btn-google-s'><FcGoogle className='icon-google-s'/>
+                <p id='txt-google-s'>Continuar con Google</p>
             </div>
-        </>
+            <div className= 'sign-coment'>
+                Ya tienes una cuenta? <a className='btn-l'>Ingresa aqui!</a>
+            </div>
+        </div>
     );
 };
 

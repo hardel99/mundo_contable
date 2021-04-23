@@ -1,0 +1,161 @@
+.content-signup{
+    position: relative;
+    top: 40px;
+}
+
+fieldset {
+    border:none;
+    margin-top: 15px;
+    text-align: center;
+    position: center;
+}
+
+.fields-signup{
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+    margin-left: 5px;
+}
+
+label {
+    margin-left: 5px;
+    color: rgba(46, 46, 54, 1);
+}
+
+.fa-user {
+    width: 20px;
+    font-size: 1rem;
+}
+
+.fa-lock {
+    width: 20px;
+    font-size: 1rem;
+}
+
+.field-signup{
+    width: 323px;
+    height: 32px;
+    border: none;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 9pt;
+    letter-spacing: 0.6px;
+}
+
+.container{
+    display: block;
+    margin: 10px 0 10px 10px;
+    cursor: pointer;
+
+}
+
+#terms-conditions{
+    font-size: 10pt;
+    font-family: roboto;
+    margin-left: 5px;
+}
+
+.container input{
+    Width: 16px;
+    Height: 16px;
+    cursor: pointer;
+}
+
+.checkmark {
+    background-color: black;
+}
+
+.btn-register{
+    background: rgba(1, 188, 154, 1);
+    width: 323px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: #000000;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.473));
+}
+
+.btn-register:hover{
+    cursor: pointer;
+    background-color: rgb(7, 155, 128);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.685));
+}
+
+#sign-linea {
+    font: 13px Roboto;
+    margin-top: 20px;
+    color: rgb(129, 129, 129);
+    text-align: center;
+}
+
+#sign-linea.linea {
+    position: relative;
+    z-index: 1;
+}
+
+#sign-linea.linea:before {
+    border-top: 1px solid rgba(129, 129, 129, 0.603);
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+#sign-linea.linea span {
+    background: rgba(237, 237, 237, 1);
+    padding: 0 15px;
+}
+
+.btn-google-s{
+    background: white; /* !important == sobreescribir a la fuerza */
+    width: 323px;
+    height: 40px;
+    border: none;
+    border-radius: 40px;
+    margin: 15px 0 15px 0;
+    text-align: left;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.13));
+}
+
+.btn-google-s:hover{
+    cursor: pointer;
+    background-color: rgb(212, 214, 214);
+}
+
+.icon-google-s{
+    margin-left: 10px;
+    margin-right: 49px;
+    transform: translateY(2.5px);
+    font-size: 1.6rem;
+}
+
+#txt-google-s{
+    font-size: 11pt;
+    display: inline-block;
+    transform: translateY(-6px);
+}
+
+.sign-coment{
+    font-size: 11pt;
+}
+
+.btn-l{
+    color: rgba(0, 163, 255, 1);
+    font-size: 11pt;
+}
+
+.btn-l:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

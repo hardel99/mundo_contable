@@ -13,6 +13,10 @@
     transition: all 0.5s ease-in-out;
 }
 
+li.mobile{
+    display: none;
+}
+
 .navbar.active {
     animation-name: navbarTransition;
     animation-duration: 0.5s;
@@ -182,23 +186,21 @@
         font-size: 2rem;
     }
 
-    .nav-links-mobile {
+    li.mobile {
         display: block;
         text-align: center;
-        padding: 1.5rem;
-        margin: 2rem auto;
+        margin: 1rem auto;
         border-radius: 4px;
-        width: 80%;
+        width: 50%;
+        height: 50px;
         background: #1888ff;
         text-decoration: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
-    .nav-links-mobile:hover {
-        background: #fff;
-        color: #1888ff;
-        transition: 250ms;
+    li.mobile > a{
+        padding-top:15px;
     }
 
     button {

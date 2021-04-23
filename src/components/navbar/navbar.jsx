@@ -105,31 +105,34 @@ function Navbar() {
                             Contactos
                         </a>
                     </li>
+                    <li className="nav-item mobile">
+                        <a
+                            className="nav-links"
+                            onClick={() => { 
+                                closeMobilMenu();
+                                loginClicked();}}>
+                            Iniciar sesion
+                        </a>
+                    </li>
+                    <li className="nav-item mobile">
+                        <a
+                            className="nav-links"
+                            onClick={() => { 
+                                closeMobilMenu();
+                                signUpClicked(); }}>
+                            Registrarse
+                        </a>
+                    </li>
                 </ul>
                 <li className="nav-log">
-                    <button
-                        className="nav-links-log"
-                        onClick={() => {
-                            loginClicked();
-                        }}
-                    >
+                    <button className="nav-links-log" onClick={() => { loginClicked(); }}>
                         Log in
                     </button>
                 </li>
-                <button
-                    className="btn"
-                    onClick={() => {
-                        signUpClicked();
-                    }}
-                >
+                <button className="btn" onClick={() => { signUpClicked(); }}> 
                     Registrarse
                 </button>
-                <Modal
-                    showModal={showModal}
-                    setShowModal={setShowModal}
-                    action={action}
-                    setAction={setAction}
-                />
+                <Modal showModal={showModal} setShowModal={setShowModal} action={action} setAction={setAction}/>
             </nav>
         </>
     );
