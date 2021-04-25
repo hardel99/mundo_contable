@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.7rem;
+    font-size: 0.8vw;
     font-family: "Roboto";
     position: sticky;
     top: 0;
@@ -76,6 +76,8 @@ li.mobile{
 
 .nav-links {
     color: white;
+    font-family: "roboto";
+    font-weight: 100;
     border-radius: 1px #ffff;
     text-decoration: none;
     padding: 0.5rem 2rem;
@@ -84,6 +86,7 @@ li.mobile{
 .nav-links-log {
     background: none;
     color: white;
+    font-size: 0.85vw;
     box-shadow: none;
     border: none;
     text-decoration: none;
@@ -242,5 +245,15 @@ li.mobile{
 
     button {
         display: none;
+    }
+}
+
+@media(min-width:1370px){
+    .navbar{
+        font-size: 0.65vw;
+    }
+
+    .nav-links-log{
+        font-size: 0.65vw;
     }
 }
