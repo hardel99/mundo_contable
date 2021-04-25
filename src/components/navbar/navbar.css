@@ -76,8 +76,9 @@ li.mobile{
 
 .nav-links {
     color: white;
+    border-radius: 1px #ffff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
 }
 
 .nav-links-log {
@@ -170,13 +171,21 @@ li.mobile{
         width: 70%;
         margin: 0px auto;
         display: table;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgba(70, 156, 190, 0.836);
         font-size: 1.2em;
     }
 
     .nav-links:hover{
         background: none;
         box-shadow: none;
+    }
+
+    .nav-links::after{
+        display: none;
+    }
+    
+    .nav-links:hover::after {
+        display: none;
     }
 
     .navbar-logo {
@@ -218,10 +227,11 @@ li.mobile{
         border-radius: 4px;
         width: 60%;
         height: 50px;
-        background: #1888ff;
+        background: #01bc9a;
         text-decoration: none;
         color: #fff;
         cursor: pointer;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.80);
     }
 
     li.mobile > a{

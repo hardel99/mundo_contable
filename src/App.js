@@ -7,7 +7,7 @@ import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "./Components/navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
