@@ -1,0 +1,246 @@
+.navbar {
+    background: rgba(9, 20, 71, 0);
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-family: "Roboto";
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-top: -65px;
+    transition: all 0.5s ease-in-out;
+}
+
+li.mobile{
+    display: none;
+}
+
+.navbar.active {
+    animation-name: navbarTransition;
+    animation-duration: 0.5s;
+    background: rgba(9, 20, 71, 1);
+}
+
+@keyframes navbarTransition {
+    from {
+        background: rgba(9, 20, 71, 0);
+    }
+
+    to {
+        background: rgba(9, 20, 71, 1);
+    }
+}
+
+.navbar-logo {
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.fa-firstdraft {
+    margin-left: 0.5rem;
+    font-size: 1.6rem;
+}
+
+/* here edit the elements of navbar */
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 15px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: center;
+}
+
+/* thats move the elements of navbar */
+.nav-item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: var(--grey-light);
+}
+
+.nav-log {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    margin-right: 10px;
+    color: var(--grey-light);
+}
+
+.nav-links {
+    color: white;
+    border-radius: 1px #ffff;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+}
+
+.nav-links-log {
+    background: none;
+    color: white;
+    box-shadow: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.nav-links:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.nav-links-log:hover {
+    padding: 8px 14px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: 1px solid var(--primary);
+}
+
+.fa-bars {
+    color: #fff;
+}
+
+.nav-links-mobile {
+    display: none;
+}
+
+.Menu-icon {
+    display: none;
+}
+
+#logo-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .fa-caret-down {
+        display: none;
+    }
+
+    .nav-log {
+        display: none;
+    }
+
+    .NavbarItems {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position:fixed;
+        top: 0%;
+        width: 100%;
+        height: 100vh;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-menu.active {
+        background:  rgba(9, 20, 71, 1);
+        left: 0;
+        width: 70%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+
+    .nav-links {
+        text-align: center;
+        padding: 2rem;
+        width: 70%;
+        margin: 0px auto;
+        display: table;
+        border-bottom: 1px solid rgba(70, 156, 190, 0.836);
+        font-size: 1.2em;
+    }
+
+    .nav-links:hover{
+        background: none;
+        box-shadow: none;
+    }
+
+    .nav-links::after{
+        display: none;
+    }
+    
+    .nav-links:hover::after {
+        display: none;
+    }
+
+    .navbar-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(25%, 25%);
+    }
+
+    #logo-mobile{
+        display: inline-block;
+    }
+
+    .Menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: #fff;
+        font-size: 2rem;
+    }
+
+    .fa-bars {
+        position: fixed;
+        top: 20px;
+        left:calc(100vw - 50px);
+    }
+
+    li.mobile {
+        display: block;
+        text-align: center;
+        margin: 1rem auto;
+        border-radius: 4px;
+        width: 60%;
+        height: 50px;
+        background: #01bc9a;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.80);
+    }
+
+    li.mobile > a{
+        width: 100%;
+        padding-top:15px;
+        border-bottom:none;
+    }
+
+    button {
+        display: none;
+    }
+}
