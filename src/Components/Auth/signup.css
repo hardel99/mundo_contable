@@ -1,6 +1,7 @@
 .content-signup{
     position: relative;
     top: 40px;
+    transform: scale(0.93);
 }
 
 fieldset {
@@ -57,9 +58,13 @@ label {
 }
 
 .container input{
-    Width: 16px;
-    Height: 16px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
+}
+
+.alert{
+    margin-top: -25px;
 }
 
 .checkmark {
@@ -160,9 +165,10 @@ label {
     text-decoration: underline;
 }
 
+/*Todos los dispositivos moviles*/
 @media(max-width:900px){
     .content-signup{
-        top: 20%;
+        top: 10%;
     }
 }
 

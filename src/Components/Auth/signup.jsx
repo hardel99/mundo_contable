@@ -18,7 +18,7 @@ const SignUp = () => {
         e.preventDefault();
 
         if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-            return setError("Passwords do not match");
+            return setError("Las contraseñas no coinciden");
         }
 
         try {
@@ -27,7 +27,7 @@ const SignUp = () => {
             await signup(emailRef.current.value, passwordRef.current.value);
             history.push("/app/dashboard");
         } catch {
-            setError("Failed to create an account");
+            setError("Error al crear cuenta");
         }
 
         setLoading(false);
