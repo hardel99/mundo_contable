@@ -3,14 +3,13 @@ import ImgBrand from '../../images/salesman-1.jpg'
 import SvgDots from '../../images/dots1.svg'
 import ReactPlayer from 'react-player'
 
-
 import {
 BrandSect,
 DotsBg1,
 DotsBg2,
-BrandRow,
-Column,
-ContainerElements,
+BrandCol,
+Row1,
+Row2,
 TextContainer,
 TextWrapper,
 Title,
@@ -21,29 +20,26 @@ VideoWrapper
 } from './BrandElements'
 
 function BrandSection() {
-    return (
-        <BrandSect>
-        <DotsBg1  src={SvgDots} />  
-        <DotsBg2  src={SvgDots} />  
+  return (
+    <BrandSect>
+       <DotsBg1  src={SvgDots} />  
+       <DotsBg2  src={SvgDots} />  
 
-        <BrandRow>
+      <BrandCol>
 
-        <Column>
+        <Row1>
+          <VideoWrapper>
+            <ReactPlayer
+               url="https://www.youtube.com/watch?time_continue=4&v=nN_TeQWQGH8&feature=emb_title"
+               width="100%"
+               height="100%"
+               controls
+               /*playing <- disabled because it still doesn't play at the correct moment */
+              />
+          </VideoWrapper>
+        </Row1>
 
-    <VideoWrapper>
-      <ReactPlayer
-        url="https://www.youtube.com/watch?time_continue=4&v=nN_TeQWQGH8&feature=emb_title"
-        width="100%"
-        height="100%"
-        controls
-        /*playing <- disabled because it still doesn't play at the correct moment */
-        
-       
-      />
-    </VideoWrapper>
-    </Column>
-
-        <ContainerElements>
+        <Row2>
 
             <TextContainer>
                 <TextWrapper>
@@ -59,11 +55,9 @@ function BrandSection() {
             <ImgAccounter  src={ImgBrand} />
             </ImgWrapper>
 
-        </ContainerElements>
-
-       
-        </BrandRow>
-        </BrandSect>
+        </Row2> 
+      </BrandCol>
+    </BrandSect>
     )
 }
 

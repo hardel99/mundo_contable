@@ -4,8 +4,12 @@ import styled from 'styled-components';
 export const InfoSect = styled.div`
   background-color: #fff;
   color: var(--black);
-  padding:180px 140px;
+  padding:100px 140px;
+  width:100%;
   height :100vh;
+  position:relative;
+  top:65px;  
+  border: solid .5px transparent;
 
     
   @media screen and (max-width: 1000px) {
@@ -13,14 +17,9 @@ export const InfoSect = styled.div`
   }
   
   @media screen and (max-width: 850px) {
-   flex-direction:column;
-   padding:100px 80px;
-   justify-content:flex-start;
+    padding:0;
   }
-
-  @media screen and (max-width: 425px) {
-   padding:100px 20px;
-  }
+  
 
 `;
 
@@ -29,24 +28,31 @@ export const InfoRow = styled.div`
   flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
-  /*   border:3px solid black;  */
+
+  @media screen and (max-width: 500px) {
+    width:100%;
+  }
+
+  @media screen and (max-width: 850px) {
+   margin: 50vh auto 0;
+   transform: translateY(-50%);
+  }
+
 `;
 
 export const Column1 = styled.div`
   flex: 1;
   max-width: 50%;
   flex-basis: 50%;
-  /*   border:3px solid blue; */
 
   @media screen and (max-width: 850px) {
     max-width: 100%;
     flex-basis: 100%;
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
   }
 
   @media screen and (min-width: 1600px) {
-  
   display: flex;
   justify-content: flex-end;
 }
@@ -57,16 +63,14 @@ export const Column2 = styled.div`
   flex: 1;
   max-width: 50%;
   flex-basis: 50%;
-  /*   border:3px solid blue;
- */
   display:flex;
   justify-content:flex-end;
 
   @media screen and (max-width: 850px) {
     max-width: 100%;
     flex-basis: 100%;
-    display: flex;
-    justify-content: center;
+    justify-content:flex-start;
+    
   }
 
   @media screen and (min-width: 1600px) {
@@ -75,7 +79,6 @@ export const Column2 = styled.div`
   justify-content: flex-start;
 }
 
-
 `;
 
 
@@ -83,12 +86,11 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   padding-bottom: 20px;
   font-size: clamp(0.5em, 3vw, 18px);
-
-  /*   border:3px solid gold;
- */
-  @media screen and (max-width: 768px) {
-  padding-bottom: 65px;
+ 
+  @media screen and (max-width: 850px) {
+   margin:0 20px;
   }
+
 `;
 
 export const TopLine = styled.div`
@@ -142,15 +144,25 @@ export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
   justify-content:center;
-  /*border: 3px solid gold;*/ 
+
+  @media screen and (max-width: 850px) {
+    max-width: 355px;
+    margin:0 20px;
+  }
+
 `;
 
 export const ImgApp = styled.img`
   padding-right: 0;
-  /*border: 3px solid red;*/ 
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
   max-height: 500px;
+
+  @media screen and (max-width: 500px) {
+    display:none;
+    }
+
+
 `;
 

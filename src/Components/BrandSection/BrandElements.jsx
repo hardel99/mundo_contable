@@ -10,7 +10,6 @@ justify-content:center;
 align-items:center;
 position:relative;
 color: var(--black);
-padding-bottom:150px;
 
   @media screen and (max-width: 900px) {
    padding:0 50px;
@@ -18,6 +17,11 @@ padding-bottom:150px;
 
   @media screen and (max-width: 700px) {
    padding:0;
+  }
+
+  @media screen and (min-width: 1600px){
+    padding-bottom:100px;
+
   }
 
 `
@@ -54,9 +58,8 @@ export const DotsBg2 = styled.img`
 
 `;
 
-export const BrandRow = styled.div `
+export const BrandCol = styled.div `
    width:100%;
-   /*border:3px solid #ff5bdb;  */
 `;
 
 export const VideoWrapper = styled.div`
@@ -80,56 +83,35 @@ export const VideoWrapper = styled.div`
     height:300px;
   }
 
-  @media screen and (min-width: 1600px) {
-  
-  }
+
   
 `;
 
-export const Column = styled.div`
+export const Row1 = styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
   flex-flow: row;
   width:100%;
   max-width: 100%;
-  /*border:3px solid #bcf09e;*/ 
-
-  
-  @media screen and (max-width: 850px) {
-  }
-
-  @media screen and (max-width: 425px) {
-  }
-
-  @media screen and (min-width: 1000px) { 
-
-  }
-
 `;
 
-export const ContainerElements = styled.div`
+export const Row2 = styled.div`
   width:100%;
   height:440px;
   display:flex;
   justify-content:center; 
   align-items:flex-end;
+  flex-direction:row;
 
   @media screen and (min-width: 1600px) {
     justify-content:center; 
     align-items:center;
-    /*border:3px solid #1b0000; */
-
 }
 
   @media screen and (max-width: 900px) {
     justify-content:center; 
     align-items:center;
-  }
-
-  
-  @media screen and (max-width: 700px) {
-    
   }
 
 `;
@@ -174,12 +156,16 @@ export const TextWrapper = styled.div`
   @media screen and (min-width: 1600px) {
     padding: 30px 60px;
     width:600px;
-    /* border:3px solid #6ada20;*/
   }
 
   @media screen and (max-width: 900px) {
     padding:20px;  
     width:400px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width:100%;
+    padding:20px 40px;  
   }
 `;
 
@@ -193,8 +179,8 @@ export const Title = styled.h1`
     margin-bottom:1.5rem;
   }
 
-  @media screen and (max-width: 00px) {
-    font-size: 40px;
+  @media screen and (max-width: 500px) {
+    font-size: 35px;
   }
 
 `;
@@ -207,6 +193,10 @@ export const Paragraph = styled.p`
  
   @media screen and (max-width: 900px) {
     font-size: 16px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 14px;
   }
 
 `;
