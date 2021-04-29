@@ -12,7 +12,6 @@ import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
 
-
 /**Usuario de prueba :
  * ttt@ttt.com
  * password */
@@ -29,7 +28,7 @@ function App() {
                         <section id="servicios">
                             <InfoSection />
                         </section>
-                        <BrandSection/>
+                        <BrandSection />
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
                     </Route>
