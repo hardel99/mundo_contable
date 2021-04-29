@@ -9,9 +9,8 @@ export const InfoSect = styled.div`
   height :100vh;
   position:relative;
   top:65px;  
-  border: solid .5px transparent;
+  border: solid .5px transparent; /* Border transparent is a trick to keep child  well centered */
 
-    
   @media screen and (max-width: 1000px) {
    padding:100px 80px;
   }
@@ -20,7 +19,6 @@ export const InfoSect = styled.div`
     padding:0;
   }
   
-
 `;
 
 export const InfoRow = styled.div`
