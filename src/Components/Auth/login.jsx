@@ -21,7 +21,7 @@ const Login = () => {
             await login(emailRef.current.value, passwordRef.current.value);
             history.push("/app/dashboard");
         } catch {
-            setError("Parece que hubo un error :/, por favor intenta de nuevo");
+            setError("Parece que hubo un error, por favor intenta de nuevo");
         }
 
         setLoading(false);

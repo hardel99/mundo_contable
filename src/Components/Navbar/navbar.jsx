@@ -69,47 +69,27 @@ function Navbar() {
                         <i className={click ? "fas fa-times" : "fas fa-bars"} />
                     </div>
                     <li className="nav-item">
-                        <a
-                            href="#"
-                            className="nav-links"
-                            onClick={closeMobilMenu}
-                        >
+                        <a href="#" className="nav-links" onClick={closeMobilMenu} >
                             Inicio
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a
-                            href="#servicios"
-                            className="nav-links"
-                            onClick={closeMobilMenu}
-                        >
+                        <a href="#servicios" className="nav-links" onClick={closeMobilMenu} >
                             Servicios
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a
-                            href="#nosotros"
-                            className="nav-links"
-                            onClick={closeMobilMenu}
-                        >
+                        <a href="#nosotros" className="nav-links" onClick={closeMobilMenu} >
                             Nosotros
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a
-                            href="#contacto"
-                            className="nav-links"
-                            onClick={closeMobilMenu}
-                        >
+                        <a href="#contacto" className="nav-links" onClick={closeMobilMenu} >
                             Contactos
                         </a>
                     </li>
                     <li className="nav-item mobile">
-                        <a
-                            className="nav-links"
-                            onClick={() => { 
-                                closeMobilMenu();
-                                loginClicked();}}>
+                        <a className="nav-links" onClick={() => {  closeMobilMenu(); loginClicked();}}>
                             Iniciar sesion
                         </a>
                     </li>
