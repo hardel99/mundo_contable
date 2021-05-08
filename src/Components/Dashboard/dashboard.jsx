@@ -1,6 +1,15 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../../app/auth/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import Navbar from "./components/Navbar"
+import {
+    Sidebar,
+    Title,
+    Profile,
+    Email,
+    UpdateLink,
+    SendSms
+} from "./DashboardElements"
 
 export default function Dashboard() {
     const [error, setError] = useState("");
@@ -45,16 +54,53 @@ export default function Dashboard() {
 
     return (
         <>
-            <h1>Dashboard</h1>
-            <h2>Profile:</h2>
-            {error && <alert>{error}</alert>}
+        <Navbar></Navbar>
+        <Sidebar>
+            <div className="sidebar">
+                <ul>
+                    <li>
+                        <link to="Inicio"/>
+
+
+                        <link to="Ventas"/>
+    
+
+                        <link to="Cliente"/>
+                    </li>
+                </ul>
+            </div>
+
+        <Title>
+         <h1>Dashboard</h1>
+        </Title>
+        <Email>
+          {error && <alert>{error}</alert>}
             <strong>Email: </strong> {currentUser.email}
             <br />
-            <Link to="/update-profile">Update profile</Link>
+        </Email>
+        <UpdateLink>
+          <Link to="/update-profile">Update profile</Link>
             <br />
             <br />
             <br />
-            <h2>Send message</h2>
+        </UpdateLink>
+
+        <button onClick={handleLogout}>Logout</button>
+
+        <input value="Mandar SMS" type="submit" />
+
+        </Sidebar>
+
+        
+        <Profile>
+         <h2>Profile:</h2>
+        </Profile>
+
+        <SendSms>
+          <h2>Send message</h2>
+        </SendSms>
+           
+        
             <form onSubmit={sendMessage} id="sendMessage">
                 <fieldset>
                     <label>Numero:(debe incluir la extension de pais)</label>
@@ -77,10 +123,8 @@ export default function Dashboard() {
                         placeholder="Ingrese su mensaje aqui"
                     />
                 </fieldset>
-                <input value="Mandar SMS" type="submit" />
+                
             </form>
-            <br />
-            <button onClick={handleLogout}>Logout</button>
         </>
     );
 }
