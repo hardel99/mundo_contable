@@ -101,7 +101,7 @@ function Navbar() {
                 </ul>
                 <li className="nav-log">
                     <button className="nav-links-log" onClick={() => { loginClicked(); }}>
-                        Log in
+                        Iniciar Sección
                     </button>
                 </li>
                 <button className="btn" onClick={() => { signUpClicked(); }}> 

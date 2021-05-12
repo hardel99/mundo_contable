@@ -9,6 +9,7 @@ import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
 import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
+import LearningSection from "./Components/LearningSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
 
@@ -30,6 +31,9 @@ function App() {
                         </section>
                         <BrandSection />
                         <section id="nosotros"></section>
+                        <section id="learning">
+                            <LearningSection />
+                        </section>
                         <section id="contacto"></section>
                     </Route>
                     <Route
