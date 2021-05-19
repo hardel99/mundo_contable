@@ -12,23 +12,28 @@ export const LearnSect = styled.div`
     position:relative;
     border: solid .5px transparent;
 
-    .swiper-container{
-        width:600px;
-        height:300px;
-        padding-top:20px;
-    }
+        .BtnGraduates {
+                border:none;
+                margin:20px;
+                background:none;
+                cursor:pointer;
+        }
 
-    button{
-        border:none;
-        margin:20px;
-        background:none;
-    }
-    
-    .btnEnlace{
+        .BtnEvents {
+                border:none;
+                margin:20px;
+                background:none;
+                cursor:pointer;
+        }
+`;
+
+export const SwiperBtnLink = styled.button`
         background-color:#ffff;
+        width:15em;
+        height:2.5em;
         color:#000;
         font-size:1em;
         padding:10px;
-
-    }
+        cursor:pointer;
 `;
+

@@ -1,21 +1,22 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation} from 'swiper';
-import {LearnSect} from "./LearningSection";
+import {LearnSect, SwiperBtnLink} from "./LearningSection";
 
 SwiperCore.use([Navigation]);
 
-function LearningSection(){
+function card({tittle, image, body}){}
 
+function LearningSection(){
     
     return(
         <LearnSect>
-                <button className='btnDiplomados'> Diplomados </button>
-                <button className='btnEventos'> Eventos</button>
+                <button className='BtnGraduates'> Diplomados </button>
+                <button className='BtnEvents'> Eventos</button>
                <Swiper
                     navigation={{
-                    prevEl: '.btnDiplomados',
-                    nextEl: '.btnEventos',
+                    prevEl: '.BtnGraduates',
+                    nextEl: '.BtnEvents',
                     }}> {/* Slider main container */}
                      <SwiperSlide>
                             <h1>Ofrecemos diplomados profecionales</h1>
@@ -23,9 +24,9 @@ function LearningSection(){
                                 te brindamos todo lo que necesitas para iniciar
                                 y potenciar tu proyecto.
                             </p>
-                            <button class="btnEnlace">
+                            <SwiperBtnLink>
                                 <a>Plataforma de cursos</a>
-                            </button>
+                            </SwiperBtnLink>
                         </SwiperSlide>
                         <SwiperSlide>
                             <h1>Slide de Eventos</h1>
