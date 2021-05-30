@@ -11,6 +11,7 @@ const NfSection = styled.div `
    position:relative;
    margin:50px;
 
+
     @media screen and (max-width: 600px) {
         margin:20px;
         padding:20px;

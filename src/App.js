@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
-import Dashboard from "./Components/Dashboard/dashboard";
+import Layout from "./Components/Dashboard/components/Layout";
 import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
@@ -20,8 +20,12 @@ function App() {
         <Router>
             <AuthProvider>
                 <Switch>
-                    <PrivateRoute path="/app/dashboard" component={Dashboard} />
+                <PrivateRoute path="/app/dashboard" component={Layout} >
+
+                </PrivateRoute>
+
                     <Route exact path="/">
+
                         <GlobalStyle />
                         <Navbar />
                         <Hero />
@@ -32,12 +36,6 @@ function App() {
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
                     </Route>
-                    <Route
-                        path="/forgotPassword"
-                        exact
-                        component={ForgotPassword}
-                    />
-                    <Route component={NotFound} />
                 </Switch>
             </AuthProvider>
         </Router>
