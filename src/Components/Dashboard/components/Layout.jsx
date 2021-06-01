@@ -9,13 +9,12 @@ function Layout(props) {
     return (
        
         <div >
-            <Navbar/>
-            <div style={{display: "flex"}}>
+          <Navbar/>
+          <div style={{display: "flex"}}>
             <Sidebar/>
             <div className="content">
-              <Routes/>
             </div>
-            </div>
+          </div>
 
         </div>
     );

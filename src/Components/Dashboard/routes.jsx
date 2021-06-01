@@ -14,9 +14,8 @@ function Routes() {
                     <Route path="/" exact component={Dashboard}/>
                     <Route path="/plans" component={Plans}/>
                     <Route path="/settings" component={Settings}/>
-            </Switch>
-            </Layout>
-                
+                </Switch>
+            </Layout>  
         )} />
         </BrowserRouter>
     )

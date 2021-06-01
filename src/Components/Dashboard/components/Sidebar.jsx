@@ -32,28 +32,27 @@ const SidebarItem = styled.div`
   }
   
   &:hover:not(:first-child) {
-    background: #9c3d2c;
+    background: #a3412f;
   }
 `;
 
 function Sidebar(props, {defaultActive}) {  
     //If no active prop is passed, use `1` instead
-    const [activeIndex,] = useState (defaultActive || 1);
+    const [activeIndex,] = useState (defaultActive || props);
     return (
         <>
           <SidebarParent>
               {
                 SidebarItems.map((item, index) => {
                   return (
-                    <Link to={item.route}> 
+                    <Link to= {item.route}>
                       <SidebarItem key={item.name} active={index === activeIndex}>
                         <p> {item.name} </p>
                       </SidebarItem>
                     </Link>
                   ); 
-                  })    
+                })    
               }
-                  
           </SidebarParent>
         </>
     );
