@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
-import Layout from "./Components/Dashboard/components/Layout";
 import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
@@ -11,6 +10,7 @@ import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
+import Dashboard from "./Components/Dashboard/Pages/dashboard";
 
 /**Usuario de prueba :
  * ttt@ttt.com
@@ -20,7 +20,7 @@ function App() {
         <Router>
             <AuthProvider>
                 <Switch>
-                <PrivateRoute path="/app/dashboard" component={Layout} >
+                <PrivateRoute path="/app/dashboard" component={Dashboard} >
 
                 </PrivateRoute>
 

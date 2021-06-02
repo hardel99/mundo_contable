@@ -1,11 +1,19 @@
-import "../components/navbar-app.scss"
+import styled from 'styled-components'
+
 
 const Navbar = () => {
     return(
-        <div className="NavbarApp">
+        <NavParent>
             Navbar
-        </div>
+        </NavParent>
     )
 }
 
 export default Navbar 
+
+const NavParent = styled.div `
+
+    background-color:#fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #cfcfcf;
+`
