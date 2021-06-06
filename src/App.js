@@ -18,9 +18,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
     container: {
-      display: "flex"
-    }
-  });
+        display: "flex",
+    },
+});
 
 /**Usuario de prueba :
  * ttt@ttt.com
@@ -28,20 +28,30 @@ const useStyles = makeStyles({
 function App() {
     const classes = useStyles();
     return (
-        <Router>    
+        <Router>
             <AuthProvider>
-                <Switch>  
-                <PrivateRoute path="/app" >
-                    <div className={classes.container}>
-                       <Drawer />
-                       <Switch>
-                         <Route exact from="/app/home" render={props => <Home {...props} />} />
-                         <Route exact path="/app/contact" render={props => <Contact {...props} />} />
-                         <Route exact path="/app/about" render={props => <About {...props} />} />
-                         <Route exact path="/" render={props => <About {...props} />} />
-                       </Switch>
-                    </div>
-              </PrivateRoute>          
+                <Switch>
+                    <PrivateRoute path="/app">
+                        <div className={classes.container}>
+                            <Drawer />
+                            <Route
+                                exact
+                                path="/app/home"
+                                render={(props) => <Home {...props} />}
+                            />
+                            <Route
+                                exact
+                                path="/app/contact"
+                                render={(props) => <Contact {...props} />}
+                            />
+                            <Route
+                                exact
+                                path="/app/about"
+                                render={(props) => <About {...props} />}
+                            />
+                            <PrivateRoute component={NotFound} />
+                        </div>
+                    </PrivateRoute>
                     <Route exact path="/">
                         <GlobalStyle />
                         <Navbar />
@@ -52,8 +62,13 @@ function App() {
                         <BrandSection />
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
-                     
                     </Route>
+                    <Route
+                        exact
+                        path="/forgotPassword"
+                        component={ForgotPassword}
+                    />
+                    <Route component={NotFound} />
                 </Switch>
             </AuthProvider>
         </Router>
