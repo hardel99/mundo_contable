@@ -32,7 +32,7 @@ export default Dashboard
 
 const Content = styled.div `
 width: 100%;
-border: 2px solid red;
+border: 2px solid #334047;
 `
 const Flex = styled.div `
 width: 100%;

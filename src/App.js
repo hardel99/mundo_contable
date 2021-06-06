@@ -10,22 +10,39 @@ import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
-import Dashboard from "./Components/Dashboard/Pages/dashboard";
+import Drawer from "./Components/DashboardTest/Drawer";
+import Home from "./Components/DashboardTest/Home";
+import Contact from "./Components/DashboardTest/Contact";
+import About from "./Components/DashboardTest/About";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+    container: {
+      display: "flex"
+    }
+  });
 
 /**Usuario de prueba :
  * ttt@ttt.com
  * password */
 function App() {
+    const classes = useStyles();
     return (
-        <Router>
+        <Router>    
             <AuthProvider>
-                <Switch>
-                <PrivateRoute path="/app/dashboard" component={Dashboard} >
-
-                </PrivateRoute>
-
+                <Switch>  
+                <PrivateRoute path="/app" >
+                    <div className={classes.container}>
+                       <Drawer />
+                       <Switch>
+                         <Route exact from="/app/home" render={props => <Home {...props} />} />
+                         <Route exact path="/app/contact" render={props => <Contact {...props} />} />
+                         <Route exact path="/app/about" render={props => <About {...props} />} />
+                         <Route exact path="/" render={props => <About {...props} />} />
+                       </Switch>
+                    </div>
+              </PrivateRoute>          
                     <Route exact path="/">
-
                         <GlobalStyle />
                         <Navbar />
                         <Hero />
@@ -35,6 +52,7 @@ function App() {
                         <BrandSection />
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
+                     
                     </Route>
                 </Switch>
             </AuthProvider>

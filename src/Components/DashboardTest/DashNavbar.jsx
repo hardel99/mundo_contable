@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-const Navbar = () => {
+const DashNavbar = () => {
     return(
         <NavParent>
             Navbar
@@ -9,7 +9,7 @@ const Navbar = () => {
     )
 }
 
-export default Navbar 
+export default DashNavbar 
 
 const NavParent = styled.div `
 
@@ -17,4 +17,3 @@ const NavParent = styled.div `
     padding: 1rem 2rem;
     border-bottom: 1px solid #cfcfcf;
 `
-

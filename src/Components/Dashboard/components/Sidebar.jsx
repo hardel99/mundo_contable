@@ -1,33 +1,41 @@
 import React from "react";
-import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button';
+
 
 
 function Sidebar () {
 
 return (
-<SidebarParent>
-<ul>
-
-<li>
-<Link to="/"> Home </Link>
-</li>
-
-<li>   
-  <Link to="/settings"> Settings </Link>
-</li>
-
-<li>
-<Link to="/Plans"> Plans </Link>
-</li>
-
-<li>
-<Link to=""> Salir </Link>
-</li>
-
-</ul>
-
-</SidebarParent>
+  <SidebarParent>
+    <ul>
+    
+      <li>
+          <Link to="/"> Home </Link>
+      </li>
+      
+      <li>   
+          <Link to="/settings"> Settings </Link>
+      </li>
+      
+      <li>
+          <Link to="/Plans"> Plans </Link>
+      </li>
+      
+      <li>
+          <Link to=""> Salir </Link>
+      </li>
+      
+      <li>
+          <Button variant="contained" color="primary">
+            Hola Mundo!
+          </Button>
+      </li>
+    
+    </ul>
+  
+  </SidebarParent>
 );
 }
 
