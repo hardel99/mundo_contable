@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import 'swiper/swiper-bundle.css'
 
-
-
 export const LearnSect = styled.div`
-    background-color:pink;
+    background-color:#ddd;
     color: var(--black);
     padding:10px 10px;
     width:100%;
@@ -26,14 +24,3 @@ export const LearnSect = styled.div`
                 cursor:pointer;
         }
 `;
-
-export const SwiperBtnLink = styled.button`
-        background-color:#ffff;
-        width:15em;
-        height:2.5em;
-        color:#000;
-        font-size:1em;
-        padding:10px;
-        cursor:pointer;
-`;
-
