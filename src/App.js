@@ -23,7 +23,6 @@ const useStyles = makeStyles({
     },
 });
 
-
 /**Usuario de prueba :
  * ttt@ttt.com
  * password */
@@ -36,28 +35,29 @@ function App() {
                     <PrivateRoute path="/app">
                         <div className={classes.container}>
                             <Drawer />
-                            <Route
-                                exact
-                                path="/app/home"
-                                render={(props) => <Home {...props} />}
-                            />
-                            <Route
-                                exact
-                                path="/app/contact"
-                                render={(props) => <Contact {...props} />}
-                            />
-                            <Route
-                                exact
-                                path="/app/about"
-                                render={(props) => <About {...props} />}
-                            />
+                            <PrivateRoute component={Drawer} />
+                            <Switch>
+                                <Route
+                                    exact
+                                    path="/app/home"
+                                    render={(props) => <Home {...props} />}
+                                />
+                                <Route
+                                    exact
+                                    path="/app/contact"
+                                    render={(props) => <Contact {...props} />}
+                                />
+                                <Route
+                                    exact
+                                    path="/app/about"
+                                    render={(props) => <About {...props} />}
+                                />
 
-                            <PrivateRoute component={Drawer} /> 
-                            
+                                <Route path="/app/" component={NotFound} />
+                            </Switch>
                         </div>
-                        
                     </PrivateRoute>
-                    
+
                     <Route exact path="/">
                         <GlobalStyle />
                         <Navbar />
@@ -75,7 +75,8 @@ function App() {
                         path="/forgotPassword"
                         component={ForgotPassword}
                     />
-                    <Route path="*" component={NotFound} />
+
+                    <Route path="/" component={NotFound} />
                 </Switch>
             </AuthProvider>
         </Router>
