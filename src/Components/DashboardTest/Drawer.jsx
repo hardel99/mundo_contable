@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
     Drawer as MUIDrawer,
     ListItem,
@@ -9,8 +9,10 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect, } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
+import { auth } from "../../app/auth/firebase";
+
 
 const useStyles = makeStyles({
     drawer: {
@@ -23,19 +25,10 @@ const Drawer = (props) => {
     const classes = useStyles();
     const { logout } = useAuth();
 
-    async function logOut() {
-        //try this when you are ready to error handling in the dashboard
-        /* setError('')
-
-        try{
-          await logout();
-          history.push("/");
-        }catch() {
-          setError('Unable to logout try again');
-        } */
-
-        await logout();
+    const CerrarSesion = () => {
+        auth.signOut()
         history.push("/");
+
     }
 
     const itemsList = [
@@ -57,7 +50,7 @@ const Drawer = (props) => {
         {
             text: "Salir",
             icon: <MailIcon />,
-            onClick: () => logOut(),
+            onClick: () => CerrarSesion(),
         },
     ];
     return (
@@ -75,6 +68,7 @@ const Drawer = (props) => {
             </List>
         </MUIDrawer>
     );
+
 };
 
 export default withRouter(Drawer);

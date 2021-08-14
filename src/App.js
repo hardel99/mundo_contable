@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
         display: "flex",
     },
 });
+
 
 /**Usuario de prueba :
  * ttt@ttt.com
@@ -49,9 +51,13 @@ function App() {
                                 path="/app/about"
                                 render={(props) => <About {...props} />}
                             />
-                            <PrivateRoute component={NotFound} />
+
+                            <PrivateRoute component={Drawer} /> 
+                            
                         </div>
+                        
                     </PrivateRoute>
+                    
                     <Route exact path="/">
                         <GlobalStyle />
                         <Navbar />
@@ -63,12 +69,13 @@ function App() {
                         <section id="nosotros"></section>
                         <section id="contacto"></section>
                     </Route>
+
                     <Route
                         exact
                         path="/forgotPassword"
                         component={ForgotPassword}
                     />
-                    <Route component={NotFound} />
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </AuthProvider>
         </Router>
