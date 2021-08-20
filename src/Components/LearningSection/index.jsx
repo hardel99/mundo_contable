@@ -17,21 +17,23 @@ import {LearnSect} from "./LearningSection";
 
 SwiperCore.use([Navigation]);
 
+
+//Aquiiiiiiiii ewe no sabes que hiciste eweewewewe
 const useStyles = makeStyles({
     root: {
-      maxWidth: 200,
+      maxWidth: '10%',
       boxShadow: '0 3px 5px 2px rgba(65, 65, 66, 0.11)',
       margin: 20,
       display: 'inline-block',
     },
     media: {
-      height: 100,
+      height: 150,
     },
   });
 
 const StyledButton = withStyles({
     root: {
-      background: 'gray',
+      background: 'grey',
       borderRadius: 3,
       border: 0,
       color: 'white',
@@ -121,7 +123,7 @@ function LearningSection(){
                                 Plataforma de cursos
                             </StyledButton>
                         </SwiperSlide>
-                        <SwiperSlide className="slideTwo">
+                        <SwiperSlide className="slideTwo slides">
                             <h1>Slide de Eventos</h1>
                         </SwiperSlide>
                </Swiper>
