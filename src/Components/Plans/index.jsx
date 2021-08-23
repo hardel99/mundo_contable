@@ -13,11 +13,26 @@ const PlanContainer = styled.div`
     align-items: center;
     padding: 50px;
     font-family: "NotoSans", sans-serif;
+
+    @media (max-width: 320px) {
+        padding: 30px 0px;
+    }
 `;
 
 const HeroText = styled.h1`
     font-size: 3.5rem;
     font-weight: 800;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
 `;
 
 const Subtitle = styled.p`
@@ -27,10 +42,25 @@ const Subtitle = styled.p`
     max-width: 600px;
     text-align: center;
     margin: 25px;
+
+    @media (max-width: 768px) {
+        font-size: 17px;
+        width: 240px;
+        text-align: justify;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 15px;
+        text-align: center;
+    }
 `;
 
 const CardContainer = styled.div`
     display: flex;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const Bullet = styled.span`
@@ -55,6 +85,9 @@ const Price = styled.span`
     text-align: center;
     font-family: "NotoSans", sans-serif;
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+        margin-bottom: 10px;
+    }
 `;
 
 const useStyles = makeStyles({
@@ -64,12 +97,22 @@ const useStyles = makeStyles({
         margin: "20px 50px",
         boxShadow: "0 6px 12px 0 rgba(0, 0, 0, 0.16)",
         padding: "0px 25px 20px 10px",
+
+        ["@media (max-width: 320px)"]: {
+            maxWidth: 260,
+        },
     },
     title: {
         fontSize: 32,
         color: "#3d3d3d",
         fontWeight: "bold",
         lineHeight: 1.31,
+        ["@media (max-width: 768px)"]: {
+            padding: "0px 0px 0px 15px",
+        },
+        ["@media (max-width: 320px)"]: {
+            fontSize: 25,
+        },
     },
     check: {
         width: 20,
@@ -82,6 +125,10 @@ const useStyles = makeStyles({
         textAlign: "center",
         color: "#000",
         margin: "15px 0px 30px 0px",
+        ["@media (max-width: 768px)"]: {
+            margin: 12,
+            padding: "0px 0px 0px 15px",
+        },
     },
 });
 
