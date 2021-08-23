@@ -10,7 +10,6 @@
 
 .swiperContainer {
     height: 100%;
-    text-align: center;
     border: 3px solid red;  
     position: relative;
 }
