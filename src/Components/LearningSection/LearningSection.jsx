@@ -6,15 +6,18 @@ export const LearnSect = styled.div`
     color: var(--black);
     padding:10px 10px;
     width:100%;
-    height:100%;
-    position:relative;
-    border: solid .5px transparent;
+    min-height:100vh;
+    border: 1px solid red;
 
         .BtnGraduates {
                 border:none;
                 margin:20px;
                 background:none;
                 cursor:pointer;
+
+                @media (max-width: 768px){
+                        display: inline-block;
+                }
         }
 
         .BtnEvents {
@@ -22,5 +25,9 @@ export const LearnSect = styled.div`
                 margin:20px;
                 background:none;
                 cursor:pointer;
+
+                @media (max-width: 768px){
+                        display: inline-block;
+                }
         }
 `;

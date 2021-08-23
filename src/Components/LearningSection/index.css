@@ -1,3 +1,16 @@
 .slides {
     margin: 0 auto;
 }
+
+#btns-learn {
+    margin: 0% auto;
+    display: flex;
+    justify-content: center;
+}
+
+.swiperContainer {
+    height: 100%;
+    text-align: center;
+    border: 3px solid red;  
+    position: relative;
+}
