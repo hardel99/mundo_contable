@@ -10,6 +10,6 @@
 
 .swiperContainer {
     height: 100%;
-    border: 3px solid red;  
+    border: 3px solid rgb(255, 136, 0);
     position: relative;
 }

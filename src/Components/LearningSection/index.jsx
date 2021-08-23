@@ -37,15 +37,16 @@ const useStyles = makeStyles({
         margin: 20,
         border: "1px solid green",
     },
-
+    //Images in the card
     media: {
         height: 150,
         backgroundSize: "100% 100%",
     },
-
+    //Settings of swiper
     swiper: {
         display: "flex",
         flexDirection: "column",
+        padding: 20,
     },
 });
 
@@ -59,6 +60,7 @@ const StyledButton = withStyles({
         color: "white",
         height: 40,
         padding: "0 30px",
+        marginBottom: 20,
         width: 300,
         alignSelf: "center",
         boxShadow: "0 1px 3px rgba(0, 0, 0, 0.08)",
