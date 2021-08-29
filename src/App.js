@@ -11,6 +11,7 @@ import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
+import AboutSection from "./Components/AboutUs/AboutSection";
 
 /**Usuario de prueba :
  * ttt@ttt.com
@@ -29,7 +30,7 @@ function App() {
                             <InfoSection />
                         </section>
                         <BrandSection />
-                        <section id="nosotros"></section>
+                        <AboutSection/>
                         <section id="contacto"></section>
                     </Route>
                     <Route
