@@ -14,7 +14,7 @@ const PlanContainer = styled.div`
     padding: 50px;
     font-family: "NotoSans", sans-serif;
 
-    @media (max-width: 320px) {
+    @media (max-width: 768px) {
         padding: 30px 0px;
     }
 `;
@@ -60,6 +60,7 @@ const CardContainer = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: column;
+        max-width: 100%;
     }
 `;
 
@@ -98,8 +99,17 @@ const useStyles = makeStyles({
         boxShadow: "0 6px 12px 0 rgba(0, 0, 0, 0.16)",
         padding: "0px 25px 20px 10px",
 
+        // eslint-disable-next-line
+        ["@media (max-width: 1024px)"]: {
+            maxWidth: 340,
+        },
+
+        // eslint-disable-next-line
         ["@media (max-width: 320px)"]: {
-            maxWidth: 260,
+            maxWidth: 270,
+            margin: "5px 10px",
+            marginBottom: 20,
+            padding: 0,
         },
     },
     title: {
@@ -107,10 +117,16 @@ const useStyles = makeStyles({
         color: "#3d3d3d",
         fontWeight: "bold",
         lineHeight: 1.31,
+
+        // eslint-disable-next-line
         ["@media (max-width: 768px)"]: {
             padding: "0px 0px 0px 15px",
+            fontSize: 25,
         },
+
+        // eslint-disable-next-line
         ["@media (max-width: 320px)"]: {
+            padding: 0,
             fontSize: 25,
         },
     },
@@ -125,9 +141,17 @@ const useStyles = makeStyles({
         textAlign: "center",
         color: "#000",
         margin: "15px 0px 30px 0px",
+
+        // eslint-disable-next-line
         ["@media (max-width: 768px)"]: {
             margin: 12,
             padding: "0px 0px 0px 15px",
+        },
+
+        // eslint-disable-next-line
+        ["@media (max-width: 320px)"]: {
+            margin: "12px",
+            padding: 0,
         },
     },
 });
@@ -141,8 +165,7 @@ export default function PlanSection() {
             <HeroText>Escoge el plan correcto para ti</HeroText>
             <Subtitle>
                 Planes ideales para los usuarios que quieren realizar el <br />
-                cálculo de los impuestos y realizar una contabilidad más
-                completa.
+                cálculo de los impuestos y realizar una contabilidad más completa.
             </Subtitle>
             <CardContainer>
                 <Card className={classes.root} id="emprendedores">
@@ -161,17 +184,11 @@ export default function PlanSection() {
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Asesoría y capacitación de 6 horas para la
-                                utilización del sistema
-                            </Bullet>
+                            <Bullet>Asesoría y capacitación de 6 horas para la utilización del sistema</Bullet>
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Solicita precio o financiamientos según tu
-                                capacidad económica
-                            </Bullet>
+                            <Bullet>Solicita precio o financiamientos según tu capacidad económica</Bullet>
                         </BulletCont>
                     </CardContent>
                 </Card>
@@ -182,21 +199,15 @@ export default function PlanSection() {
                         <Price>$100</Price>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Capacidad de llevar hasta 999 empresas
-                            </Bullet>
+                            <Bullet>Capacidad de llevar hasta 999 empresas</Bullet>
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Asignación de usuarios y claves para cada cuenta
-                            </Bullet>
+                            <Bullet>Asignación de usuarios y claves para cada cuenta</Bullet>
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Asesoría y capacitación en el uso del sistema
-                            </Bullet>
+                            <Bullet>Asesoría y capacitación en el uso del sistema</Bullet>
                         </BulletCont>
                         <BulletCont>
                             {check}
@@ -204,9 +215,7 @@ export default function PlanSection() {
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Financiamiento con tasa 0% hasta 6 meses
-                            </Bullet>
+                            <Bullet>Financiamiento con tasa 0% hasta 6 meses</Bullet>
                         </BulletCont>
                         <BulletCont>
                             {check}
@@ -230,10 +239,7 @@ export default function PlanSection() {
                         </BulletCont>
                         <BulletCont>
                             {check}
-                            <Bullet>
-                                Además: Gestión de clientes para cobranza y
-                                ventas.
-                            </Bullet>
+                            <Bullet>Además: Gestión de clientes para cobranza y ventas.</Bullet>
                         </BulletCont>
                     </CardContent>
                 </Card>
