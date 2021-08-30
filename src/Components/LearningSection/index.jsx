@@ -16,35 +16,67 @@ import { LearnSect } from "./LearningSection";
 SwiperCore.use([Navigation]);
 
 const TextContainer = styled.div`
-    border: 1px solid red;
     text-align: center;
 `;
 const CardContainer = styled.div`
     display: flex;
     margin: 20px;
-    border: 1px solid blue;
+    margin-top: 50px;
     justify-content: center;
+    pointer-events: none;
+    @media (max-width: 1368px) {
+        display: flex;
+        margin: 20px;
+        margin-top: 50px;
+        justify-content: center;
+        pointer-events: none;
+    }
     @media (max-width: 768px) {
         flex-direction: column;
     }
 `;
 
+const GalleryContariner1 = styled.div`
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+`;
+
+const GalleryContariner2 = styled.div`
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+`;
+
 //Aqui van las cards
 const useStyles = makeStyles({
     root: {
-        maxWidth: "90%",
+        maxWidth: "100%",
+        minWidth: "19vw",
         boxShadow: "0 3px 5px 2px rgba(65, 65, 66, 0.11)",
         margin: 20,
-        border: "1px solid green",
     },
     //Images in the card
     media: {
-        height: 150,
+        height: "20vh",
         backgroundSize: "100% 100%",
+    },
+
+    //This is the container of images from to secod slide
+    container: {
+        maxWidth: "100%",
+        minWidth: "20vw",
+        margin: 20,
+    },
+    //Images of second slide
+    gallery: {
+        height: "25vh",
+        backgroundSize: "cover",
     },
     //Settings of swiper
     swiper: {
         display: "flex",
+        alignItems: "center",
         flexDirection: "column",
         padding: 20,
     },
@@ -60,6 +92,7 @@ const StyledButton = withStyles({
         color: "white",
         height: 40,
         padding: "0 30px",
+        marginTop: 40,
         marginBottom: 20,
         width: 300,
         alignSelf: "center",
@@ -146,7 +179,50 @@ function LearningSection() {
                     </StyledButton>
                 </SwiperSlide>
                 <SwiperSlide className={classes.swiper}>
-                    <h1>Slide de Eventos</h1>
+                    <GalleryContariner1>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                    </GalleryContariner1>
+                    <GalleryContariner2>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                        <Card className={classes.container}>
+                            <CardActionArea>
+                                <CardMedia className={classes.gallery} image={image} />
+                            </CardActionArea>
+                        </Card>
+                    </GalleryContariner2>
                 </SwiperSlide>
             </Swiper>
         </LearnSect>
