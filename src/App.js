@@ -10,6 +10,7 @@ import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
+import AboutSection from "./Components/AboutUs/AboutSection";
 import Drawer from "./Components/DashboardTest/Drawer";
 import Home from "./Components/DashboardTest/Home";
 import Contact from "./Components/DashboardTest/Contact";
@@ -54,7 +55,9 @@ function App() {
                             <InfoSection />
                         </section>
                         <BrandSection />
-                        <section id="nosotros"></section>
+                        <section id="nosotros">
+                            <AboutSection />
+                        </section>
                         <PlanSection />
                         <section id="contacto"></section>
                     </Route>
