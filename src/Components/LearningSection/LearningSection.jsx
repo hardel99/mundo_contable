@@ -17,6 +17,11 @@ export const LearnSect = styled.div`
         @media (max-width: 768px) {
             display: inline-block;
         }
+
+        @media (min-width: 1080px) {
+            margin-top: 40px;
+            font-size: 1em;
+        }
     }
 
     .BtnEvents {
@@ -27,6 +32,11 @@ export const LearnSect = styled.div`
 
         @media (max-width: 768px) {
             display: inline-block;
+        }
+
+        @media (min-width: 1080px) {
+            margin-top: 40px;
+            font-size: 1em;
         }
     }
 `;
