@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "./app/auth/AuthContext";
@@ -38,21 +37,9 @@ function App() {
                             <Drawer />
                             <PrivateRoute component={Drawer} />
                             <Switch>
-                                <Route
-                                    exact
-                                    path="/app/home"
-                                    render={(props) => <Home {...props} />}
-                                />
-                                <Route
-                                    exact
-                                    path="/app/contact"
-                                    render={(props) => <Contact {...props} />}
-                                />
-                                <Route
-                                    exact
-                                    path="/app/about"
-                                    render={(props) => <About {...props} />}
-                                />
+                                <Route exact path="/app/home" render={(props) => <Home {...props} />} />
+                                <Route exact path="/app/contact" render={(props) => <Contact {...props} />} />
+                                <Route exact path="/app/about" render={(props) => <About {...props} />} />
 
                                 <Route path="/app/" component={NotFound} />
                             </Switch>
@@ -67,16 +54,12 @@ function App() {
                             <InfoSection />
                         </section>
                         <BrandSection />
-                        <PlanSection />
                         <section id="nosotros"></section>
+                        <PlanSection />
                         <section id="contacto"></section>
                     </Route>
 
-                    <Route
-                        exact
-                        path="/forgotPassword"
-                        component={ForgotPassword}
-                    />
+                    <Route exact path="/forgotPassword" component={ForgotPassword} />
 
                     <Route path="/" component={NotFound} />
                 </Switch>
