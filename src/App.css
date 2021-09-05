@@ -31,6 +31,10 @@ section {
     top: -65px;
 }
 
+#nosotros {
+    height: fit-content;
+}
+
 #s0 {
     background-image: url("./Components/img/paisaje.jpg");
     background-position: center;
@@ -38,6 +42,5 @@ section {
 }
 
 #contacto {
-    background-color:transparent;
-
+    background-color: transparent;
 }
