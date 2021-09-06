@@ -18,7 +18,7 @@ export const LearnSect = styled.div`
             display: inline-block;
         }
 
-        @media (min-width: 1080px) {
+        @media (min-width: 1400px) {
             margin-top: 40px;
             font-size: 1em;
         }
@@ -34,7 +34,7 @@ export const LearnSect = styled.div`
             display: inline-block;
         }
 
-        @media (min-width: 1080px) {
+        @media (min-width: 1400px) {
             margin-top: 40px;
             font-size: 1em;
         }

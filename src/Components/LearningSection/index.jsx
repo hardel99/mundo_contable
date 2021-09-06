@@ -18,7 +18,17 @@ SwiperCore.use([Navigation]);
 const TextContainer = styled.div`
     text-align: center;
 
-    @media (min-width: 180px) {
+    @media (min-width: 1900px) {
+        margin-top: 40px;
+        font-size: 1.5em;
+    }
+
+    @media (min-width: 1400px) {
+        margin-top: 10px;
+        font-size: 1.5em;
+    }
+
+    @media (min-width: 2000px) {
         font-size: 1.5em;
     }
 `;
@@ -29,15 +39,7 @@ const CardContainer = styled.div`
     justify-content: center;
     pointer-events: none;
 
-    @media (max-width: 1400px) {
-        display: flex;
-        margin: 20px;
-        margin-top: 50px;
-        justify-content: center;
-        pointer-events: none;
-    }
-
-    @media (min-width: 1080px) {
+    @media (min-width: 1400px) {
         margin-top: 80px;
     }
 
@@ -45,11 +47,22 @@ const CardContainer = styled.div`
         width: 95%;
         flex-direction: column;
     }
+
+    @media (max-width: 1040px) and (min-width: 768px) {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
+        grid-gap: 10px;
+    }
 `;
 
 const GalleryContariner1 = styled.div`
     display: flex;
     justify-content: center;
+
+    @media (min-width: 1400px) {
+        margin-top: 70px;
+    }
 
     @media (max-width: 768px) {
         width: 90%;
@@ -95,15 +108,33 @@ const useStyles = makeStyles({
             minWidth: "60vw",
             margin: 7,
         },
+
+        ["@media (max-width: 1040px) and (min-width:768px)"]: {
+            minWidth: "40vw",
+            margin: 10,
+        },
     },
     //Images in the card
     media: {
         height: "27vh",
         backgroundSize: "100% 100%",
 
+        ["@media (min-width: 1900px)"]: {
+            height: "25vh",
+        },
+
         //Screan to 1040px size
-        ["@media (max-width: 1040px)"]: {
-            minWidth: "50vw",
+
+        ["@media (min-width: 1400px)"]: {
+            height: "20vh",
+        },
+
+        ["@media (min-width: 2000px)"]: {
+            height: "30vh",
+        },
+
+        ["@media (max-width: 1040px) and (min-width:768px)"]: {
+            height: "30vw",
         },
     },
 
@@ -113,6 +144,11 @@ const useStyles = makeStyles({
         minWidth: "17vw",
         margin: 20,
         boxShadow: "0 3px 5px 2px rgba(7, 7, 150, 0.15)",
+
+        ["@media (min-width: 1400px)"]: {
+            minWidth: "20vw",
+            margin: 7,
+        },
 
         // Screen to standard mobile
         ["@media (max-width: 768px)"]: {
@@ -166,10 +202,26 @@ const StyledButton = withStyles({
             width: "95%",
         },
 
-        ["@media (min-width: 1080px)"]: {
+        ["@media (min-width: 1400px)"]: {
+            marginTop: 80,
+            width: "20vw",
+            height: "4.5vh",
+        },
+
+        ["@media (min-width: 1900px)"]: {
             marginTop: 80,
             width: "15vw",
             height: "4.5vh",
+        },
+
+        ["@media (min-width: 2000px)"]: {
+            marginTop: 80,
+            width: "15vw",
+            height: "4.5vh",
+        },
+
+        ["@media (max-width: 1040px) and (min-width:768px)"]: {
+            width: "80%",
         },
     },
     label: {
