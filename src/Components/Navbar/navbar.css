@@ -97,7 +97,7 @@ li.mobile{
 .nav-links::after{
     content:'';
     display: block;
-    width: 0;
+    width: 0%;
     height: 2px;
     background: #fff;
     transition: width .3s;
@@ -136,6 +136,10 @@ li.mobile{
 @media screen and (max-width: 960px) {
     .fa-caret-down {
         display: none;
+    }
+
+    .navbar{
+        font-size: 0.7rem;
     }
 
     .nav-log {
@@ -255,5 +259,79 @@ li.mobile{
 
     .nav-links-log{
         font-size: 0.65vw;
+    }
+
+}
+
+/*All sceen size phones*/
+@media(max-width:900px){
+    .nav-item{
+        position: relative;
+        height: 10%;
+        top: -1%;
+        transform: scale(1);
+    }
+    .nav-links{
+        font-size: 1.3em;
+    }
+    
+    li.mobile {
+        width: 80%;
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+
+    li.mobile > a{
+        padding: 15px;
+        font-size: 1.4em;
+    }
+}
+
+/*iphone5*/
+@media(max-width:320px){
+    .nav-item{
+        position: relative;
+        height: 10%;
+        top: 5px;
+        transform: scale(1);
+    }
+    .nav-links{
+        font-size: 1.3em;
+    }
+    
+    li.mobile {
+        width: 80%;
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+
+    li.mobile > a{
+        padding: 15px;
+        font-size: 1.4em;
+    }
+}  
+
+/* Tablets */
+@media(max-width:900px) and ( min-width:500px){
+    .nav-item{
+        position: relative;
+        top: -20px;
+        height: 10%;
+        transform: scale(1);
+    }
+    .nav-links{
+        font-size: 2em;
+    }
+    
+    li.mobile {
+        width: 80%;
+        height: 70px;
+        margin-top: 40px;
+        margin-bottom: -20px;
+    }
+
+    li.mobile > a{
+        padding: 18px;
+        font-size: 2.4em;
     }
 }

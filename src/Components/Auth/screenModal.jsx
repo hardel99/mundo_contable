@@ -160,7 +160,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                                 </ModalContent>
                                 <ModalImg>
                                     <p id="txt-modal-img">
-                                        Se mas eficiente y obtén más ganancias.
+                                        Sé más eficiente y obtén más ganancias.
                                     </p>
                                 </ModalImg>
                             </ModalWrapper>
