@@ -32,7 +32,7 @@ section {
 }
 
 #nosotros {
-    height: fit-content;
+    min-height: 0;
 }
 
 #s0 {
