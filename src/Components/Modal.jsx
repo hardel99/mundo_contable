@@ -24,16 +24,16 @@ const Modal = ({ isOpen, closeModal, children }) => {
           </p>
 
           <p className="pmodal">
-            Es el inicio para empezar  a hacerte de tu propia cartera de clientes.
+            Es el inicio para empezar a hacerte de tu propia cartera de clientes.
           </p>
 
           <p className="pmodal">
-            En una economía globalizada los profesionales que  logren trascender en los cambios son los que
+            En una economía globalizada los profesionales que logren trascender en los cambios son los que
             más se adaptan y llegan primero a cubrir las necesidades futuras de las empresas.
           </p>
 
           <p className="pmodal">
-            Sé de los profesionales que creen en sí mismos más  que en una empresa y lograr ofrecer un servicio
+            Sabemos de los profesionales que creen en sí mismos más que en una empresa y logran ofrecer un servicio
             integral, con el propósito de focalizar los recursos de su negocio.
           </p>
 
