@@ -25,10 +25,14 @@ html {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     top: -65px;
+}
+
+#nosotros {
+    height: fit-content;
 }
 
 #s0 {
@@ -38,6 +42,5 @@ section {
 }
 
 #contacto {
-    background-color:transparent;
-
+    background-color: transparent;
 }
