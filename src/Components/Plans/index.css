@@ -1,0 +1,9 @@
+#emprendedores {
+    max-height: 600px;
+}
+
+@media (max-width: 768px) {
+    #emprendedores {
+        max-height: min-content;
+    }
+}

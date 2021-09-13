@@ -58,7 +58,7 @@ function Navbar() {
         <>
             <nav className={navbar ? "navbar active" : "navbar"}>
                 <a href="#" className="navbar-logo">
-                    <img  src={logo} width={40} height={40} alt={"MundoCOntablesLogo"}
+                    <img  src={logo} width={40} height={40} alt={"MundoContablesLogo"}
                     />
                 </a>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -101,7 +101,7 @@ function Navbar() {
                 </ul>
                 <li className="nav-log">
                     <button className="nav-links-log" onClick={() => { loginClicked(); }}>
-                        Log in
+                        Iniciar sesión
                     </button>
                 </li>
                 <button className="btn" onClick={() => { signUpClicked(); }}> 
