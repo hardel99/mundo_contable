@@ -4,7 +4,8 @@ import LogoBinyapi from '../../images/logo-binyapi.png';
 import LogoJvm from '../../images/logo-jvm.png';
 import LogoMachuca from '../../images/logo-machuca.png';
 import LogoMega from '../../images/logo-megapro.png';
-
+import useModal from '../Hooks/useModal';
+import Modal from '../Modal.jsx'
 
 
 export const AboutSect = styled.div`
@@ -50,26 +51,12 @@ a{
     color: var(--accent-dark);
     text-decoration: none;
     transition: 0.3s ease-out;
+    cursor: pointer;
 
     &:hover{
         filter: opacity(100%);
     }
 }`;
-/* 
-AboutP.defaultProps = {
-    theme: {
-        main: "#fff"
-    }
-}
-
-const theme = {
-    accent: "var(--accent-dark)"
-
-};
-
-PUT ELEMENT INSIDE THAT, FOR THEME THEM <ThemeProvider theme={theme}>    </ThemeProvider>
-
-*/
 
 export const HistoryContainer = styled.div`
 width: 420px;
@@ -156,6 +143,7 @@ filter: grayscale(80%);
 height:80px;
 padding: 10px;
 margin-right: 80px;
+cursor: pointer;
 transition:0.3s ease-out;
 &:hover {
     filter: grayscale(0%);
@@ -175,11 +163,14 @@ padding:20px;
 
 @media screen and (min-width: 1580px){
     text-align: center;
-}
+}`;
 
-`;
+
 
 const AboutSection = () => {
+    const [isOpenModal, openModal, closeModal] = useModal();
+    /*     const [isOpenModal, openModal, closeModal] = useModal(); */
+
     return (
         <>
             <AboutSect id="nosotros">
@@ -187,7 +178,7 @@ const AboutSection = () => {
                     <TextContainer>
 
                         <HistoryContainer>
-                        <Title>Nosotros</Title>
+                            <Title>Nosotros</Title>
                             <AboutP>
                                 Somos una empresa comprometida con el
                                 crecimiento y desarrollo de muchos
@@ -200,7 +191,13 @@ const AboutSection = () => {
                             </AboutP>
 
                             <AboutP>
-                                <a href="">Mas información +</a>
+                                <a href="#nosotros" onClick={openModal}>Mas información +</a>
+        
+                                <Modal
+                                 isOpen={isOpenModal}
+                                 closeModal={closeModal}
+                                >
+                                </Modal>
                             </AboutP>
 
 
@@ -239,15 +236,13 @@ const AboutSection = () => {
 
                         </AboutP>
                     </TextContainer>
-
                     <LogoContainer>
-                        <Title className="empresas">Empresas Aliadas</Title>
+                        <Title >Empresas Aliadas</Title>
                         <Logo src={LogoBinyapi} alt="logo" />
                         <Logo src={LogoMachuca} alt="logo" />
                         <Logo src={LogoJvm} alt="logo" />
                         <Logo src={LogoMega} alt="logo" />
                     </LogoContainer>
-
                 </MainContainer>
             </AboutSect>
 
@@ -258,4 +253,19 @@ const AboutSection = () => {
 
 export default AboutSection
 
+{/*function Panel() {
 
+    const [MostrarPanel, setMostrarPanel] = useState(false);
+
+    return (
+        <>
+        {MostrarPanel && <div className="Panel" >No hay todavia</div> }
+        {MostrarPanel && 
+        ReactDOM.createPortal(
+            <div className="Panel"> No hay todavia </div>, 
+            document.querySelector('#portal')
+        )}
+        <button onClick={() => setMostrarPanel(!MostrarPanel)} >Mas informacion +</button>
+        </>
+    );
+}*/}
