@@ -18,6 +18,7 @@ import Contact from "./Components/DashboardTest/Contact";
 import About from "./Components/DashboardTest/About";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
+import ReviewSection from "./Components/Review-section/ReviewSection";
 
 const useStyles = makeStyles({
     container: {
@@ -63,6 +64,7 @@ function App() {
                             <LearningSection />
                         </section>
                         <PlanSection />
+                        <ReviewSection />
                         <section id="contacto"></section>
                     </Route>
 
