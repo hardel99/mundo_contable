@@ -1,8 +1,10 @@
 import React from "react";
 import "./Review.css";
 
-function ReviewSection() {
-    return <ReviewSection></ReviewSection>;
+export default function ReviewSection() {
+    return (
+        <div>
+            <h1>Hey, esta es la siguiente mision.... no la riegues</h1>
+        </div>
+    );
 }
-
-export default ReviewSection;
