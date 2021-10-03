@@ -18,6 +18,7 @@ import Contact from "./Components/DashboardTest/Contact";
 import About from "./Components/DashboardTest/About";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
+import ChatSupport from "./Components/ChatSupport";
 
 const useStyles = makeStyles({
     container: {
@@ -63,9 +64,8 @@ function App() {
                             <LearningSection />
                         </section>
                         <PlanSection />
-                        <section id="contacto"></section>
+                        <ChatSupport />
                     </Route>
-
                     <Route exact path="/forgotPassword" component={ForgotPassword} />
 
                     <Route path="/" component={NotFound} />
