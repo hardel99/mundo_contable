@@ -7,7 +7,6 @@ import LogoMega from '../../images/logo-megapro.png';
 import useModal from '../Hooks/useModal';
 import Modal from '../Modal.jsx'
 
-
 export const AboutSect = styled.div`
   background-color: var(--blue-dark);
   color: #fff;
@@ -168,8 +167,7 @@ padding:20px;
 
 
 const AboutSection = () => {
-    const [isOpenModal, openModal, closeModal] = useModal();
-    /*     const [isOpenModal, openModal, closeModal] = useModal(); */
+    const [isOpenAboutModal, openAboutModal, closeAboutModal] = useModal();
 
     return (
         <>
@@ -191,12 +189,44 @@ const AboutSection = () => {
                             </AboutP>
 
                             <AboutP>
-                                <a href="#nosotros" onClick={openModal}>Mas información +</a>
-        
+                                <a href="#nosotros" onClick={openAboutModal}>Mas información +</a>
                                 <Modal
-                                 isOpen={isOpenModal}
-                                 closeModal={closeModal}
+                                    isOpen={isOpenAboutModal}
+                                    closeModal={closeAboutModal}
+                                    title="Mundo Contable"
                                 >
+                                    <div className="scroll-div">
+         
+
+                                    <div className="banner-container" />
+
+                                    <p className="pmodal">
+                                        Creada con el fin de contribuir en el desarrollo  contable, administrativo y Legal,  para muchos
+                                        jóvenes profesionales emprendedores, que  debido a las  diferentes limitaciones se les dificulta
+                                        emprender y empezar a ofrecer sus  servicios profesionales.
+                                    </p>
+
+                                    <p className="pmodal">
+                                        Es el inicio para empezar a hacerte de tu propia cartera de clientes.
+                                    </p>
+
+                                    <p className="pmodal">
+                                        En una economía globalizada los profesionales que logren trascender en los cambios son los que
+                                        más se adaptan y llegan primero a cubrir las necesidades futuras de las empresas.
+                                    </p>
+
+                                    <p className="pmodal">
+                                        Sabemos de los profesionales que creen en sí mismos más que en una empresa y logran ofrecer un servicio
+                                        integral, con el propósito de focalizar los recursos de su negocio.
+                                    </p>
+
+                                    <p className="pmodal">
+                                        Apuéstale a tu libertad Financiera, ya que estamos conscientes que  de tu crecimiento depende de
+                                        nosotros como empresa, estaremos  contigo desde el inicio hasta el momento que tus expectativas
+                                        superen lo que se te ofrece y logres crear tu propia empresa y te asesoraremos para ello.
+                                    </p>
+                                    </div>
+
                                 </Modal>
                             </AboutP>
 
