@@ -75,11 +75,11 @@ export const Link = styled.div`
       transition: 200ms ease-in;
   }
 
-  &.direct{
+  & a.direct{
+      text-decoration: none;
       color: #92a0cc;
       &:hover{
         color: var(--accent-dark);
-
       }
 
     }
@@ -113,7 +113,7 @@ export function FooterContainer() {
                         Condominios 2000, local B-23.</Pfooter>
                         <Pfooter>San Salvador, El Salvador</Pfooter>
                         <Pfooter>Telefono: (503) 2225-5318</Pfooter>
-                        <Footer.Link href="#" className="direct" >info@mundocontables.net</Footer.Link>
+                        <Footer.Link > <a href="mailto:info@mundocontables.net" className="direct" >info@mundocontables.net</a></Footer.Link>
                         <Btn onClick={openMapModal} >Ubicacion</Btn>
 
                     </Footer.Column>
@@ -138,7 +138,7 @@ export function FooterContainer() {
                         <IconContext.Provider value={{ size: "30px"}}>
                         <a href="https://www.facebook.com/mundocontables/"><FaFacebookF className="icon"/></a>
                         <a href="https://www.instagram.com/mundocontables/"><FaInstagram className="icon"/></a>
-                        <a href=""><CgMail className="icon"/></a>
+                        <a href="mailto:info@mundocontables.net"><CgMail className="icon"/></a>
                         <a href="https://www.youtube.com/channel/UC5o3xZ7V-J4JGH-nd3h4FIg"><FaYoutube className="icon"/></a> 
                         </IconContext.Provider>
 
@@ -149,9 +149,7 @@ export function FooterContainer() {
             <Modal 
                 isOpen={isOpenMapModal}
                 closeModal={closeMapModal}
-                title="Mapa de cabañas 0w0" >
-                
-                
+                title="Ubicacion" >
             </Modal>
         </Footer>
     )
