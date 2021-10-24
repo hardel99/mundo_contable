@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import FormTemp from "./form";
+
+const modalWrapper = styled.div`
+    z-index: 100;
+`;
 
 const Bubble = styled.div`
     background-color: #727bcc;
@@ -28,6 +33,7 @@ const ChatBody = styled.div`
     position: fixed;
     bottom: 0px;
     left: 1vw;
+    z-index: 100;
 `;
 
 export default function ChatSupport() {
@@ -36,22 +42,13 @@ export default function ChatSupport() {
     const hide = () => setDisplay(false);
 
     return (
-        <>
+        <modalWrapper>
             <Bubble onClick={show}>?</Bubble>
-            {display
-                ? {
-                      /* <ChatBody onClick={hide}>
-                    <input type="submit" value="Enviar" />
-                </ChatBody> */
-                  }
-                : null}
-            <ChatBody>
-                <h3>Rellenele el formulario a continuacion y le contestaremos lo antes posible</h3>
-                <input type="text" placeholder="* Nombre" />
-                <input type="email" placeholder="* E-mail" />
-                <textarea name="msg" id="msg" cols="30" rows="10" placeholder="* Mensaje"></textarea>
-                <input type="button" value="Enviar" />
-            </ChatBody>
-        </>
+            {display ? (
+                <ChatBody onClick={hide}>
+                    <FormTemp />
+                </ChatBody>
+            ) : null}
+        </modalWrapper>
     );
 }
