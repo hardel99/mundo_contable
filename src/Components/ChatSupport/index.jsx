@@ -65,20 +65,22 @@ const useStyles = makeStyles({
 
 function sendEmail(e) {
     e.preventDefault(); //DO NOT REMOVE
-    
+
     //instead of e.target goes the refence to the element with the info
     //https://www.emailjs.com/docs/examples/reactjs/
-    emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'USER_ID')
-    .then((result) => {
-        window.location.reload(); //to reload the page
-    }, (error) => {
-        //rayos se cayo prod
-        console.log(error.text);
-    });
+    emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", e.target, "USER_ID").then(
+        (result) => {
+            window.location.reload(); //to reload the page
+        },
+        (error) => {
+            //rayos se cayo prod
+            console.log(error.text);
+        }
+    );
 }
 
 function sendForm() {
-    form = document.getElementById("contact");
+    const form = document.getElementById("contact");
     form.submit();
     //make the user know the form was sent
     alert("your email was sent!");
