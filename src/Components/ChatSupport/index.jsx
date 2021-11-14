@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { Button, TextField } from "@material-ui/core";
 import "./form.css";
@@ -63,36 +63,35 @@ const useStyles = makeStyles({
     },
 });
 
-function sendEmail(e) {
-    e.preventDefault(); //DO NOT REMOVE
-
-    //instead of e.target goes the refence to the element with the info
-    //https://www.emailjs.com/docs/examples/reactjs/
-    emailjs.sendForm("SERVICE_ID", "TEMPLATE_ID", e.target, "USER_ID").then(
-        (result) => {
-            window.location.reload(); //to reload the page
-        },
-        (error) => {
-            //rayos se cayo prod
-            console.log(error.text);
-        }
-    );
-}
-
-function sendForm() {
-    const form = document.getElementById("contact");
-    form.submit();
-    //make the user know the form was sent
-    alert("your email was sent!");
-}
-
 export default function ChatSupport() {
     const [display, setDisplay] = useState(false);
     const [errorFlag, setErrorFlag] = useState(false);
     const show = () => setDisplay(true);
     const hide = () => setDisplay(false);
+    const form = useRef();
 
     const classes = useStyles();
+
+    function sendEmail(e) {
+        e.preventDefault(); //DO NOT REMOVE
+
+        //make this secrets
+        emailjs.sendForm("SERVICE_ID", "template_9wvlr67", form.current, "user_OHQz1Af5m5VBmoI8yMSsx").then(
+            (result) => {
+                console.log(result.text);
+            },
+            (error) => {
+                console.log(error.text);
+            }
+        );
+    }
+
+    function sendForm() {
+        const form = document.getElementById("contact");
+        form.submit();
+        //make the user know the form was sent
+        alert("your email was sent!");
+    }
 
     return (
         <ModalWrapper>
@@ -102,7 +101,8 @@ export default function ChatSupport() {
                     <div class="container" onClick={hide}>
                         <h4 className="form-disclaimer">Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
                         <div className={classes.offset}>
-                            <form id="contact" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()}>
+                            <form id="contact" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()} ref={form}>
+                                {/* Names of the elements must match with the params you are using in emailjs */}
                                 <TextField error={errorFlag} label="Nombre" placeholder="Nombre" variant="outlined" className={classes.inputs} helperText={"Campo obligatorio"} />
                                 <TextField
                                     error={errorFlag}
@@ -115,10 +115,6 @@ export default function ChatSupport() {
                                 <TextField error={errorFlag} label="Mensaje" placeholder="Mensaje" variant="outlined" className={classes.inputs} helperText={"Campo obligatorio"} />
                                 <Button size="small" variant="contained" className={classes.submit} onClick={sendForm}>
                                     Enviar
-                                    {/* Have to add an
-                                    input type=submit or rather change the 
-                                    onSubmit function for the form and put it in this button
-                                    and map the information */}
                                 </Button>
                             </form>
                         </div>
