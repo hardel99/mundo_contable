@@ -6,9 +6,8 @@ import { CgMail } from 'react-icons/cg'
 import { IconContext } from 'react-icons/lib'
 import { Btn } from "../ButtonElement"
 import useModal from '../Hooks/useModal';
-import Modal from '../Modal.jsx'
-import '../Footer/form.css'
-import Button from '@material-ui/core/Button';
+import MapModal from './MapModal';
+import '../Footer/form.css';
 
 export const Container = styled.div`
     padding: 80px 60px;
@@ -146,29 +145,11 @@ export function FooterContainer() {
 
                 </Footer.Row>
             </Footer.Wrapper>
-            <Modal
+            <MapModal
                 isOpen={isOpenMapModal}
-                closeModal={closeMapModal}
-                title="Ubicacion" >
-                <div class="formcontainer">
-                    <form id="contact" action="" method="post">
-                        <h4>Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
+                closeModal={closeMapModal}>
 
-                        <fieldset>
-                            <input placeholder="Nombre" type="text" tabindex="1" required autofocus />
-                        </fieldset>
-
-                        <fieldset>
-                            <input placeholder="Correo" type="email" tabindex="" required />
-                        </fieldset>
-
-                        <fieldset>
-                            <textarea placeholder="Escribe tu mensaje aqui..." tabindex="5" required></textarea>
-                        </fieldset>
-                        <Button className="formbtn" size="small" variant="contained" color="primary">Enviar</Button>
-                    </form>
-                </div>
-            </Modal>
+            </MapModal>
         </Footer>
     )
 }
