@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Footer from './index'
-import {FaFacebookF,FaInstagram,FaYoutube} from 'react-icons/fa'
-import {CgMail} from 'react-icons/cg'
-import { IconContext} from 'react-icons/lib'
-import {Btn} from "../ButtonElement"
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { CgMail } from 'react-icons/cg'
+import { IconContext } from 'react-icons/lib'
+import { Btn } from "../ButtonElement"
 import useModal from '../Hooks/useModal';
-import Modal from '../Modal.jsx'
-
+import MapModal from './MapModal';
+import '../Footer/form.css';
 
 export const Container = styled.div`
     padding: 80px 60px;
@@ -86,7 +86,7 @@ export const Link = styled.div`
 
 `
 
-export const Pfooter = styled.p `
+export const Pfooter = styled.p`
     color: #fff;
     margin-bottom: 20px;
     font-size: 16px;
@@ -99,7 +99,6 @@ export const Title = styled.h1`
   font-weight: bold;
 `
 
-
 export function FooterContainer() {
     const [isOpenMapModal, openMapModal, closeMapModal] = useModal();
 
@@ -110,7 +109,7 @@ export function FooterContainer() {
                     <Footer.Column>
                         <Footer.Title>Contacto</Footer.Title>
                         <Pfooter>Colonia Buenos Aires III, Diagonal Centroamericana.
-                        Condominios 2000, local B-23.</Pfooter>
+                            Condominios 2000, local B-23.</Pfooter>
                         <Pfooter>San Salvador, El Salvador</Pfooter>
                         <Pfooter>Telefono: (503) 2225-5318</Pfooter>
                         <Footer.Link > <a href="mailto:info@mundocontables.net" className="direct" >info@mundocontables.net</a></Footer.Link>
@@ -135,22 +134,22 @@ export function FooterContainer() {
                     <Footer.Column>
                         <Footer.Title>Siguenos</Footer.Title>
 
-                        <IconContext.Provider value={{ size: "30px"}}>
-                        <a href="https://www.facebook.com/mundocontables/"><FaFacebookF className="icon"/></a>
-                        <a href="https://www.instagram.com/mundocontables/"><FaInstagram className="icon"/></a>
-                        <a href="mailto:info@mundocontables.net"><CgMail className="icon"/></a>
-                        <a href="https://www.youtube.com/channel/UC5o3xZ7V-J4JGH-nd3h4FIg"><FaYoutube className="icon"/></a> 
+                        <IconContext.Provider value={{ size: "30px" }}>
+                            <a href="https://www.facebook.com/mundocontables/"><FaFacebookF className="icon" /></a>
+                            <a href="https://www.instagram.com/mundocontables/"><FaInstagram className="icon" /></a>
+                            <a href="mailto:info@mundocontables.net"><CgMail className="icon" /></a>
+                            <a href="https://www.youtube.com/channel/UC5o3xZ7V-J4JGH-nd3h4FIg"><FaYoutube className="icon" /></a>
                         </IconContext.Provider>
 
                     </Footer.Column>
 
                 </Footer.Row>
             </Footer.Wrapper>
-            <Modal 
+            <MapModal
                 isOpen={isOpenMapModal}
-                closeModal={closeMapModal}
-                title="Ubicacion" >
-            </Modal>
+                closeModal={closeMapModal}>
+
+            </MapModal>
         </Footer>
     )
 }

@@ -10,8 +10,11 @@ const Modal = ({ isOpen, closeModal, title, children }) => {
   return (
     <div className={`modal ${isOpen && 'modalOpen'}`} onClick={closeModal}>
       <div className="modal_dialog" onClick={handleModalDialogClick}>
-        <button className="close-modal-btn" onClick={closeModal} >X</button>
-        <h1 className="title-modal"> {title} </h1>
+        <div className="modal_bar">
+          <h1 className="title-modal"> {title} </h1>
+          <button className="close-modal-btn" onClick={closeModal} >X</button>
+        </div>
+        
         {children}
       </div>
 
