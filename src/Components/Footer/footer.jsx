@@ -150,7 +150,7 @@ export function FooterContainer() {
                 isOpen={isOpenMapModal}
                 closeModal={closeMapModal}
                 title="Ubicacion" >
-                <div class="container">
+                <div class="formcontainer">
                     <form id="contact" action="" method="post">
                         <h4>Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
 
@@ -165,7 +165,7 @@ export function FooterContainer() {
                         <fieldset>
                             <textarea placeholder="Escribe tu mensaje aqui..." tabindex="5" required></textarea>
                         </fieldset>
-                        <Button size="small" variant="contained" color="primary">Enviar</Button>
+                        <Button className="formbtn" size="small" variant="contained" color="primary">Enviar</Button>
                     </form>
                 </div>
             </Modal>
