@@ -42,12 +42,7 @@ const ModalImg = styled.div`
     height: 100%;
     padding: none;
     border-radius: 0 10px 10px 0;
-    background-image: linear-gradient(
-            180deg,
-            rgba(34, 90, 255, 0.5) 0%,
-            rgba(9, 20, 71, 0.5) 100%
-        ),
-        url(${image});
+    background-image: linear-gradient(180deg, rgba(34, 90, 255, 0.5) 0%, rgba(9, 20, 71, 0.5) 100%), url(${image});
     background-position: center;
     background-size: cover;
 
@@ -76,7 +71,7 @@ const ModalContent = styled.div`
     background-color: rgba(237, 237, 237, 1);
 
     .fa-times {
-        color:#bdbdbd;
+        color: #bdbdbd;
         box-shadow: #000000;
         position: absolute;
         right: 10%;
@@ -123,7 +118,7 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
             duration: 250,
         },
         opacity: showModal ? 1 : 0,
-        trasnform: showModal ? `translateY(0%)` : `translateY(-100%)`,
+        transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
     });
 
     const closeModal = (e) => {
@@ -155,13 +150,11 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
                         <animated.div style={animation}>
                             <ModalWrapper showModal={showModal}>
                                 <ModalContent>
-                                    <i className={"fas fa-times"} onClick={closeModal} ref={mobileRef}/>
+                                    <i className={"fas fa-times"} onClick={closeModal} ref={mobileRef} />
                                     {action == "Login" ? <Login /> : <SignUp />}
                                 </ModalContent>
                                 <ModalImg>
-                                    <p id="txt-modal-img">
-                                        Sé más eficiente y obtén más ganancias.
-                                    </p>
+                                    <p id="txt-modal-img">Sé más eficiente y obtén más ganancias.</p>
                                 </ModalImg>
                             </ModalWrapper>
                         </animated.div>

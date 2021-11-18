@@ -1,12 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { Button, TextField } from "@material-ui/core";
-import "./form.css";
+import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import emailjs from "emailjs-com";
+import "./form.css";
 
 const ModalWrapper = styled.div`
     z-index: 100;
+`;
+
+const FeedbackWrapper = styled.div`
+    margin-top: 25px;
+    text-align: center;
 `;
 
 const Bubble = styled.div`
@@ -30,9 +35,10 @@ const Bubble = styled.div`
 
 const ChatBody = styled.div`
     position: fixed;
-    bottom: 0px;
+    bottom: -500px;
     left: 1vw;
     z-index: 100;
+    transition: all 0.5s ease-in-out;
 `;
 
 const useStyles = makeStyles({
@@ -46,64 +52,91 @@ const useStyles = makeStyles({
         margin: "50px 0",
         marginBottom: "0",
     },
-    submit: {
-        color: "white",
-        background: "#1a6e3e",
-        border: "none",
-        fontSize: 15,
-        fontWeight: "bold",
-        padding: "10px 0px",
-        borderRadius: 5,
-        width: "100%",
-        marginTop: "25px",
-
-        "&:hover": {
-            background: "#4e966d",
-        },
-    },
 });
 
 export default function ChatSupport() {
-    const [display, setDisplay] = useState(false);
+    const [display, setDisplay] = useState(true);
     const [errorFlag, setErrorFlag] = useState(false);
-    const show = () => setDisplay(true);
-    const hide = () => setDisplay(false);
+    const [successFlag, setSuccessFlag] = useState(false);
+    const [loading, setLoading] = useState(false);
     const form = useRef();
-
+    const chatBody = useRef();
     const classes = useStyles();
 
-    function sendEmail(e) {
+    const show = () => {
+        setDisplay(true);
+
+        setTimeout(() => {
+            const element = document.getElementById("chat-body");
+            element.classList.add("extended");
+        }, 5);
+    };
+
+    const hide = () => {
+        const element = document.getElementById("chat-body");
+        element.classList.remove("extended");
+
+        setTimeout(() => {
+            setDisplay(false);
+            setSuccessFlag(false);
+            setErrorFlag(false);
+        }, 500);
+    };
+
+    async function sendEmail(e) {
         e.preventDefault(); //DO NOT REMOVE
 
-        //make this secrets
-        emailjs.sendForm("SERVICE_ID", "template_9wvlr67", form.current, "user_OHQz1Af5m5VBmoI8yMSsx").then(
+        setLoading(true);
+        setSuccessFlag(false);
+        setErrorFlag(false);
+
+        await emailjs.sendForm("service_wl3zbf6", "template_9wvlr67", form.current, "user_OHQz1Af5m5VBmoI8yMSsx").then(
             (result) => {
-                console.log(result.text);
+                console.log(result.text); //make the user know the form was sent
+                setSuccessFlag(true);
             },
             (error) => {
                 console.log(error.text);
+                setErrorFlag(true);
             }
         );
+
+        setLoading(false);
     }
 
-    function sendForm() {
-        const form = document.getElementById("contact");
-        form.submit();
-        //make the user know the form was sent
-        alert("your email was sent!");
-    }
+    useEffect(() => {
+        function closeModal(event) {
+            if (chatBody.current && !chatBody.current.contains(event.target)) {
+                hide();
+            }
+        }
+
+        document.addEventListener("mousedown", closeModal);
+        return () => {
+            document.removeEventListener("mousedown", closeModal);
+        };
+    }, [chatBody]);
 
     return (
         <ModalWrapper>
             <Bubble onClick={show}>?</Bubble>
             {display ? (
-                <ChatBody>
-                    <div class="container" onClick={hide}>
-                        <h4 className="form-disclaimer">Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
+                <ChatBody ref={chatBody} id="chat-body">
+                    <div className="container">
+                        <h4 className="form-disclaimer" onClick={hide}>
+                            Rellene el formulario a continuación y le contestaremos lo antes posible.
+                        </h4>
                         <div className={classes.offset}>
                             <form id="contact" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()} ref={form}>
-                                {/* Names of the elements must match with the params you are using in emailjs */}
-                                <TextField error={errorFlag} label="Nombre" placeholder="Nombre" variant="outlined" className={classes.inputs} helperText={"Campo obligatorio"} />
+                                <TextField
+                                    name="cus_name"
+                                    error={errorFlag}
+                                    label="Nombre"
+                                    placeholder="Nombre"
+                                    variant="outlined"
+                                    className={classes.inputs}
+                                    helperText={"Campo obligatorio"}
+                                />
                                 <TextField
                                     error={errorFlag}
                                     label="Correo Electronico"
@@ -111,11 +144,22 @@ export default function ChatSupport() {
                                     variant="outlined"
                                     className={classes.inputs}
                                     helperText={"Campo obligatorio"}
+                                    name="cus_email"
                                 />
-                                <TextField error={errorFlag} label="Mensaje" placeholder="Mensaje" variant="outlined" className={classes.inputs} helperText={"Campo obligatorio"} />
-                                <Button size="small" variant="contained" className={classes.submit} onClick={sendForm}>
-                                    Enviar
-                                </Button>
+                                <TextField
+                                    name="message"
+                                    error={errorFlag}
+                                    label="Mensaje"
+                                    placeholder="Mensaje"
+                                    variant="outlined"
+                                    className={classes.inputs}
+                                    helperText={"Campo obligatorio"}
+                                />
+                                <input disabled={loading} type="submit" value="Enviar" />
+                                <FeedbackWrapper>
+                                    {errorFlag && <span className="error">Hubo un problema, por favor vuelve a intentar en otro momento</span>}
+                                    {successFlag && <span className="success">Tu mensaje se envio exitosamente!</span>}
+                                </FeedbackWrapper>
                             </form>
                         </div>
                     </div>
