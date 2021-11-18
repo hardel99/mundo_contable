@@ -60,3 +60,43 @@
 .extended {
     bottom: 0px !important;
 }
+
+@media (max-width: 1025px) {
+    .container {
+        width: 90%;
+        max-width: 800px;
+    }
+
+    .form-disclaimer {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+
+    #contact input {
+        width: 380px;
+    }
+    .extended {
+        bottom: 50% !important;
+    }
+}
+
+@media (max-width: 769px) {
+    .container {
+        width: 100%;
+    }
+
+    #contact input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        transform: scale(0.7);
+    }
+
+    .form-disclaimer {
+        font-size: 1.2rem;
+        padding: 20px 10px;
+    }
+}

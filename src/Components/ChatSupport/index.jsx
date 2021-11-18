@@ -39,6 +39,15 @@ const ChatBody = styled.div`
     left: 1vw;
     z-index: 100;
     transition: all 0.5s ease-in-out;
+
+    @media (max-width: 1024px) {
+        left: 50%;
+        transform: translate(-50%, 30%);
+    }
+
+    @media (max-width: 550px) {
+        transform: translate(-50%, 40%);
+    }
 `;
 
 const useStyles = makeStyles({
@@ -57,6 +66,7 @@ const useStyles = makeStyles({
 export default function ChatSupport() {
     const [display, setDisplay] = useState(true);
     const [errorFlag, setErrorFlag] = useState(false);
+    const [error, setError] = useState("");
     const [successFlag, setSuccessFlag] = useState(false);
     const [loading, setLoading] = useState(false);
     const form = useRef();
@@ -69,7 +79,7 @@ export default function ChatSupport() {
         setTimeout(() => {
             const element = document.getElementById("chat-body");
             element.classList.add("extended");
-        }, 5);
+        }, 1);
     };
 
     const hide = () => {
@@ -80,40 +90,74 @@ export default function ChatSupport() {
             setDisplay(false);
             setSuccessFlag(false);
             setErrorFlag(false);
+            setError("");
         }, 500);
+    };
+
+    const validateEmail = (event) => {
+        if (
+            !event.target.value.match(
+                /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+            )
+        ) {
+            setError("Por favor verifique que la direccion de correo electronica sea correcta");
+        } else {
+            if (event.target.value.length === 0) {
+                setError("Campo obligatorio");
+            }
+            setError("");
+        }
+    };
+
+    const validateNotBlank = (event) => {
+        if (event.target.value.length === 0) {
+            setErrorFlag(true);
+        } else {
+            setErrorFlag(false);
+        }
     };
 
     async function sendEmail(e) {
         e.preventDefault(); //DO NOT REMOVE
 
         setLoading(true);
-        setSuccessFlag(false);
-        setErrorFlag(false);
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let mess = document.getElementById("message");
+        if (name.value.length > 0 && email.value.length > 0 && mess.value.length > 0) {
+            setSuccessFlag(false);
+            setErrorFlag(false);
 
-        await emailjs.sendForm("service_wl3zbf6", "template_9wvlr67", form.current, "user_OHQz1Af5m5VBmoI8yMSsx").then(
-            (result) => {
-                console.log(result.text); //make the user know the form was sent
-                setSuccessFlag(true);
-            },
-            (error) => {
-                console.log(error.text);
-                setErrorFlag(true);
-            }
-        );
+            await emailjs.sendForm("service_wl3zbf6", "template_9wvlr67", form.current, "user_OHQz1Af5m5VBmoI8yMSsx").then(
+                (result) => {
+                    console.log(result.text); //make the user know the form was sent
+                    setSuccessFlag(true);
+                },
+                (error) => {
+                    console.log(error.text);
+                    setErrorFlag(true);
+                }
+            );
+        } else {
+            setErrorFlag(true);
+            setError("Campo Obligatorio");
+        }
 
         setLoading(false);
     }
 
     useEffect(() => {
         function closeModal(event) {
-            if (chatBody.current && !chatBody.current.contains(event.target)) {
+            if ((chatBody.current && !chatBody.current.contains(event.target)) || (chatBody.current && event.key === "Escape")) {
                 hide();
             }
         }
 
         document.addEventListener("mousedown", closeModal);
+        document.addEventListener("keydown", closeModal);
         return () => {
             document.removeEventListener("mousedown", closeModal);
+            document.removeEventListener("keydown", closeModal);
         };
     }, [chatBody]);
 
@@ -123,9 +167,7 @@ export default function ChatSupport() {
             {display ? (
                 <ChatBody ref={chatBody} id="chat-body">
                     <div className="container">
-                        <h4 className="form-disclaimer" onClick={hide}>
-                            Rellene el formulario a continuación y le contestaremos lo antes posible.
-                        </h4>
+                        <h4 className="form-disclaimer">Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
                         <div className={classes.offset}>
                             <form id="contact" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()} ref={form}>
                                 <TextField
@@ -136,15 +178,19 @@ export default function ChatSupport() {
                                     variant="outlined"
                                     className={classes.inputs}
                                     helperText={"Campo obligatorio"}
+                                    onChange={validateNotBlank}
+                                    id="name"
                                 />
                                 <TextField
-                                    error={errorFlag}
+                                    error={error.length === 0 ? false : true}
                                     label="Correo Electronico"
                                     placeholder="Correo Electronico"
                                     variant="outlined"
                                     className={classes.inputs}
-                                    helperText={"Campo obligatorio"}
+                                    helperText={error}
                                     name="cus_email"
+                                    onChange={validateEmail}
+                                    id="email"
                                 />
                                 <TextField
                                     name="message"
@@ -154,8 +200,10 @@ export default function ChatSupport() {
                                     variant="outlined"
                                     className={classes.inputs}
                                     helperText={"Campo obligatorio"}
+                                    onChange={validateNotBlank}
+                                    id="message"
                                 />
-                                <input disabled={loading} type="submit" value="Enviar" />
+                                <input disabled={loading || errorFlag || error.length > 0} type="submit" value="Enviar" />
                                 <FeedbackWrapper>
                                     {errorFlag && <span className="error">Hubo un problema, por favor vuelve a intentar en otro momento</span>}
                                     {successFlag && <span className="success">Tu mensaje se envio exitosamente!</span>}
