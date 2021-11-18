@@ -71,6 +71,7 @@ export default function ChatSupport() {
     const [loading, setLoading] = useState(false);
     const form = useRef();
     const chatBody = useRef();
+    const bubble = useRef();
     const classes = useStyles();
 
     const show = () => {
@@ -148,7 +149,7 @@ export default function ChatSupport() {
 
     useEffect(() => {
         function closeModal(event) {
-            if ((chatBody.current && !chatBody.current.contains(event.target)) || (chatBody.current && event.key === "Escape")) {
+            if ((chatBody.current && event.target !== bubble.current && !chatBody.current.contains(event.target)) || (chatBody.current && event.key === "Escape")) {
                 hide();
             }
         }
@@ -163,7 +164,9 @@ export default function ChatSupport() {
 
     return (
         <ModalWrapper>
-            <Bubble onClick={show}>?</Bubble>
+            <Bubble onClick={show} ref={bubble}>
+                ?
+            </Bubble>
             {display ? (
                 <ChatBody ref={chatBody} id="chat-body">
                     <div className="container">
