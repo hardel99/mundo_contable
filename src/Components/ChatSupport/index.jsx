@@ -169,10 +169,10 @@ export default function ChatSupport() {
             </Bubble>
             {display ? (
                 <ChatBody ref={chatBody} id="chat-body">
-                    <div className="container">
+                    <div className="form_container">
                         <h4 className="form-disclaimer">Rellene el formulario a continuación y le contestaremos lo antes posible.</h4>
                         <div className={classes.offset}>
-                            <form id="contact" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()} ref={form}>
+                            <form id="contact_form" onSubmit={sendEmail} onClick={(e) => e.stopPropagation()} ref={form}>
                                 <TextField
                                     name="cus_name"
                                     error={errorFlag}
