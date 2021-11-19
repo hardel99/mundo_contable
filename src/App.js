@@ -19,6 +19,8 @@ import About from "./Components/DashboardTest/About";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
 import ChatSupport from "./Components/ChatSupport";
+import {FooterContainer} from "./Components/Footer/footer"
+import FormButton from "./Components/ContactForm/FormButton";
 
 const useStyles = makeStyles({
     container: {
@@ -48,11 +50,11 @@ function App() {
                             </Switch>
                         </div>
                     </PrivateRoute>
-
                     <Route exact path="/">
                         <GlobalStyle />
                         <Navbar />
                         <Hero />
+                        <FormButton/>
                         <section id="servicios">
                             <InfoSection />
                         </section>
@@ -65,6 +67,7 @@ function App() {
                         </section>
                         <PlanSection />
                         <ChatSupport />
+                        <FooterContainer/>
                     </Route>
                     <Route exact path="/forgotPassword" component={ForgotPassword} />
 

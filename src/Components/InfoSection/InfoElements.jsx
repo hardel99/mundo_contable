@@ -160,7 +160,5 @@ export const ImgApp = styled.img`
   @media screen and (max-width: 500px) {
     display:none;
     }
-
-
 `;
 

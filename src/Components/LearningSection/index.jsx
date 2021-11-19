@@ -300,7 +300,7 @@ function LearningSection() {
                             </CardActionArea>
                         </Card>
                     </CardContainer>
-                    <StyledButton className={btnLink} color="primary" variant="contained" disableElevation>
+                    <StyledButton href="https://aula.mundocontables.net/login/index.php" className={btnLink} color="primary" variant="contained" disableElevation>
                         Plataforma de cursos
                     </StyledButton>
                 </SwiperSlide>
