@@ -18,6 +18,7 @@ import Contact from "./Components/DashboardTest/Contact";
 import About from "./Components/DashboardTest/About";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
+import ChatSupport from "./Components/ChatSupport";
 import {FooterContainer} from "./Components/Footer/footer"
 import FormButton from "./Components/ContactForm/FormButton";
 
@@ -65,9 +66,9 @@ function App() {
                             <LearningSection />
                         </section>
                         <PlanSection />
+                        <ChatSupport />
                         <FooterContainer/>
                     </Route>
-
                     <Route exact path="/forgotPassword" component={ForgotPassword} />
 
                     <Route path="/" component={NotFound} />
