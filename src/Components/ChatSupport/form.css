@@ -1,4 +1,4 @@
-.container {
+.form_container {
     max-width: 330px;
     width: 100%;
     margin: 0 auto;
@@ -9,13 +9,13 @@
     padding-top: 40px;
 }
 
-#contact input {
+#contact_form input {
     width: 250px;
     background-color: white;
     border-radius: 3px;
 }
 
-#contact input[type="submit"] {
+#contact_form input[type="submit"] {
     width: 100%;
     background-color: #1a6e3e;
     height: auto;
@@ -28,12 +28,12 @@
     transition: all 0.2s ease-in-out;
 }
 
-#contact input[type="submit"]:hover {
+#contact_form input[type="submit"]:hover {
     background-color: #4e966d;
     letter-spacing: 1px;
 }
 
-#contact {
+#contact_form {
     margin-top: -60px;
     margin-bottom: 20px;
 }
@@ -72,7 +72,7 @@
         padding: 20px;
     }
 
-    #contact input {
+    #contact_form input {
         width: 380px;
     }
     .extended {
@@ -85,7 +85,7 @@
         width: 100%;
     }
 
-    #contact input {
+    #contact_form input {
         width: 300px;
     }
 }
