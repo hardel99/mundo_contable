@@ -3,8 +3,8 @@ import './button.css';
 
 export function Button() {
     return (
-            <button className='btn'>
-                Registrarse
+            <button className='btn_signup'>
+                Regitrarse
             </button>
     );
 }

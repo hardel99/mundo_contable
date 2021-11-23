@@ -247,8 +247,8 @@ li.mobile{
         border-bottom:none;
     }
 
-    button {
-        display: none;
+    .btn_signup {
+        display:none;
     }
 }
 

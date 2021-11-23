@@ -32,17 +32,25 @@ export const MapContainer = styled.div`
     z-index: 1;
     top: 50%;
     left: 50%;
-    width: 500px;
-    height: 500px;
-    transform: translate(-150%, -50%);
+    width: 100%;
+    height: 100%;
+    transform: translate(-180%, -50%);
     background-color: rgba(54, 216, 116, 0.8);
+    cursor: pointer;
     border-radius: 50%;
     transition: .8s;
+
+    @media screen and (max-width: 400px)
+    {
+        transform: translate(-160%, -50%);
+    }
+
     }
 
     &:hover:after{
         transform: translate(-50%, -50%);
         border-radius: 0;
+        background-color: rgba(54, 216, 116, 0.8);
     }
 
     img{
@@ -66,10 +74,20 @@ export const MapContainer = styled.div`
     z-index: 2;
     top: 50%;
     left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
     transform: translate(-2000px, -50%);
     transition: .6s;
     transition-timing-function: ease-in;
+    
+
+
+    @media screen and (max-width: 450px)
+    {
+        font-size: 1.5rem;
+    }
 }
 
     &:hover li{
@@ -79,7 +97,32 @@ export const MapContainer = styled.div`
 
 a{
     color: #fff;
+    padding: 2px;
+
+    text-decoration: none;
+  
+  display: inline-block;
+
+  &:after{
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  }
+
+    &:hover::after {
+        width: 100%; 
+  left: 0; 
+    }
 }
+
+
    
 `;
 
@@ -109,8 +152,9 @@ const MapModal = (props) => {
             <MapContainer >
                 <img src={MapaMc} alt="Mapa" />
                 <li>
-                 <a href="https://g.page/MundoContables?share" target="_blank"><FaLocationArrow className="iconlocation" /> </a>
-                </li>
+                <a href="https://g.page/MundoContables?share" target="_blank"><FaLocationArrow className="iconlocation" /> </a>
+                <a href="https://g.page/MundoContables?share" target="_blank">Ir al mapa</a>
+                </li>               
             </MapContainer>
 
             <DirectBox >
