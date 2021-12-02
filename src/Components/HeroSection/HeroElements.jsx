@@ -54,10 +54,9 @@ export const HeroItems = styled.div `
 
 export const HeroH1 = styled.h1`
  font-size: clamp(2.5rem, 10vw, 5rem); 
- /* Clamp is for responsive text without media queries although these sizes will not be the official ones*/
- /*  font-size: var(--h1-size); */ 
  margin-bottom:2rem;
- box-shadow: 0 3px var(--accent);
+ border-bottom: 3px solid var(--accent);
+
 `;
 
 export const HeroP = styled.p`

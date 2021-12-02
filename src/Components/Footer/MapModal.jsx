@@ -35,7 +35,7 @@ export const MapContainer = styled.div`
     width: 100%;
     height: 100%;
     transform: translate(-180%, -50%);
-    background-color: rgba(54, 216, 116, 0.8);
+    background-color: rgba(54, 216, 116, 0);
     cursor: pointer;
     border-radius: 50%;
     transition: .8s;
@@ -121,9 +121,6 @@ a{
   left: 0; 
     }
 }
-
-
-   
 `;
 
 export const Direct = styled.p`
