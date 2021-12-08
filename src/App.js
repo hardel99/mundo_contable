@@ -6,6 +6,7 @@ import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
+import {SliderData} from "./Components/HeroSection/SliderData"
 import Navbar from "./Components/Navbar/navbar";
 import InfoSection from "./Components/InfoSection";
 import LearningSection from "./Components/LearningSection";
@@ -21,6 +22,7 @@ import PlanSection from "./Components/Plans";
 import ChatSupport from "./Components/ChatSupport";
 import {FooterContainer} from "./Components/Footer/footer"
 import FormButton from "./Components/ContactForm/FormButton";
+
 
 const useStyles = makeStyles({
     container: {
@@ -53,7 +55,7 @@ function App() {
                     <Route exact path="/">
                         <GlobalStyle />
                         <Navbar />
-                        <Hero />
+                        <Hero slides={SliderData} />
                         <FormButton/>
                         <section id="servicios">
                             <InfoSection />

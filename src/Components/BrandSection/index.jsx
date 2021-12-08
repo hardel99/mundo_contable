@@ -34,7 +34,6 @@ function BrandSection() {
                width="100%"
                height="100%"
                controls
-               /*playing <- disabled because it still doesn't play at the correct moment */
               />
           </VideoWrapper>
         </Row1>
