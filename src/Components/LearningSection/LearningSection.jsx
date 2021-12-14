@@ -2,7 +2,7 @@ import styled from "styled-components";
 import "swiper/swiper-bundle.css";
 
 export const LearnSect = styled.div`
-    background-color: #ddd;
+    background-color: #f6f6fb;
     color: var(--black);
     padding: 10px 10px;
     width: 100%;

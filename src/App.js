@@ -8,7 +8,7 @@ import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
 import {SliderData} from "./Components/HeroSection/SliderData"
 import Navbar from "./Components/Navbar/navbar";
-import InfoSection from "./Components/InfoSection";
+import AppsSection from "./Components/AppsSection";
 import LearningSection from "./Components/LearningSection";
 import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
@@ -22,7 +22,6 @@ import PlanSection from "./Components/Plans";
 import ChatSupport from "./Components/ChatSupport";
 import {FooterContainer} from "./Components/Footer/footer"
 import FormButton from "./Components/ContactForm/FormButton";
-
 
 const useStyles = makeStyles({
     container: {
@@ -58,7 +57,7 @@ function App() {
                         <Hero slides={SliderData} />
                         <FormButton/>
                         <section id="servicios">
-                            <InfoSection />
+                            <AppsSection/>
                         </section>
                         <BrandSection />
                         <section id="nosotros">
