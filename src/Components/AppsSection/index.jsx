@@ -1,27 +1,17 @@
 import React from "react";
-import { Tabs, Tab, makeStyles} from "@material-ui/core"
+import { Tabs, Tab, makeStyles } from "@material-ui/core"
 import styled from "styled-components";
-import {AppSmsTab} from "./AppSmsTab"
+import { AppSmsTab } from "./AppSmsTab"
 import ProgramTab from "./ProgramTab"
 
-const useStyles = makeStyles((theme) => ( {
+const useStyles = makeStyles((theme) => ({
 
-  tabtitle:{
+  tabtitle: {
     [theme.breakpoints.down('xs')]: {
-      fontSize:"0.6rem",
+      fontSize: "0.6rem",
     }
   },
 
-  tabwraper:{
-    [theme.breakpoints.up('lg')]: {
-      /*display: "flex",
-      alignItems:"center",
-      justifyContent:"center",
-      border:"solid red 3px",
-       */
-    }
-    
-  }
 }));
 
 export const InfoSect = styled.div`
@@ -32,7 +22,6 @@ export const InfoSect = styled.div`
   height :100vh;
   position:relative;
   top:65px;  
-  /* Border transparent is a trick to keep child  well centered */
 
   @media screen and (max-width: 1000px) {
    padding:100px 80px;
@@ -52,12 +41,12 @@ export const TitleContainer = styled.div`
 
 @media screen and (min-width: 1600px) {
   width:100%;
-  //border:solid #55ff56;
   display:flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
   }
+
 `;
 
 export const TopLine = styled.div`
@@ -66,7 +55,6 @@ export const TopLine = styled.div`
   letter-spacing: 1.4px;
   margin-bottom: 16px;
   color: var(--blue);
-
 `;
 
 export const Heading = styled.h1`
@@ -78,12 +66,10 @@ export const Heading = styled.h1`
     line-height: 2;
   }
 
-
 `;
 
 export const TabContainer = styled.div`
 padding-bottom:20px;
-//border:solid #ff33dd 3px;
 
 @media screen and (min-width: 1600px) {
   padding-bottom:50px;
@@ -94,41 +80,42 @@ padding-bottom:20px;
   }
 
 `
-//-----------------------------------
+
 const AppsSection = () => {
 
-    const classes = useStyles();
+  const classes = useStyles();
 
-    const [SelectedTab, setSelectedTab] = React.useState(0);
+  const [SelectedTab, setSelectedTab] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-        setSelectedTab(newValue);
-    };
+  const handleChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
 
-    return (
-        <>
-        <InfoSect>
-          <TitleContainer>
-            <TopLine >Mundo Contable </TopLine>
-            <Heading > Nuestras Apps para emprededores </Heading>
-          </TitleContainer>
-            <TabContainer>
-                    <Tabs 
-                    value={SelectedTab} 
-                    onChange={handleChange} 
-                    indicatorColor="primary"
-                    className={classes.tabwraper}
-                    >
-                        <Tab  className={classes.tabtitle} label="App Mundo Mensajes"  />
-                        <Tab  className={classes.tabtitle} label="Programa Contable" />
-                        
-                    </Tabs>
-            </TabContainer>
-            {SelectedTab === 0 && <AppSmsTab />}
-            {SelectedTab === 1 && <ProgramTab />}
-        </InfoSect>
-        </>
-    );
+  return (
+    <>
+      <InfoSect>
+        <TitleContainer>
+          <TopLine >Mundo Contable </TopLine>
+          <Heading > Nuestras Apps para emprededores </Heading>
+        </TitleContainer>
+        <TabContainer>
+
+          <Tabs
+            value={SelectedTab}
+            onChange={handleChange}
+            indicatorColor="primary"
+            className={classes.tabwraper}
+          >
+            <Tab className={classes.tabtitle} label="App Mundo Mensajes" />
+            <Tab className={classes.tabtitle} label="Programa Contable" />
+          </Tabs>
+
+        </TabContainer>
+        {SelectedTab === 0 && <AppSmsTab />}
+        {SelectedTab === 1 && <ProgramTab />}
+      </InfoSect>
+    </>
+  );
 };
 
 export default AppsSection;
