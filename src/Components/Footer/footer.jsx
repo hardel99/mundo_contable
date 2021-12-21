@@ -64,7 +64,7 @@ export const Column = styled.div`
 `
 
 export const Link = styled.div`
-  color: #fff;
+  color: #c2b98c;
   margin-bottom: 20px;
   font-size: 16px;
   text-decoration: none;
@@ -72,6 +72,7 @@ export const Link = styled.div`
 
   &:hover {
       color: var(--accent);
+      font-size: 16.3px;
       transition: 200ms ease-in;
   }
 
