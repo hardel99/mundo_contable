@@ -6,23 +6,72 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import { withRouter, Redirect, } from "react-router-dom";
+import SmsNavbar from "./SmsNavbar"
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import TextsmsIcon from '@material-ui/icons/Textsms';
+import PaymentIcon from '@material-ui/icons/Payment';
+import ExitToApp from '@material-ui/icons/ExitToApp';
+import InfoIcon from '@material-ui/icons/Info';
+import { withRouter, Redirect, useLocation, } from "react-router-dom";
 import { useAuth } from "../../app/auth/AuthContext";
 import { auth } from "../../app/auth/firebase";
 
+const drawerWidth = 200
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     drawer: {
-        width: "190px",
-    },
-});
+        width: drawerWidth,
+        height: "100vh",
+        //border: "solid #f39820 3px",
+        
+        [theme.breakpoints.down("sm")]: {
+            width: "50px",
+        },
 
+    },
+
+    list: {
+        //border:"solid #212b5a 3px",
+        color: '#fff',
+        marginTop: theme.spacing(8),
+    },
+
+    listButtons: {
+        background: '#212b5a',
+        marginTop: theme.spacing(1),
+        '&:hover': {
+            background: '#222638'
+        }
+    },
+
+    drawerPaper: {
+        width: drawerWidth,
+        background: '#1f2a5c',  
+        
+        [theme.breakpoints.down("sm")]: {
+            width: "50px",
+        },
+    },
+
+    iconItem: {
+        color: '#fff',
+
+        [theme.breakpoints.down("xs")]: {
+            fontSize:"18px",
+        },
+    },
+
+    listText:{
+        [theme.breakpoints.down("sm")]: {
+            display:"none",
+        },
+    },
+
+}));
 const Drawer = (props) => {
     const { history } = props;
     const classes = useStyles();
+
     const { logout } = useAuth();
 
     const CerrarSesion = () => {
@@ -31,42 +80,57 @@ const Drawer = (props) => {
 
     }
 
+    //***********************************************
+
     const itemsList = [
         {
-            text: "Home",
-            icon: <InboxIcon />,
-            onClick: () => history.push("/app/home"),
+            text: "Mensajes",
+            icon: <TextsmsIcon className={classes.iconItem} />,
+            onClick: () => history.push("/app/mensajes"),
         },
         {
-            text: "About",
-            icon: <MailIcon />,
-            onClick: () => history.push("/app/about"),
+            text: "Planes",
+            icon: <PaymentIcon className={classes.iconItem} />,
+            onClick: () => history.push("/app/plans"),
         },
         {
-            text: "Contact",
-            icon: <MailIcon />,
-            onClick: () => history.push("/app/contact"),
+            text: "Informacion",
+            icon: <InfoIcon className={classes.iconItem} />,
+            onClick: () => history.push("/app/informacion"),
         },
         {
             text: "Salir",
-            icon: <MailIcon />,
+            icon: <ExitToApp className={classes.iconItem} />,
             onClick: () => CerrarSesion(),
         },
     ];
+
     return (
-        <MUIDrawer variant="permanent" className={classes.drawer}>
-            <List>
-                {itemsList.map((item, index) => {
-                    const { text, icon, onClick } = item;
-                    return (
-                        <ListItem button key={text} onClick={onClick}>
-                            {icon && <ListItemIcon>{icon}</ListItemIcon>}
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    );
-                })}
-            </List>
-        </MUIDrawer>
+        <>
+            <MUIDrawer
+                variant="permanent"
+                className={classes.drawer}
+                anchor="left"
+                classes={{ paper: classes.drawerPaper }}
+            >
+                        <SmsNavbar />
+                <List className={classes.list}>
+                    {itemsList.map((item, index) => {
+                        const { text, icon, onClick } = item;
+                        return (
+                            <ListItem
+                                button key={text}
+                                onClick={onClick}
+                                className={classes.listButtons}
+                            >
+                                {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                <ListItemText primary={text} className={classes.listText}/>
+                            </ListItem>
+                        );
+                    })}
+                </List>
+            </MUIDrawer>
+        </>
     );
 
 };
