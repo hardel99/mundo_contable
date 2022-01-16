@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
     Drawer as MUIDrawer,
     ListItem,
@@ -12,8 +12,7 @@ import TextsmsIcon from '@material-ui/icons/Textsms';
 import PaymentIcon from '@material-ui/icons/Payment';
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import InfoIcon from '@material-ui/icons/Info';
-import { withRouter, Redirect, useLocation, } from "react-router-dom";
-import { useAuth } from "../../app/auth/AuthContext";
+import { withRouter} from "react-router-dom";
 import { auth } from "../../app/auth/firebase";
 
 const drawerWidth = 200
@@ -22,7 +21,6 @@ const useStyles = makeStyles(theme => ({
     drawer: {
         width: drawerWidth,
         height: "100vh",
-        //border: "solid #f39820 3px",
         
         [theme.breakpoints.down("sm")]: {
             width: "50px",
@@ -31,7 +29,6 @@ const useStyles = makeStyles(theme => ({
     },
 
     list: {
-        //border:"solid #212b5a 3px",
         color: '#fff',
         marginTop: theme.spacing(8),
     },
@@ -41,7 +38,11 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         '&:hover': {
             background: '#222638'
-        }
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            paddingLeft:"25%",
+        },
     },
 
     drawerPaper: {
@@ -68,19 +69,17 @@ const useStyles = makeStyles(theme => ({
     },
 
 }));
+
 const Drawer = (props) => {
     const { history } = props;
     const classes = useStyles();
 
-    const { logout } = useAuth();
 
     const CerrarSesion = () => {
         auth.signOut()
         history.push("/");
 
     }
-
-    //***********************************************
 
     const itemsList = [
         {

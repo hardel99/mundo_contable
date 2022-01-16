@@ -11,6 +11,7 @@ import {
     Typography,
     makeStyles
 } from "@material-ui/core";
+
 import TelegramIcon from '@material-ui/icons/Telegram';
 
 const titles = {
@@ -23,10 +24,6 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: "flex",
         justifyContent:"space-between",
-    },
-
-    appbar: {
-        //border: "solid #20f32b 3px",
     },
 
     navtitle: {
@@ -47,10 +44,7 @@ const SmsNavbar = () => {
      }, [location.pathname]);
      
      return(
-        <AppBar
-        position="fixed"
-        className={classes.appbar}
-    >
+        <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
             <Typography 
             variant="h6" 
@@ -63,7 +57,6 @@ const SmsNavbar = () => {
             </div>
         </Toolbar>
     </AppBar>
-
      );
 }
 

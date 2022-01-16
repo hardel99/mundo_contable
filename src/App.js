@@ -14,7 +14,6 @@ import NotFound from "./Components/inexistentPage";
 import BrandSection from "./Components/BrandSection";
 import AboutSection from "./Components/AboutUs/AboutSection";
 import Drawer from "./Components/DashboardTest/Drawer";
-import Layout from "./Components/DashboardTest/Layout";
 import Mensajes from "./Components/DashboardTest/Mensajes";
 import Informacion from "./Components/DashboardTest/Informacion";
 import Plans from "./Components/DashboardTest/Plans";

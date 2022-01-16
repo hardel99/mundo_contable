@@ -7,7 +7,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent:"center",
     alignItems:"center",
-    //border:"solid red 3px"
   }
 }));
 
