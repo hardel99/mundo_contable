@@ -160,7 +160,7 @@ padding: 0 1rem;
 export const HeroH1 = styled.h1`
  font-size: clamp(2.5rem, 10vw, 5rem);  
  margin-bottom:2rem;
- border-bottom: solid 3px  var(--accent);
+ border-bottom: solid 3px var(--accent);
 `;
 
 export const HeroP = styled.p`

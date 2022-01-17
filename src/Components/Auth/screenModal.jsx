@@ -117,7 +117,6 @@ export default function Modal({ showModal, setShowModal, action, setAction }) {
             duration: 250,
         },
         opacity: showModal ? 1 : 0,
-        transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
     });
 
     const closeModal = (e) => {
