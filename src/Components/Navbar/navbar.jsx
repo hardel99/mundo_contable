@@ -105,7 +105,7 @@ function Navbar() {
                     </button>
                 </li>
                 <button className="btn_signup" onClick={() => { signUpClicked(); }}> 
-                    Registrasrse
+                    Registrarse
                 </button>
                 <Modal showModal={showModal} setShowModal={setShowModal} action={action} setAction={setAction}/>
             </nav>
