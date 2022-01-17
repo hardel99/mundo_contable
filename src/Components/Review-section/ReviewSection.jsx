@@ -4,15 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Review.css";
 import { Avatar } from "@material-ui/core";
-import image from "../../images/salesman-1.jpg";
+import fondo from "../../images/waves.svg";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
+//Buttons of Prev/Next slide...
 const PreviusBtn = (props) => {
     console.log(props);
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <ArrowBackIos style={{ color: " #01bc9a", fontSize: "45px" }} />
+            <ArrowBackIos style={{ color: " rgb(38 58 129)", fontSize: "45px" }} />
         </div>
     );
 };
@@ -21,27 +22,47 @@ const NextBtn = (props) => {
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <ArrowForwardIos style={{ color: " #01bc9a", fontSize: "45px" }} />
+            <ArrowForwardIos style={{ color: "rgb(38 58 129)", fontSize: "45px" }} />
         </div>
     );
 };
+
+//Slide section
 const ReviewSection = () => {
     return (
         <div
             className="testimonial"
             style={{
+                background: `url(${fondo})`,
                 display: "flex",
                 justifyContent: "center",
                 marginTop: 50,
+                marginBottom: 65,
+                padding: 20,
             }}
         >
-            <div style={{ width: "50%", textAlign: "center" }}>
-                <h1 style={{ marginBottom: 50, fontfamily: "Nunito Sans", color: " #2e2e36" }}>
+            <div
+                style={{
+                    width: "50%",
+                    textAlign: "center",
+                    paddingBottom: 50,
+                    background: "#3f8db991",
+                    borderRadius: 20,
+                }}
+            >
+                <h1
+                    style={{
+                        marginBottom: 50,
+                        fontfamily: "Nunito Sans",
+                        color: " #2e2e36",
+                        padding: 5,
+                    }}
+                >
                     {" "}
                     Lo que la gente piensa de nuestros servicios{" "}
                 </h1>
-                <Slider prevArrow={<PreviusBtn />} nextArrow={<NextBtn />} dots>
-                    <CardFirst img="https://www.tutorialrepublic.com/examples/images/clients/2.jpg" />
+                <Slider prevArrow={<PreviusBtn />} nextArrow={<NextBtn />} dots autoplay={{ autoplaySpeed: 2000 }}>
+                    <CardFirst img="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" />
                     <CardSecond img="https://www.tutorialrepublic.com/examples/images/clients/2.jpg" />
                     <CardThird img="https://www.tutorialrepublic.com/examples/images/clients/3.jpg" />
                     <CardFourth img="https://www.tutorialrepublic.com/examples/images/clients/1.jpg" />
@@ -51,6 +72,8 @@ const ReviewSection = () => {
         </div>
     );
 };
+
+//This is each text comment in the section
 const CardFirst = (img) => {
     return (
         <div
@@ -59,7 +82,8 @@ const CardFirst = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -82,7 +106,7 @@ const CardFirst = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Roxana Martinez
@@ -100,7 +124,8 @@ const CardSecond = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -123,7 +148,7 @@ const CardSecond = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Tony Antony
@@ -141,7 +166,9 @@ const CardThird = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                padding: "20px 20px 20px",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -161,7 +188,7 @@ const CardThird = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Melisa Ferdinand
@@ -179,7 +206,8 @@ const CardFourth = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -202,7 +230,7 @@ const CardFourth = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Jessica Sutton
@@ -220,7 +248,8 @@ const CardFifth = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -244,7 +273,7 @@ const CardFifth = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Mark Adams, Web Developer
@@ -262,7 +291,8 @@ const CardSixt = (img) => {
                 alignItems: "center",
                 flexDirection: "column",
                 textAlign: "center",
-                color: "gray",
+                color: "#16191c",
+                padding: 10,
             }}
         >
             <Avatar
@@ -285,7 +315,7 @@ const CardSixt = (img) => {
                 <span
                     style={{
                         fontWeight: 500,
-                        color: " #01bc9a",
+                        color: " rgb(38 58 129)",
                     }}
                 >
                     Scarlett Hugo
