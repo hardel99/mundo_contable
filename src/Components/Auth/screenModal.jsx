@@ -16,7 +16,6 @@ const Background = styled.div`
     align-items: center;
 `;
 
-//la cosita donde va el contenido del login
 const ModalWrapper = styled.div`
     width: 834px;
     height: 600px;

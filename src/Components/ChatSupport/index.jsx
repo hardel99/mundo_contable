@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { RiMessage2Fill} from 'react-icons/ri'
 import emailjs from "emailjs-com";
 import "./form.css";
 
@@ -15,7 +16,7 @@ const FeedbackWrapper = styled.div`
 `;
 
 const Bubble = styled.div`
-    background-color: #727bcc;
+    background-color: var(--green);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -26,7 +27,11 @@ const Bubble = styled.div`
     color: white;
     font-weight: bold;
     line-height: 60px;
-    font-size: 30px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 
     &:hover {
         cursor: pointer;
@@ -165,7 +170,7 @@ export default function ChatSupport() {
     return (
         <ModalWrapper>
             <Bubble onClick={show} ref={bubble}>
-                ?
+            <RiMessage2Fill />
             </Bubble>
             {display ? (
                 <ChatBody ref={chatBody} id="chat-body">

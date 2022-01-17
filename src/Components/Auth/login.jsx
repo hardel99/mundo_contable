@@ -19,7 +19,7 @@ const Login = () => {
             setError("");
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
-            history.push("/app/home");
+            history.push("/app/mensajes");
         } catch {
             setError("Parece que hubo un error, por favor intenta de nuevo");
         }
