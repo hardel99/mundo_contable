@@ -12,7 +12,7 @@ import TextsmsIcon from '@material-ui/icons/Textsms';
 import PaymentIcon from '@material-ui/icons/Payment';
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import InfoIcon from '@material-ui/icons/Info';
-import { withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { auth } from "../../app/auth/firebase";
 
 const drawerWidth = 200
@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     drawer: {
         width: drawerWidth,
         height: "100vh",
-        
+
         [theme.breakpoints.down("sm")]: {
             width: "50px",
         },
@@ -41,14 +41,14 @@ const useStyles = makeStyles(theme => ({
         },
 
         [theme.breakpoints.down("sm")]: {
-            paddingLeft:"25%",
+            paddingLeft: "25%",
         },
     },
 
     drawerPaper: {
         width: drawerWidth,
-        background: '#1f2a5c',  
-        
+        background: '#1f2a5c',
+
         [theme.breakpoints.down("sm")]: {
             width: "50px",
         },
@@ -58,16 +58,15 @@ const useStyles = makeStyles(theme => ({
         color: '#fff',
 
         [theme.breakpoints.down("xs")]: {
-            fontSize:"18px",
+            fontSize: "18px",
         },
     },
 
-    listText:{
+    listText: {
         [theme.breakpoints.down("sm")]: {
-            display:"none",
+            display: "none",
         },
     },
-
 }));
 
 const Drawer = (props) => {
@@ -112,7 +111,7 @@ const Drawer = (props) => {
                 anchor="left"
                 classes={{ paper: classes.drawerPaper }}
             >
-                        <SmsNavbar />
+                <SmsNavbar />
                 <List className={classes.list}>
                     {itemsList.map((item, index) => {
                         const { text, icon, onClick } = item;
@@ -123,7 +122,7 @@ const Drawer = (props) => {
                                 className={classes.listButtons}
                             >
                                 {icon && <ListItemIcon>{icon}</ListItemIcon>}
-                                <ListItemText primary={text} className={classes.listText}/>
+                                <ListItemText primary={text} className={classes.listText} />
                             </ListItem>
                         );
                     })}

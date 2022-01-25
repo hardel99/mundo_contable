@@ -7,30 +7,41 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import CountrySelect from "./ToolComponents/CountryTextField";
-
+import CountrySelect from "./ToolComponents/CountrySelect";
+import InputPhone from "./ToolComponents/InputPhone";
+import TextArea from "./ToolComponents/TextArea";
 
 const useStyles = makeStyles(theme => ({
   smsPage: {
     width: "100%",
     display: "flex",
     justifyContent: "start",
-    flexDirection: "column",
-    padding: "140px 100px",
-  },
-  smsContainer:{
-    width: "800px",
+    padding: "120px 80px",
 
-    '& h1':{
-      marginBottom: theme.spacing(2),
-    },
-    '& p':{
-      marginBottom: theme.spacing(2),
+    [theme.breakpoints.down("md")]: {
+      padding: "100px 50px",
     },
   },
-  stepperbox:{
+
+  smsContainer: {
+    width: "700px",
+    
+    '& h1': {
+      marginBottom: theme.spacing(2),
+    },
+    '& p': {
+      marginBottom: theme.spacing(2),
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      width: "600px",
+    }
+
+  },
+
+  stepperbox: {
     background: "#F6F6FB",
-    borderRadius:"10px",
+    borderRadius: "10px",
   },
   button: {
     marginTop: theme.spacing(1),
@@ -44,14 +55,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//getSteps contain the Step titles
 function getSteps() {
   return [
     <b>Seleccionar código postal.</b>,
-    <b>Crear lista de contactos</b>,
+    <b>Digitar numero telefonico</b>,
     <b>Escribir mensaje</b>
   ];
 }
 
+//getStepContent contain the sms components 
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -63,13 +76,14 @@ function getStepContent(step) {
     case 1:
       return (
         <>
-          <h1>(._.)</h1>
-          <input type="tel" className="tel" />
+          <InputPhone>
+
+          </InputPhone>
         </>
       ); case 2:
       return (
         <>
-          <h1>(∩ಠ-ಠ)⊃━☆ﾟ.*･｡ﾟ</h1>
+          <TextArea></TextArea>
         </>
       ); default:
       return 'Unknown step';
@@ -133,14 +147,13 @@ const Mensajes = () => {
                 </StepContent>
               </Step>
             ))}
-          </Stepper>
-
+          </Stepper>        
           {activeStep === steps.length && (
             <Paper square elevation={0}
               className={classes.resetContainer}>
               <Typography> (っ▀¯▀)つ ¡Su mensaje ha sido enviado con éxito! </Typography>
               <Button onClick={handleReset} className={classes.button}>
-                Reiniciar
+                Volver
               </Button>
             </Paper>
           )}
