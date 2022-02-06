@@ -6,7 +6,7 @@ import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
-import {SliderData} from "./Components/HeroSection/SliderData"
+import { SliderData } from "./Components/HeroSection/SliderData"
 import Navbar from "./Components/Navbar/navbar";
 import AppsSection from "./Components/AppsSection";
 import LearningSection from "./Components/LearningSection";
@@ -20,10 +20,10 @@ import Plans from "./Components/DashboardTest/Plans";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
 import ChatSupport from "./Components/ChatSupport";
-import {FooterContainer} from "./Components/Footer/footer"
+import { FooterContainer } from "./Components/Footer/footer"
 import FormButton from "./Components/ContactForm/FormButton";
 
-const useStyles = makeStyles( theme =>({
+const useStyles = makeStyles(theme => ({
     container: {
         display: "flex",
         background: '#fff',
@@ -47,7 +47,6 @@ function App() {
                                 <Route exact path="/app/mensajes" render={(props) => <Mensajes {...props} />} />
                                 <Route exact path="/app/informacion" render={(props) => <Informacion {...props} />} />
                                 <Route exact path="/app/plans" render={(props) => <Plans {...props} />} />
-
                                 <Route path="/app/" component={NotFound} />
                             </Switch>
                         </div>
@@ -56,9 +55,9 @@ function App() {
                         <GlobalStyle />
                         <Navbar />
                         <Hero slides={SliderData} />
-                        <FormButton/>
+                        <FormButton />
                         <section id="servicios">
-                            <AppsSection/>
+                            <AppsSection />
                         </section>
                         <BrandSection />
                         <section id="nosotros">
@@ -69,7 +68,7 @@ function App() {
                         </section>
                         <PlanSection />
                         <ChatSupport />
-                        <FooterContainer/>
+                        <FooterContainer />
                     </Route>
                     <Route exact path="/forgotPassword" component={ForgotPassword} />
 

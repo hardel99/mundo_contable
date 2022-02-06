@@ -6,6 +6,15 @@ const useStyles = makeStyles(theme => ({
     textArea: {
         width: "300px",
         marginTop: "15px",
+
+        [theme.breakpoints.down("sm")]: {
+            width: "230px",
+          },
+
+        [theme.breakpoints.up("xl")]: {
+            fontSize:"1.5rem",
+            width: "400px",
+          },
     },
 }));
 
@@ -26,7 +35,7 @@ const TextArea = () => {
             <TextField
                 className={clasess.textArea}
                 multiline
-                rows={4}
+                rows={5}
                 label="Escribir"
                 inputProps={{
                     maxlength: WordsLimit

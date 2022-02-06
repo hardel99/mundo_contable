@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import CountrySelect from "./ToolComponents/CountrySelect";
 import InputPhone from "./ToolComponents/InputPhone";
 import TextArea from "./ToolComponents/TextArea";
+import AdComponent from "./ToolComponents/AdComponent";
 
 const useStyles = makeStyles(theme => ({
   smsPage: {
@@ -17,10 +18,28 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "start",
     padding: "120px 80px",
+    //border:"solid #d83860 2px",
 
     [theme.breakpoints.down("md")]: {
       padding: "100px 50px",
+      //border:"solid #38d880 2px",
     },
+
+    [theme.breakpoints.down("sm")]: {
+      padding: "80px 30px",
+      //border:"solid #9d38d8 2px",
+    },
+
+    
+    [theme.breakpoints.down("xs")]: {
+      padding: "70px 20px",
+    },
+
+    [theme.breakpoints.up("xl")]: {
+      padding: "150px 80px",
+      border:"solid #3878d8 2px",
+    },
+
   },
 
   smsContainer: {
@@ -28,35 +47,79 @@ const useStyles = makeStyles(theme => ({
     
     '& h1': {
       marginBottom: theme.spacing(2),
+
+      [theme.breakpoints.up("xl")]: {
+        fontSize:"3.5rem",
+      },
+
+      [theme.breakpoints.down("xs")]: {
+        fontSize:"1.5rem",
+      },
+  
     },
     '& p': {
       marginBottom: theme.spacing(2),
+
+      [theme.breakpoints.up("xl")]: {
+        marginBottom: theme.spacing(4),
+        fontSize:"1.5rem",
+      },
+
+    [theme.breakpoints.down("xs")]: {
+      fontSize:"0.8rem",
+      width: "320px",
+    },
+
     },
 
     [theme.breakpoints.down("sm")]: {
       width: "600px",
-    }
+    },
+    
+    [theme.breakpoints.up("xl")]: {
+      width: "1000px",
+    },
 
   },
 
   stepperbox: {
     background: "#F6F6FB",
     borderRadius: "10px",
+
+    [theme.breakpoints.down("xs")]: {
+      width: "350px",
+    },
+
   },
+  
   button: {
     marginTop: theme.spacing(1),
     marginRight: theme.spacing(1),
+
+    [theme.breakpoints.up("xl")]: {
+      marginTop: theme.spacing(0),
+      fontSize:"0.8rem",
+    },
+
   },
+
   actionsContainer: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
   },
   resetContainer: {
     padding: theme.spacing(3),
+  },
+
+  ad:{
+    width:"100px",
+    height:"80px",
+    border:"solid red 2px",
   },
 }));
 
 //getSteps contain the Step titles
 function getSteps() {
+
   return [
     <b>Seleccionar código postal.</b>,
     <b>Digitar numero telefonico</b>,
@@ -122,7 +185,7 @@ const Mensajes = () => {
           <Stepper activeStep={activeStep} orientation="vertical" className={classes.stepperbox}>
             {steps.map((label, index) => (
               <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+                <StepLabel >{label}</StepLabel>
                 <StepContent>
                   <Typography>{getStepContent(index)}</Typography>
                   <div className={classes.actionsContainer}>
@@ -147,7 +210,10 @@ const Mensajes = () => {
                 </StepContent>
               </Step>
             ))}
-          </Stepper>        
+          </Stepper>    
+          
+          <AdComponent className={classes.ad} />
+
           {activeStep === steps.length && (
             <Paper square elevation={0}
               className={classes.resetContainer}>

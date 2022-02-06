@@ -11,20 +11,53 @@ const useStyles = theme => ({
     },
     select_box: {
         margin: theme.spacing(1),
-        width: "60px",
+        width: "50px",
         height: "40px",
+
+        [theme.breakpoints.down("sm")]: {
+            width: "40px",
+            height: "30px",
+        },
+
+        [theme.breakpoints.up("xl")]: {
+            width: "80px",
+        },
+
         "& select": {
             marginLeft: theme.spacing(2),
             height: "40px",
             position: "absolute",
             border: "none",
             outline: "none",
+
+            [theme.breakpoints.down("sm")]: {
+                height: "30px",
+                width: "140px",
+                marginLeft: theme.spacing(1),
+            },
+
+
+            [theme.breakpoints.up("xl")]: {
+                height: "60px",
+                fontSize:"1.5rem",
+              },
         }
     },
     flag_img: {
-        width: "60px",
+        width: "50px",
         height: "40px",
         position: "asolute",
+
+        [theme.breakpoints.down("sm")]: {
+            width: "40px",
+            height: "30px",
+        },
+
+        [theme.breakpoints.up("xl")]: {
+            width: "70px",
+            height: "50px",
+          },
+
     },
 })
 

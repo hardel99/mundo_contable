@@ -8,6 +8,11 @@ const useStyles = makeStyles(theme => ({
             border: "none",
             outline: "none",
             padding: "20px",
+
+            [theme.breakpoints.up("xl")]: {
+              height: "50px",
+              fontSize:"1.2rem",
+            },
   }
 }));
 
