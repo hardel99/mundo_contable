@@ -36,15 +36,17 @@ const ReviewSection = () => {
                 background: `url(${fondo})`,
                 display: "flex",
                 justifyContent: "center",
-                marginTop: 50,
-                marginBottom: 65,
+                marginTop: 10,
+                marginBottom: 0,
                 padding: 20,
+                paddingBottom: 100,
             }}
         >
             <div
                 style={{
                     width: "50%",
                     textAlign: "center",
+                    paddingTop: 20,
                     paddingBottom: 50,
                     background: "#3f8db991",
                     borderRadius: 20,
@@ -98,10 +100,7 @@ const CardFirst = (img) => {
                 }}
             />
             <p>"Me encanta"</p>
-            <p>
-                Les animo a que sigan trabajando de esta manera. Pensando en el cliente es como se camina hacia el exito
-                prefesional
-            </p>
+            <p>Les animo a que sigan trabajando de esta manera. Pensando en el cliente es como se camina hacia el exito prefesional</p>
             <p style={{ fontStyle: "italic", marginTop: 25 }}>
                 <span
                     style={{
@@ -141,8 +140,8 @@ const CardSecond = (img) => {
             />
             <p>"Estamos Felices"</p>
             <p>
-                Decidimos confiar nuestro asesoramiento fiscal y contable a MUNDO CONTABLES, nunca pensamos el acierto y
-                las ventajas que nos iba a aportar el contar con un grupo profesional tan eficaz.
+                Decidimos confiar nuestro asesoramiento fiscal y contable a MUNDO CONTABLES, nunca pensamos el acierto y las ventajas que nos iba a aportar el contar con un grupo
+                profesional tan eficaz.
             </p>
             <p style={{ fontStyle: "italic", marginTop: 25 }}>
                 <span
@@ -222,10 +221,7 @@ const CardFourth = (img) => {
                 }}
             />
             <p>"Muy profesionales"</p>
-            <p>
-                El sistema de Mundo Contables es una oferta competitiva en cuanto a funcionalidad, flexibilidad y
-                escalabilidad.
-            </p>
+            <p>El sistema de Mundo Contables es una oferta competitiva en cuanto a funcionalidad, flexibilidad y escalabilidad.</p>
             <p style={{ fontStyle: "italic", marginTop: 25 }}>
                 <span
                     style={{
@@ -265,9 +261,8 @@ const CardFifth = (img) => {
             />
             <p>"Un Sistema Confiable"</p>
             <p>
-                La implantacion del sistema de gestion empresarial nos permitio aumentar la calidad y seguridad de
-                lainformacion, generar informes con mayor oportunidad, disminuir costos por la reduccion de operaciones
-                y papeleria.
+                La implantacion del sistema de gestion empresarial nos permitio aumentar la calidad y seguridad de lainformacion, generar informes con mayor oportunidad, disminuir
+                costos por la reduccion de operaciones y papeleria.
             </p>
             <p style={{ fontStyle: "italic", marginTop: 25 }}>
                 <span
@@ -307,10 +302,7 @@ const CardSixt = (img) => {
                 }}
             />
             <p>"Talleres Profesionales Online"</p>
-            <p>
-                Gracias por el curso! Durante el fin de semana he estado releyendo los apuntes e intentando aplicar los
-                recomendaciones.
-            </p>
+            <p>Gracias por el curso! Durante el fin de semana he estado releyendo los apuntes e intentando aplicar los recomendaciones.</p>
             <p style={{ fontStyle: "italic", marginTop: 25 }}>
                 <span
                     style={{
