@@ -6,7 +6,7 @@ import ForgotPassword from "./Components/Auth/restorePass";
 import PrivateRoute from "./app/auth/PrivateRoute";
 import { GlobalStyle } from "./Components/GlobalStyles";
 import Hero from "./Components/HeroSection";
-import { SliderData } from "./Components/HeroSection/SliderData"
+import { SliderData } from "./Components/HeroSection/SliderData";
 import Navbar from "./Components/Navbar/navbar";
 import AppsSection from "./Components/AppsSection";
 import LearningSection from "./Components/LearningSection";
@@ -19,14 +19,15 @@ import Informacion from "./Components/DashboardTest/Informacion";
 import Plans from "./Components/DashboardTest/Plans";
 import { makeStyles } from "@material-ui/core/styles";
 import PlanSection from "./Components/Plans";
+import ReviewSection from "./Components/Review-section/ReviewSection";
 import ChatSupport from "./Components/ChatSupport";
-import { FooterContainer } from "./Components/Footer/footer"
+import { FooterContainer } from "./Components/Footer/footer";
 import FormButton from "./Components/ContactForm/FormButton";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     container: {
         display: "flex",
-        background: '#fff',
+        background: "#fff",
         //border: "solid #20f32b 3px",
     },
 }));
@@ -67,6 +68,7 @@ function App() {
                             <LearningSection />
                         </section>
                         <PlanSection />
+                        <ReviewSection />
                         <ChatSupport />
                         <FooterContainer />
                     </Route>
