@@ -1,9 +1,9 @@
 import React, {
     useEffect,
     useState
- } from "react";
+} from "react";
 
- import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import {
     AppBar,
@@ -15,20 +15,21 @@ import {
 import TelegramIcon from '@material-ui/icons/Telegram';
 
 const titles = {
-    "/app/mensajes":"Mensajes",
+    "/app/mensajes": "Mensajes",
     "/app/plans": "Planes",
     "/app/informacion": "Información",
- };
+};
 
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: "flex",
-        justifyContent:"space-between",
+        justifyContent: "space-between",
+        width: "100%",
     },
 
     navtitle: {
         [theme.breakpoints.down("sm")]: {
-            fontSize:"14px",
+            fontSize: "14px",
         }
     },
 
@@ -41,23 +42,23 @@ const SmsNavbar = () => {
 
     useEffect(() => {
         setTitle(titles[location.pathname]);
-     }, [location.pathname]);
-     
-     return(
+    }, [location.pathname]);
+
+    return (
         <AppBar position="fixed">
-        <Toolbar className={classes.toolbar}>
-            <Typography 
-            variant="h6" 
-            className={classes.navtitle}
-            >
-                {title}
-            </Typography>
-            <div>
-            <TelegramIcon/> 
-            </div>
-        </Toolbar>
-    </AppBar>
-     );
+            <Toolbar className={classes.toolbar}>
+                <Typography
+                    variant="h6"
+                    className={classes.navtitle}
+                >
+                    {title}
+                </Typography>
+                <div>
+                    <TelegramIcon />
+                </div>
+            </Toolbar>
+        </AppBar>
+    );
 }
 
 export default SmsNavbar;

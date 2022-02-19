@@ -3,40 +3,80 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import Paper from "@material-ui/core/Paper";
+import Add from "../../images/signup-img-blue.jpg"
+import AddHorizontal from "../img/paisaje.jpg"
 
 const useStyles = makeStyles((theme) => ({
-     paper: {
-      marginTop:"70px",
-      padding: theme.spacing(1),
-      color: theme.palette.text.secondary,
-      //border:"solid #b93c3c 2px",
-      width: "100%",
+
+  paper: {
+    display: "flex",
+    alignItems: "start",
+    marginTop: "70px",
+    padding: theme.spacing(3),
+    width: "100wh",
+    //border: "solid #ff3333 2px",
+
+    [theme.breakpoints.up('xl')]: {
+      margin: "70px 400px 0 400px",
     },
 
-    grid_container:{
-      border: "5px solid rgb(111,41,97)",
-  display: "grid,"
+  },
+
+  gridParent:{
+    //border: "solid #02d9ff 2px",
+    width: "100wh",
+  },
+
+  gridContainer: {
+    //border: "solid #3c48b9 2px",
+  },
+
+  gridItem: {
+    //border: "solid #3c8 2px"
+  },
+
+  addimg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+
+    [theme.breakpoints.down('md')]: {
     },
-    paperc:{
-      padding: theme.spacing(1),
-      textAlign: "center",
-      color: theme.palette.text.secondary,
-      marginTop:"20px",
-      
+
+  },
+
+  addContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    width: "200px",
+    height: "200px",
+    marginTop: "10px",
+
+    //border: "solid #b93c3c 2px",
+
+    [theme.breakpoints.down('md')]: {
     },
-    
+
+  },
+
+  addContainerH: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    width: "728px",
+    height: "90px",
+
+    [theme.breakpoints.down('md')]: {
+      width: "600px",
+    },
+  },
+
 }));
-
-function GridItem({ classes }) {
-  return (
-    // From 0 to 600px wide (smart-phones), I take up 12 columns, or the whole device width
-    // From 600-690px wide (tablets), I take up 6 out of 12 columns, so 2 columns fit the screen.
-    // From 960px wide and above, I take up 25% of the device (3/12), so 4 columns fit the screen.
-    <Grid item xs={12} sm={6} md={3}>
-      <Paper className={classes.paperc}>ITEM</Paper>
-    </Grid>
-  );
-}
 
 const Informacion = () => {
   const classes = useStyles();
@@ -44,18 +84,80 @@ const Informacion = () => {
   return (
     <>
       <div className={classes.paper}>
-      <div>
-      <h3> Responsive Material UI Grid </h3>
-      <Grid container spacing={1}>
-        <GridItem classes={classes} />
-        <GridItem classes={classes} />
-        <GridItem classes={classes} />
-        <GridItem classes={classes} />
-        <GridItem classes={classes} />
-        <GridItem classes={classes} />
-      </Grid>
-    </div>
+        <Grid className={classes.gridParent} container spacing={2} >
 
+          <Grid className={classes.gridContainer} item md={8} sm={12}>
+
+            <Grid container >
+
+              <Grid item xs={12} className={classes.gridItem}>
+                <Paper>
+                  <Box width="100%" height={90} >
+                    <div className={classes.addContainerH}>
+                      <img src={AddHorizontal} alt="addimg" />
+                    </div>
+                  </Box>
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12} className={classes.gridItem} >
+                <Paper>
+                  <Box width="100%" p={1.5} >
+                    <h1>MUNDO MENSAJES</h1>
+                    <p>Envió de mensajes de texto (SMS) hacia celulares de El Salvador: Tigo, Claro, Digicel, movistar,
+                      primero debes escribir el numero  de teléfono, luego escribes el contenido del mensajito, escribes
+                      tu nombre y finalizas haciendo clic en el botón  enviar.
+                    </p>
+                  </Box>
+                </Paper>
+              </Grid>
+
+
+                <Grid item xs={12} className={classes.gridItem}>
+                  <Paper>
+                    <Box width="100%" height={500} p={1.5} >
+                      Stepper
+                    </Box>
+                  </Paper>
+                </Grid>
+
+
+            </Grid>
+          </Grid>
+
+          <Grid item className={classes.gridContainer} xs={12} md={4} sm={12} >
+            <Grid container >
+
+              <Grid className={classes.gridItem} item xs={5} md={12} sm={4} >
+                  <Box width="100%"  >
+                    <div className={classes.addContainer}>
+                      <img src={Add} alt="addimg" className={classes.addimg} />
+                    </div>
+                  </Box>
+              </Grid>
+
+              <Grid className={classes.gridItem} item xs={5} md={12} sm={4}>
+                  <Box width="100%"  >
+                    <div className={classes.addContainer}>
+                      <img src={Add} alt="addimg" className={classes.addimg} />
+                    </div>
+                  </Box>
+              </Grid>
+
+              <Grid className={classes.gridItem} item xs={5} md={12} sm={4}>
+                  <Box width="100%"  >
+                    <div className={classes.addContainer}>
+                      <img src={Add} alt="addimg" className={classes.addimg} />
+                    </div>
+                  </Box>
+              </Grid>
+
+            </Grid>
+
+
+          </Grid>
+
+        </Grid>
       </div>
     </>
   );
