@@ -13,18 +13,20 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "start",
     marginTop: "70px",
     padding: theme.spacing(3),
-    width: "100wh",
+    width: "100vw",
+    //overflow: "hidden",
     //border: "solid #ff3333 2px",
 
     [theme.breakpoints.up('xl')]: {
       margin: "70px 400px 0 400px",
+      
     },
 
   },
 
   gridParent:{
-    //border: "solid #02d9ff 2px",
-    width: "100wh",
+    //Sborder: "solid #02d9ff 2px",
+    width: "100%",
   },
 
   gridContainer: {
@@ -32,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   gridItem: {
-    //border: "solid #3c8 2px"
+    //border: "solid #3c8 2px",
+    overflow: "hidden",
   },
 
   addimg: {
@@ -55,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     width: "200px",
     height: "200px",
     marginTop: "10px",
+    
 
     //border: "solid #b93c3c 2px",
 
@@ -70,9 +74,14 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     width: "728px",
     height: "90px",
-
+    
     [theme.breakpoints.down('md')]: {
       width: "600px",
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: "400px",
+      height: "50px",
     },
   },
 
@@ -92,7 +101,7 @@ const Informacion = () => {
 
               <Grid item xs={12} className={classes.gridItem}>
                 <Paper>
-                  <Box width="100%" height={90} >
+                  <Box width="100%">
                     <div className={classes.addContainerH}>
                       <img src={AddHorizontal} alt="addimg" />
                     </div>
@@ -128,7 +137,7 @@ const Informacion = () => {
           <Grid item className={classes.gridContainer} xs={12} md={4} sm={12} >
             <Grid container >
 
-              <Grid className={classes.gridItem} item xs={5} md={12} sm={4} >
+              <Grid className={classes.gridItem}  item xs={6} md={12} sm={4} >
                   <Box width="100%"  >
                     <div className={classes.addContainer}>
                       <img src={Add} alt="addimg" className={classes.addimg} />
@@ -136,7 +145,7 @@ const Informacion = () => {
                   </Box>
               </Grid>
 
-              <Grid className={classes.gridItem} item xs={5} md={12} sm={4}>
+              <Grid className={classes.gridItem} item xs={6} md={12} sm={4}>
                   <Box width="100%"  >
                     <div className={classes.addContainer}>
                       <img src={Add} alt="addimg" className={classes.addimg} />
@@ -144,7 +153,7 @@ const Informacion = () => {
                   </Box>
               </Grid>
 
-              <Grid className={classes.gridItem} item xs={5} md={12} sm={4}>
+              <Grid className={classes.gridItem} item xs={6} md={12} sm={4}>
                   <Box width="100%"  >
                     <div className={classes.addContainer}>
                       <img src={Add} alt="addimg" className={classes.addimg} />

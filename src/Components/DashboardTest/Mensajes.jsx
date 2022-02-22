@@ -11,73 +11,30 @@ import CountrySelect from "./ToolComponents/CountrySelect";
 import InputPhone from "./ToolComponents/InputPhone";
 import TextArea from "./ToolComponents/TextArea";
 import AdComponent from "./ToolComponents/AdComponent";
+//-------------------------------------
+import Grid from "@material-ui/core/Grid"
+import Box from "@material-ui/core/Box"
+import Add from "../../images/signup-img-blue.jpg"
+import AddHorizontal from "../img/paisaje.jpg"
+
 
 const useStyles = makeStyles(theme => ({
   smsPage: {
-    width: "100%",
+
     display: "flex",
-    justifyContent: "start",
-    padding: "120px 80px",
-    //border:"solid #d83860 2px",
+    alignItems: "start",
+    marginTop: "70px",
+    padding: theme.spacing(3),
+    //overflow: "hidden",
+   //border: "solid #ff3333 2px",
 
-    [theme.breakpoints.down("md")]: {
-      padding: "100px 50px",
-      //border:"solid #38d880 2px",
+    [theme.breakpoints.up('xl')]: {
+      margin: "70px 400px 0 400px",
     },
 
-    [theme.breakpoints.down("sm")]: {
-      padding: "80px 30px",
-      //border:"solid #9d38d8 2px",
-    },
-
-    
-    [theme.breakpoints.down("xs")]: {
-      padding: "70px 20px",
-    },
-
-    [theme.breakpoints.up("xl")]: {
-      padding: "150px 80px",
-      border:"solid #3878d8 2px",
-    },
-
-  },
-
-  smsContainer: {
-    width: "700px",
-    
-    '& h1': {
-      marginBottom: theme.spacing(2),
-
-      [theme.breakpoints.up("xl")]: {
-        fontSize:"3.5rem",
-      },
-
-      [theme.breakpoints.down("xs")]: {
-        fontSize:"1.5rem",
-      },
-  
-    },
-    '& p': {
-      marginBottom: theme.spacing(2),
-
-      [theme.breakpoints.up("xl")]: {
-        marginBottom: theme.spacing(4),
-        fontSize:"1.5rem",
-      },
-
-    [theme.breakpoints.down("xs")]: {
-      fontSize:"0.8rem",
-      width: "320px",
-    },
-
-    },
-
-    [theme.breakpoints.down("sm")]: {
-      width: "600px",
-    },
-    
-    [theme.breakpoints.up("xl")]: {
-      width: "1000px",
+    [theme.breakpoints.down('xs')]: {
+      marginTop: "60px",
+      padding: theme.spacing(0),
     },
 
   },
@@ -91,14 +48,14 @@ const useStyles = makeStyles(theme => ({
     },
 
   },
-  
+
   button: {
     marginTop: theme.spacing(1),
     marginRight: theme.spacing(1),
 
     [theme.breakpoints.up("xl")]: {
       marginTop: theme.spacing(0),
-      fontSize:"0.8rem",
+      fontSize: "0.8rem",
     },
 
   },
@@ -106,15 +63,104 @@ const useStyles = makeStyles(theme => ({
   actionsContainer: {
     marginBottom: theme.spacing(1),
   },
+  
   resetContainer: {
     padding: theme.spacing(3),
   },
 
-  ad:{
-    width:"100px",
-    height:"80px",
-    border:"solid red 2px",
+  //*************************************************** */
+
+  gridParent: {
+    //border: "solid #02d9ff 2px",
+    width: "100%",
+
+    //***********************
+    '& h1': {
+      marginBottom: theme.spacing(2),
+
+      [theme.breakpoints.up("xl")]: {
+        fontSize: "3.5rem",
+      },
+
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1.5rem",
+      },
+
+    },
+    '& p': {
+
+      [theme.breakpoints.up("xl")]: {
+        marginBottom: theme.spacing(4),
+        fontSize: "1.5rem",
+      },
+
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "0.8rem",
+        //width: "320px",
+        marginBottom: theme.spacing(0),
+      },
+
+    },
+
   },
+
+  gridContainer: {
+    //border: "solid #3c48b9 2px",
+  },
+
+  gridItem: {
+    //border: "solid #3c8 2px",
+    overflow: "hidden",    
+  },
+
+  addimg: {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+
+    [theme.breakpoints.down('md')]: {
+    },
+
+  },
+
+  addContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    width: "200px",
+    height: "200px",
+    marginTop: "10px",
+
+
+    //border: "solid #b93c3c 2px",
+
+    [theme.breakpoints.down('md')]: {
+    },
+
+  },
+
+  addContainerH: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    width: "728px",
+    height: "90px",
+
+    [theme.breakpoints.down('md')]: {
+      width: "600px",
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: "400px",
+      height: "50px",
+    },
+  },
+
+
 }));
 
 //getSteps contain the Step titles
@@ -174,56 +220,112 @@ const Mensajes = () => {
     <>
       <div className={classes.smsPage}>
 
-        <div className={classes.smsContainer} >
-          <h1>MUNDO MENSAJES</h1>
-          <p>Envió de mensajes de texto (SMS) hacia celulares de El Salvador: Tigo, Claro, Digicel, movistar,
-            primero debes escribir el numero  de teléfono, luego escribes el contenido del mensajito, escribes
-            tu nombre y finalizas haciendo clic en el botón  enviar, este servicio que te proporcionamos es
-            igual al de listasal.
-          </p>
+        <Grid className={classes.gridParent} container spacing={2} >
 
-          <Stepper activeStep={activeStep} orientation="vertical" className={classes.stepperbox}>
-            {steps.map((label, index) => (
-              <Step key={label}>
-                <StepLabel >{label}</StepLabel>
-                <StepContent>
-                  <Typography>{getStepContent(index)}</Typography>
-                  <div className={classes.actionsContainer}>
-                    <div>
-                      <Button
-                        disabled={activeStep === 0}
-                        onClick={handleBack}
-                        className={classes.button}
-                      >
-                        Regresar
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleNext}
-                        className={classes.button}
-                      >
-                        {activeStep === steps.length - 1 ? 'Enviar' : 'Continuar'}
-                      </Button>
+          <Grid className={classes.gridContainer} item md={8} sm={12}>
+
+            <Grid container >
+
+              <Grid item xs={12} className={classes.gridItem}>
+                  <Box width="100%">
+                    <div className={classes.addContainerH}>
+                      <img src={AddHorizontal} alt="addimg" />
                     </div>
-                  </div>
-                </StepContent>
-              </Step>
-            ))}
-          </Stepper>    
-          
-          <AdComponent className={classes.ad} />
+                  </Box>
+              </Grid>
 
-          {activeStep === steps.length && (
-            <Paper square elevation={0}
-              className={classes.resetContainer}>
-              <Typography> (っ▀¯▀)つ ¡Su mensaje ha sido enviado con éxito! </Typography>
-              <Button onClick={handleReset} className={classes.button}>
-                Volver
-              </Button>
-            </Paper>
-          )}
-        </div>
+              <Grid item xs={12} className={classes.gridItem} >
+                  <Box width="100%" p={1.5} >
+                    <h1>MUNDO MENSAJES</h1>
+                    <p>Envió de mensajes de texto (SMS) hacia celulares de El Salvador: Tigo, Claro, Digicel, movistar,
+                      primero debes escribir el numero  de teléfono, luego escribes el contenido del mensajito, escribes
+                      tu nombre y finalizas haciendo clic en el botón  enviar.
+                    </p>
+                  </Box>
+              </Grid>
+
+
+              <Grid item xs={12} className={classes.gridItem}>
+                  <Box width="100%"  p={1.5} >
+                    <Stepper activeStep={activeStep} orientation="vertical" className={classes.stepperbox}>
+                      {steps.map((label, index) => (
+                        <Step key={label}>
+                          <StepLabel >{label}</StepLabel>
+                          <StepContent>
+                            <Typography>{getStepContent(index)}</Typography>
+                            <div className={classes.actionsContainer}>
+                              <div>
+                                <Button
+                                  disabled={activeStep === 0}
+                                  onClick={handleBack}
+                                  className={classes.button}
+                                >
+                                  Regresar
+                                </Button>
+                                <Button
+                                  variant="contained"
+                                  color="primary"
+                                  onClick={handleNext}
+                                  className={classes.button}
+                                >
+                                  {activeStep === steps.length - 1 ? 'Enviar' : 'Continuar'}
+                                </Button>
+                              </div>
+                            </div>
+                          </StepContent>
+                        </Step>
+                      ))}
+                    </Stepper>
+                    {activeStep === steps.length && (
+                      <Paper square elevation={0}
+                        className={classes.resetContainer}>
+                        <Typography> (っ▀¯▀)つ ¡Su mensaje ha sido enviado con éxito! </Typography>
+                        <Button onClick={handleReset} className={classes.button}>
+                          Volver
+                        </Button>
+                      </Paper>
+                    )}
+                  </Box>
+              </Grid>
+
+
+            </Grid>
+          </Grid>
+
+          <Grid item className={classes.gridContainer} xs={12} md={4} sm={12} >
+            <Grid container >
+
+              <Grid className={classes.gridItem} item xs={6} md={12} sm={4} >
+                <Box width="100%">
+                  <div className={classes.addContainer}>
+                    <img src={Add} alt="addimg" className={classes.addimg} />
+                  </div>
+                </Box>
+              </Grid>
+
+              <Grid className={classes.gridItem} item xs={6} md={12} sm={4}>
+                <Box width="100%"  >
+                  <div className={classes.addContainer}>
+                    <img src={Add} alt="addimg" className={classes.addimg} />
+                  </div>
+                </Box>
+              </Grid>
+
+              <Grid className={classes.gridItem} item xs={6} md={12} sm={4}>
+                <Box width="100%"  >
+                  <div className={classes.addContainer}>
+                    <img src={Add} alt="addimg" className={classes.addimg} />
+                  </div>
+                </Box>
+              </Grid>
+
+            </Grid>
+
+
+          </Grid>
+
+        </Grid>
+
       </div>
     </>
   );
